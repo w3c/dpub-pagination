@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#" content="en" property="dcterms:language" about="" typeof="bibo:Document " dir="ltr" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>Pagination</title>
+	<meta charset="utf-8">
+  <style type="text/css">
+    .source { text-align: right; font-style: normal;}
+    blockquote p { font-style: italic; }
+
+    </style> 
+<style>/*****************************************************************
+ * ReSpec 3 CSS
+ * Robin Berjon - http://berjon.com/
+ *****************************************************************/
+
+/* --- INLINES --- */
+em.rfc2119 { 
+    text-transform:     lowercase;
+    font-variant:       small-caps;
+    font-style:         normal;
+    color:              #900;
+}
+
+h1 acronym, h2 acronym, h3 acronym, h4 acronym, h5 acronym, h6 acronym, a acronym,
+h1 abbr, h2 abbr, h3 abbr, h4 abbr, h5 abbr, h6 abbr, a abbr {
+    border: none;
+}
+
+dfn {
+    font-weight:    bold;
+}
+
+a.internalDFN {
+    color:  inherit;
+    border-bottom:  1px solid #99c;
+    text-decoration:    none;
+}
+
+a.externalDFN {
+    color:  inherit;
+    border-bottom:  1px dotted #ccc;
+    text-decoration:    none;
+}
+
+a.bibref {
+    text-decoration:    none;
+}
+
+cite .bibref {
+    font-style: normal;
+}
+
+code {
+    color:  #ff4500;
+}
+
+/* --- TOC --- */
+.toc a, .tof a {
+    text-decoration:    none;
+}
+
+a .secno, a .figno {
+    color:  #000;
+}
+
+ul.tof, ol.tof {
+    list-style: none outside none;
+}
+
+.caption {
+    margin-top: 0.5em;
+    font-style:   italic;
+}
+
+/* --- TABLE --- */
+table.simple {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    border-bottom:  3px solid #005a9c;
+}
+
+.simple th {
+    background: #005a9c;
+    color:  #fff;
+    padding:    3px 5px;
+    text-align: left;
+}
+
+.simple th[scope="row"] {
+    background: inherit;
+    color:  inherit;
+    border-top: 1px solid #ddd;
+}
+
+.simple td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+}
+
+.simple tr:nth-child(even) {
+    background: #f0f6ff;
+}
+
+/* --- DL --- */
+.section dd > p:first-child {
+    margin-top: 0;
+}
+
+.section dd > p:last-child {
+    margin-bottom: 0;
+}
+
+.section dd {
+    margin-bottom:  1em;
+}
+
+.section dl.attrs dd, .section dl.eldef dd {
+    margin-bottom:  0;
+}
+</style><style>/* --- EXAMPLES --- */
+div.example-title {
+    min-width: 7.5em;
+    color: #b9ab2d;
+}
+div.example-title span {
+    text-transform: uppercase;   
+}
+aside.example, div.example, div.illegal-example {
+    padding: 0.5em;
+    margin: 1em 0;
+    position: relative;
+    clear: both;
+}
+div.illegal-example { color: red }
+div.illegal-example p { color: black }
+aside.example, div.example {
+    padding: .5em;
+    border-left-width: .5em;
+    border-left-style: solid;
+    border-color: #e0cb52;
+    background: #fcfaee;    
+}
+
+aside.example div.example {
+    border-left-width: .1em;
+    border-color: #999;
+    background: #fff;
+}
+aside.example div.example div.example-title {
+    color: #999;
+}
+</style><style>/* --- ISSUES/NOTES --- */
+div.issue-title, div.note-title {
+    padding-right:  1em;
+    min-width: 7.5em;
+    color: #b9ab2d;
+}
+div.issue-title { color: #e05252; }
+div.note-title { color: #2b2; }
+div.issue-title span, div.note-title span {
+    text-transform: uppercase;
+}
+div.note, div.issue {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.note > p:first-child, .issue > p:first-child { margin-top: 0 }
+.issue, .note {
+    padding: .5em;
+    border-left-width: .5em;
+    border-left-style: solid;
+}
+div.issue, div.note {
+    padding: 1em 1.2em 0.5em;
+    margin: 1em 0;
+    position: relative;
+    clear: both;
+}
+span.note, span.issue { padding: .1em .5em .15em; }
+
+.issue {
+    border-color: #e05252;
+    background: #fbe9e9;
+}
+.note {
+    border-color: #52e052;
+    background: #e9fbe9;
+}
+
+
+</style><style>/* HIGHLIGHTS */
+code.prettyprint {
+    color:  inherit;
+}
+
+/* this from google-code-prettify */
+.pln{color:#000}@media screen{.str{color:#080}.kwd{color:#008}.com{color:#800}.typ{color:#606}.lit{color:#066}.pun,.opn,.clo{color:#660}.tag{color:#008}.atn{color:#606}.atv{color:#080}.dec,.var{color:#606}.fun{color:red}}@media print,projection{.str{color:#060}.kwd{color:#006;font-weight:bold}.com{color:#600;font-style:italic}.typ{color:#404;font-weight:bold}.lit{color:#044}.pun,.opn,.clo{color:#440}.tag{color:#006;font-weight:bold}.atn{color:#404}.atv{color:#060}}ol.linenums{margin-top:0;margin-bottom:0}li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8{list-style-type:none}li.L1,li.L3,li.L5,li.L7,li.L9{background:#eee}
+</style><link href="Pagination_files/W3C-WD.css" rel="stylesheet"></head>
+<body id="respecDocument" role="document" class="h-entry"><div id="respecHeader" role="contentinfo" class="head">
+  <p>
+    
+      <a href="http://www.w3.org/"><img src="Pagination_files/w3c_home.png" alt="W3C" height="48" width="72"></a>
+    
+  </p>
+  <h1 class="title p-name" id="title" property="dcterms:title">Pagination</h1>
+  
+  <h2 id="w3c-first-public-working-draft-08-october-2013" property="dcterms:issued" datatype="xsd:dateTime" content="2013-10-08T13:58:36.000Z"><abbr title="World Wide Web Consortium">W3C</abbr> First Public Working Draft <time class="dt-published" datetime="2013-10-08">08 October 2013</time></h2>
+  <dl>
+    
+      <dt>This version:</dt>
+      <dd><a class="u-url" href="http://www.w3.org/TR/2013/WD-pagination-20131008/">http://www.w3.org/TR/2013/WD-pagination-20131008/</a></dd>
+      <dt>Latest published version:</dt>
+      <dd><a href="http://www.w3.org/TR/pagination/">http://www.w3.org/TR/pagination/</a></dd>
+    
+    
+    
+    
+    
+    
+    
+    <dt>Editor:</dt>
+    <dd class="p-author h-card vcard" rel="bibo:editor" inlist=""><span typeof="foaf:Person"><a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="Dave Cramer" href="http://epubzero.blogspot.com/">Dave Cramer</a>, <a rel="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.hbgusa.com/">Hachette</a>, <span class="ed_mailto"><a class="u-email email" rel="foaf:mbox" href="mailto:dave.cramer@hbgusa.com">dave.cramer@hbgusa.com</a></span></span>
+</dd>
+
+    
+    
+  </dl>
+  
+  
+  
+  
+    
+      <p class="copyright">
+        <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> ©
+        2013
+        
+        <a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
+        (<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+        <a href="http://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
+        <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>), 
+        
+        All Rights Reserved.
+        
+        <abbr title="World Wide Web Consortium">W3C</abbr> <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+        <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
+        <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules apply.
+      </p>
+    
+  
+  <hr>
+</div>
+<section rel="bibo:chapter" resource="#abstract" typeof="bibo:Chapter" datatype="" property="dcterms:abstract" class="introductory" id="abstract"><h2 id="h2_abstract" role="heading" aria-level="1">Abstract</h2> 
+<p>
+	This document describes requirements for pagination and layout in 
+English (and possibly other Western languages), based on the tradition 
+of print book design and composition. It is hoped that these principles 
+can inform the pagination of digital content as well, and serve as a 
+reference for the CSS Working Group and other interested parties. This 
+work was inspired by [<cite><a href="#bib-JLREQ" class="bibref">JLREQ</a></cite>].
+</p>
+</section><section rel="bibo:chapter" resource="#sotd" typeof="bibo:Chapter" id="sotd" class="introductory"><h2 id="h2_sotd" role="heading" aria-level="1">Status of This Document</h2>
+  
+    
+      
+        <p>
+          <em>This section describes the status of this document at the time of its publication. Other
+          documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision
+          of this technical report can be found in the <a href="http://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports
+          index</a> at http://www.w3.org/TR/.</em>
+        </p>
+         
+<p>
+	If this document had a version number, it would be less than zero. 
+</p>
+
+        <p>
+          This document was published by the <a href="http://www.w3.org/dpub/IG/">Digital Publishing Interest Group</a> as a First Public Working Draft.
+          
+          
+          If you wish to make comments regarding this document, please send them to 
+          <a href="mailto:public-digipub-ig@w3.org">public-digipub-ig@w3.org</a> 
+          (<a href="mailto:public-digipub-ig-request@w3.org?subject=subscribe">subscribe</a>,
+          <a href="http://lists.w3.org/Archives/Public/public-digipub-ig/">archives</a>).
+          
+          
+          
+          
+            All comments are welcome.</p>
+          
+        
+          <p>
+            Publication as a First Public Working Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership.
+            This is a draft document and may be updated, replaced or obsoleted by other documents at 
+            any time. It is inappropriate to cite this document as other than work in progress.
+          </p>
+        
+        
+        <p>
+          
+            This document was produced by a group operating under the 
+             
+                <a id="sotd_patent" about="" rel="w3p:patentRules" href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+            
+          
+          The group does not expect this document to become a <abbr title="World Wide Web Consortium">W3C</abbr> Recommendation.
+          
+            
+              <abbr title="World Wide Web Consortium">W3C</abbr> maintains a <a href="" rel="disclosure">public list of any patent disclosures</a> 
+            
+            made in connection with the deliverables of the group; that page also includes instructions for 
+            disclosing a patent. An individual who has actual knowledge of a patent which the individual believes contains
+            <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential Claim(s)</a> must disclose the
+            information in accordance with <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section
+            6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+          
+          
+        </p>
+        
+      
+    
+  
+</section><section id="toc"><h2 id="h2_toc" role="heading" aria-level="1" class="introductory">Table of Contents</h2><ul id="respecContents" role="directory" class="toc"><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>
+	Introduction
+</a></li><li class="tocline"><a class="tocxref" href="#conformance"><span class="secno">2. </span>Conformance</a></li><li class="tocline"><a class="tocxref" href="#fundamentals"><span class="secno">3. </span>
+	Fundamentals
+</a><ul class="toc"><li class="tocline"><a class="tocxref" href="#tradeoffs"><span class="secno">3.1 </span>
+	Tradeoffs
+</a></li><li class="tocline"><a class="tocxref" href="#untangling-the-vertical-and-the-horizontal"><span class="secno">3.2 </span>
+	Untangling the Vertical and the Horizontal
+</a></li></ul></li><li class="tocline"><a class="tocxref" href="#paginating-single-column-text"><span class="secno">4. </span>
+	Paginating Single-Column Text
+</a><ul class="toc"><li class="tocline"><a class="tocxref" href="#widows"><span class="secno">4.1 </span>
+	Widows
+</a></li><li class="tocline"><a class="tocxref" href="#constraints-on-page-depth"><span class="secno">4.2 </span>
+	Constraints on page depth
+</a></li><li class="tocline"><a class="tocxref" href="#space-breaks-and-ornaments"><span class="secno">4.3 </span>
+	Space Breaks and Ornaments
+</a></li><li class="tocline"><a class="tocxref" href="#orphans"><span class="secno">4.4 </span>
+	Orphans
+</a></li><li class="tocline"><a class="tocxref" href="#recto-and-verso-hyphens"><span class="secno">4.5 </span>
+	Recto and Verso Hyphens
+</a></li></ul></li><li class="tocline"><a class="tocxref" href="#running-headers-and-footers"><span class="secno">5. </span>Running headers and footers</a><ul class="toc"><li class="tocline"><a class="tocxref" href="#content"><span class="secno">5.1 </span>Content</a></li><li class="tocline"><a class="tocxref" href="#placement"><span class="secno">5.2 </span>Placement</a></li></ul></li><li class="tocline"><a class="tocxref" href="#heads"><span class="secno">6. </span>
+	Heads
+</a></li><li class="tocline"><a class="tocxref" href="#images"><span class="secno">7. </span>
+	Images
+</a><ul class="toc"><li class="tocline"><a class="tocxref" href="#tk"><span class="secno">7.1 </span>TK</a></li></ul></li><li class="tocline"><a class="tocxref" href="#tables"><span class="secno">8. </span>
+	Tables
+</a></li><li class="tocline"><a class="tocxref" href="#footnotes"><span class="secno">9. </span>
+	Footnotes
+</a><ul class="toc"><li class="tocline"><a class="tocxref" href="#inline-footnotes-and-multiple-footnote-regions"><span class="secno">9.1 </span>Inline footnotes and multiple footnote regions</a></li><li class="tocline"><a class="tocxref" href="#at-the-foot-of-what"><span class="secno">9.2 </span>At the foot of what?</a></li><li class="tocline"><a class="tocxref" href="#breaking-footnotes-across-pages"><span class="secno">9.3 </span>Breaking footnotes across pages</a></li><li class="tocline"><a class="tocxref" href="#numbering"><span class="secno">9.4 </span>Numbering</a></li></ul></li><li class="tocline"><a class="tocxref" href="#sidebars"><span class="secno">10. </span>
+Sidebars
+</a></li><li class="tocline"><a class="tocxref" href="#marginalia"><span class="secno">11. </span>
+	Marginalia
+</a></li><li class="tocline"><a class="tocxref" href="#equations"><span class="secno">12. </span>
+	Equations
+</a></li><li class="tocline"><a class="tocxref" href="#columns"><span class="secno">13. </span>
+	Columns
+</a></li><li class="tocline"><a class="tocxref" href="#special-considerations-for-genres"><span class="secno">14. </span>
+	Special Considerations for Genres
+</a></li><li class="tocline"><a class="tocxref" href="#digital-issues"><span class="secno">15. </span>
+	Digital Issues
+</a></li><li class="tocline"><a class="tocxref" href="#large-scale-issues-in-pagination"><span class="secno">16. </span>
+	Large-Scale Issues in Pagination
+</a><ul class="toc"><li class="tocline"><a class="tocxref" href="#book-optimization"><span class="secno">16.1 </span>
+	Book optimization
+</a></li><li class="tocline"><a class="tocxref" href="#chapter-optimization"><span class="secno">16.2 </span>
+	Chapter optimization
+</a></li></ul></li><li class="tocline"><a class="tocxref" href="#the-classical-rules-of-hyphenation-and-pagination"><span class="secno">A. </span>
+	The Classical Rules of Hyphenation and Pagination
+</a></li><li class="tocline"><a class="tocxref" href="#acknowledgments"><span class="secno">B. </span>Acknowledgments</a></li><li class="tocline"><a class="tocxref" href="#trick-to-get-links-to-specs"><span class="secno">C. </span>
+	Trick to get links to specs
+</a></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">D. </span>References</a><ul class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><span class="secno">D.1 </span>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><span class="secno">D.2 </span>Informative references</a></li></ul></li></ul></section>  <section id="introduction" class="informative"> 
+<!--OddPage--><h2 id="h2_introduction" role="heading" aria-level="1"><span class="secno">1. </span>
+	Introduction
+</h2><p><em>This section is non-normative.</em></p>
+<p>
+	Not all stories worth telling can fit in a tweet, on a computer screen,
+ or on a single piece of paper. Ever since the codex replaced the 
+scroll, humans have divided our stories into pages. Pagination is the 
+art and the craft of turning that scroll of content into discrete 
+pieces, whether destined for book pages or screens. Pagination requires 
+us to think about the document at all levels, from the total number of 
+pages to the tiny spaces between letters. Along with graphic design and 
+typography, it determines the look of the page. 
+</p>
+<blockquote>
+	<p>
+		Typography is the craft of endowing human language with a durable visual form, and thus with an independent existence. 
+	</p>
+	<p class="source">
+		—Robert Bringhurst, <i>The Elements of Typographic Style</i>
+	</p>
+</blockquote>
+<p>
+	Good pagination, like good typography, aims to be invisible. As the 
+reader turns the page, the stream of words and images in her mind should
+ not be interrupted. Two thousand years of experience have taught us how
+ best to do this. The goal of this document is to describe those rules, 
+as clearly as possible, so they can be implemented in the Open Web 
+Platform. We hope for a day where the pagination of digital books will 
+be as beautiful and transparent as the best printed books. 
+</p>
+</section> <section rel="bibo:chapter" resource="#conformance" typeof="bibo:Chapter" id="conformance"><!--OddPage--><h2 id="h2_conformance" role="heading" aria-level="1"><span class="secno">2. </span>Conformance</h2>
+<p>
+  As well as sections marked as non-normative, all authoring guidelines, diagrams, examples,
+  and notes in this specification are non-normative. Everything else in this specification is
+  normative.
+</p>
+<p>
+  The key words <em title="MUST" class="rfc2119">MUST</em>, <em title="MUST NOT" class="rfc2119">MUST NOT</em>, <em title="REQUIRED" class="rfc2119">REQUIRED</em>, <em title="SHOULD" class="rfc2119">SHOULD</em>, <em title="SHOULD NOT" class="rfc2119">SHOULD NOT</em>, <em title="RECOMMENDED" class="rfc2119">RECOMMENDED</em>, <em title="MAY" class="rfc2119">MAY</em>,
+  and <em title="OPTIONAL" class="rfc2119">OPTIONAL</em> in this specification are to be interpreted as described in [<cite><a href="#bib-RFC2119" class="bibref">RFC2119</a></cite>].
+</p>
+ 
+<p>
+	TK 
+</p>
+</section> <section id="fundamentals"> 
+<!--OddPage--><h2 id="h2_fundamentals" role="heading" aria-level="1"><span class="secno">3. </span>
+	Fundamentals
+</h2>
+<blockquote>
+	<p>
+		Makeup is a highly skilled procedure. If the text is merely divided 
+mechanically into portions of equal length, without regard to where the 
+divisions fall, some of the pages that result are bound to be 
+unacceptable logically or aesthetically: they will incorporate bad 
+breaks.
+	</p>
+	<p class="source">
+		—<i>Chicago Manual of Style, 14th Edition</i>, 19.40.
+	</p>
+</blockquote>
+<blockquote>
+	<p>
+		What therefore God hath joined together, let not man put asunder.
+	</p>
+	<p class="source">
+		—<i>The Bible</i>, Matthew 19:6
+	</p>
+</blockquote>
+<p>
+	Every rule of pagination boils down to a single principle: break pages 
+with as little disruption to the reading experience as possible. A widow
+ leaves the last line of a paragraph isolated from the rest of the 
+thought. A recto hyphen means a word is interrupted by a page turn. A 
+heading at the bottom of a page removes the title from the section, and 
+the section from the title. 
+</p>
+<section id="tradeoffs"> 
+<h3 id="h3_tradeoffs" role="heading" aria-level="2"><span class="secno">3.1 </span>
+	Tradeoffs
+</h3>
+<p>
+	Pagination involves tradeoffs. Fixing a widow may result in a 
+misaligned spread. Fixing that may result in a loose line or paragraph. 
+What is acceptable in one book, or for one publisher, may be 
+unacceptable to another. What is acceptable in one country, or language,
+ may be unacceptable elsewhere. 
+</p>
+</section> <section id="untangling-the-vertical-and-the-horizontal"> 
+<h3 id="h3_untangling-the-vertical-and-the-horizontal" role="heading" aria-level="2"><span class="secno">3.2 </span>
+	Untangling the Vertical and the Horizontal
+</h3>
+<p>
+	Page breaks are often line breaks. The tiniest change in kerning can 
+make a paragraph longer or shorter, and thus create a widow or an 
+orphan. The work of pagination, as done by typesetters, human or 
+machine, inevitably involves the consideration of the lines of text. And
+ so we will not try too hard to avoid talking about line breaks, when 
+they potentially influence pagination. 
+</p>
+</section> </section> <section id="paginating-single-column-text"> 
+<!--OddPage--><h2 id="h2_paginating-single-column-text" role="heading" aria-level="1"><span class="secno">4. </span>
+	Paginating Single-Column Text
+</h2>
+<p>
+	The simplest situation, which is very common, is when the content is 
+only text, in a single column. Aside from chapter and book optimizations
+ (to be discussed later) and line-breaking, the biggest issue is likely 
+to be widows (see <a class="fig-ref" href="#fig-widow1">Fig. <span class="figno">1</span> <span class="fig-title"> Text spread with widow </span></a> for an example). 
+</p>
+<section id="widows"> 
+<h3 id="h3_widows" role="heading" aria-level="2"><span class="secno">4.1 </span>
+	Widows
+</h3>
+<p>
+	Are widows permitted? What’s the minimum number of lines of a paragraph
+ allowed before a page break? How is a widow defined? For some 
+publishers, the last line of the paragraph can appear at the top of a 
+page if it spans at least three-quarters of the measure. 
+</p>
+<figure id="fig-widow1"> <img src="Pagination_files/image01.png" alt="diagram of facing text pages with widow at top of verso page" width="480"> <figcaption>Fig. <span class="figno">1</span> <span class="fig-title"> Text spread with widow </span></figcaption> </figure> 
+<p>
+	Many typesetting systems (including CSS) have settings to prevent 
+widows, usually by specifying how many lines of a paragraph must be kept
+ together at the top of a page. Unfortunately, these systems usually 
+create another problem when they fix the widow. In <a class="fig-ref" href="#fig-widow2">Fig. <span class="figno">2</span> <span class="fig-title"> Widow fixed, but pages don’t align </span></a>,
+ there’s no longer a widow at the top of the page, but since the system 
+merely moved a line from the left page to the right, it left behind an 
+empty line, and the pages no longer align at the bottom. 
+</p>
+<figure id="fig-widow2"> <img src="Pagination_files/image02.png" alt="diagram of facing text pages where left page is one line shorter than right page" width="480"> <figcaption>Fig. <span class="figno">2</span> <span class="fig-title"> Widow fixed, but pages don’t align </span></figcaption> </figure> 
+<p>
+	More needs to be done. Removing one line of text from each page of the spread, shown in <a class="fig-ref" href="#fig-widow3">Fig. <span class="figno">3</span> <span class="fig-title"> Widow fixed by “running short.” </span></a> solves the problem. 
+</p>
+<figure id="fig-widow3"> <img src="Pagination_files/image03.png" alt="diagram of facing text pages where left page is one line shorter than right page" width="480"> <figcaption>Fig. <span class="figno">3</span> <span class="fig-title"> Widow fixed by “running short.” </span></figcaption> </figure> </section> <section id="constraints-on-page-depth"> 
+<h3 id="h3_constraints-on-page-depth" role="heading" aria-level="2"><span class="secno">4.2 </span>
+	Constraints on page depth
+</h3>
+<p>
+	In traditional typesetting, the first defense against bad breaks is to 
+change the depth of the page. “Running long” or “running short” means 
+including one more (or one less) line of text on each page of the 
+spread, thus sidestepping the previously-identified issue. 
+</p>
+<p>
+	A typical book design includes instructions on whether it’s acceptable 
+to run short, long, or (rarely) both. Often there are also constraints 
+on how many consecutive spreads (or pages) may be altered in this way. 
+If running both long and short, it’s usually forbidden to go from one to
+ another without an intervening normal spread. 
+</p>
+</section> <section id="space-breaks-and-ornaments"> 
+<h3 id="h3_space-breaks-and-ornaments" role="heading" aria-level="2"><span class="secno">4.3 </span>
+	Space Breaks and Ornaments
+</h3>
+<p>
+	Many novels, and some narrative non-fiction books, include small breaks
+ in the text. These are usually represented by one to three blank lines,
+ or by a small ornament or dingbat. Problems arise when these breaks 
+fall at the top or bottom of a page. 
+</p>
+<figure id="fig-spacebreak1"> <img src="Pagination_files/image04.png" alt="" width="480"> <figcaption>Fig. <span class="figno">4</span> <span class="fig-title"> Space break </span></figcaption> </figure> 
+<p>
+	If, however, the space break falls at the bottom of the page, confusion can result. In <a class="fig-ref" href="#fig-spacebreak2">Fig. <span class="figno">5</span> <span class="fig-title"> Incorrect: Space break at bottom of page </span></a>, it’s hard to tell there’s a space break, as it just looks like the page is a few lines short. 
+</p>
+<figure id="fig-spacebreak2"> <img src="Pagination_files/image05.png" alt="" width="480"> <figcaption>Fig. <span class="figno">5</span> <span class="fig-title"> Incorrect: Space break at bottom of page </span></figcaption> </figure> 
+<p>
+	In that case, asterisks or some other ornament is added to the top or 
+bottom of a page, as a visual reminder of the break. To get everything 
+to work out, the spread was run short, and the space break (now with 
+ornament) pushed to the top of the second page. See <a class="fig-ref" href="#fig-spacebreak3">Fig. <span class="figno">6</span> <span class="fig-title"> Space break at top of page with asterisks </span></a>. 
+</p>
+<figure id="fig-spacebreak3"> <img src="Pagination_files/image00.png" alt="" width="480"> <figcaption>Fig. <span class="figno">6</span> <span class="fig-title"> Space break at top of page with asterisks </span></figcaption> </figure> </section> <section> 
+
+
+<div class="issue"><div id="h_issue_1" role="heading" aria-level="3" class="issue-title"><span>Issue 1</span></div><p class="">The editors are not aware of any implementation of this concept.</p></div>
+<h3 role="heading" aria-level="2" id="facing-pages">
+	Facing Pages
+</h3>
+<p>
+	Are there facing pages? If so, must facing pages align? 
+</p>
+</section> <section id="orphans"> 
+<h3 id="h3_orphans" role="heading" aria-level="2"><span class="secno">4.4 </span>
+	Orphans
+</h3>
+<p>
+	Are orphans permitted? What’s the minimum number of lines of a paragraph allowed before a page break? 
+</p>
+</section> <section id="recto-and-verso-hyphens"> 
+<h3 id="h3_recto-and-verso-hyphens" role="heading" aria-level="2"><span class="secno">4.5 </span>
+	Recto and Verso Hyphens
+</h3>
+<p>
+	Are recto hyphens acceptable? Verso hyphens? 
+</p>
+</section> </section> 
+
+
+<section id="running-headers-and-footers">
+<!--OddPage--><h2 id="h2_running-headers-and-footers" role="heading" aria-level="1"><span class="secno">5. </span>Running headers and footers</h2>
+
+<p>Books often have material printed at the top and/or bottom of each 
+page, outside the normal content area. These headers or footers may 
+serve as guideposts for reader, fodder for designers, low-tech DRM, or 
+merely a way to know what book your fellow train passenger is reading. 
+There’s more to running headers than is dreamt of in the open web 
+platform…</p>
+
+<section id="content">
+<h3 id="h3_content" role="heading" aria-level="2"><span class="secno">5.1 </span>Content</h3>
+<p>Running heads and footers may contain:</p>
+<ol>
+<li>
+Content from the document: book title, chapter or part titles, author name(s)…
+</li>
+<li>
+Content intended only for running heads: shortened versions of chapter titles…</li>
+<li>
+Page or section numbers
+</li>
+<li>
+Chapter numbers
+</li>
+
+<li>
+ornaments or other decorative type
+</li>
+<li>
+combinations of the above
+</li>
+</ol>
+<p>In some cases the content of running heads may have an internal 
+structure—a chapter title might have an italic word—or may require 
+different text styles or fonts.</p>
+
+
+<div class="example">
+<figure id="fig-runninghead-ornament"> <img src="Pagination_files/RunningHead.png" alt="" width="480"> <figcaption>Fig. <span class="figno">7</span> <span class="fig-title"> Running head with text ornament </span></figcaption> </figure> 
+
+<p>In this example, the running header contains the author name, the 
+page number, and an ornament. This seemingly simple case was quite 
+complex, using [<cite><a href="#bib-css3-gcpm" class="bibref">css3-gcpm</a></cite>]-like features implemented by PrinceXML.</p>
+
+<pre class="highlight prettyprint"><span class="lit">@page</span><span class="pln"> body</span><span class="pun">:</span><span class="pln">left </span><span class="pun">{</span><span class="pln">
+  </span><span class="lit">@top</span><span class="pun">-</span><span class="pln">center </span><span class="pun">{</span><span class="pln"> 
+    content</span><span class="pun">:</span><span class="pln"> flow</span><span class="pun">(</span><span class="pln">verso</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+
+p</span><span class="pun">.</span><span class="pln">verso</span><span class="pun">-</span><span class="pln">cus </span><span class="pun">{</span><span class="pln">
+  flow</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">static</span><span class="pun">(</span><span class="pln">verso</span><span class="pun">);</span><span class="pln">
+  content</span><span class="pun">:</span><span class="pln"> prince</span><span class="pun">-</span><span class="pln">glyph</span><span class="pun">-</span><span class="pln">index</span><span class="pun">(</span><span class="lit">80</span><span class="pun">);</span><span class="pln">
+  font</span><span class="pun">-</span><span class="pln">family</span><span class="pun">:</span><span class="pln"> </span><span class="str">'Type Embellishments One'</span><span class="pun">;</span><span class="pln">
+  font</span><span class="pun">-</span><span class="pln">size</span><span class="pun">:</span><span class="pln"> </span><span class="lit">10pt</span><span class="pun">;</span><span class="pln">
+  text</span><span class="pun">-</span><span class="pln">align</span><span class="pun">:</span><span class="pln"> center</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+p</span><span class="pun">.</span><span class="pln">verso</span><span class="pun">-</span><span class="pln">cus</span><span class="pun">:</span><span class="pln">before </span><span class="pun">{</span><span class="pln">
+  content</span><span class="pun">:</span><span class="pln"> counter</span><span class="pun">(</span><span class="pln">page</span><span class="pun">);</span><span class="pln">
+  display</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">inline</span><span class="pun">;</span><span class="pln">
+  padding</span><span class="pun">-</span><span class="pln">right</span><span class="pun">:</span><span class="pln"> </span><span class="lit">15pt</span><span class="pun">;</span><span class="pln">
+  font</span><span class="pun">-</span><span class="pln">family</span><span class="pun">:</span><span class="pln"> </span><span class="str">'Garamond 3 LT Std'</span><span class="pun">;</span><span class="pln">
+  font</span><span class="pun">-</span><span class="pln">style</span><span class="pun">:</span><span class="pln"> italic</span><span class="pun">;</span><span class="pln">
+  font</span><span class="pun">-</span><span class="pln">size</span><span class="pun">:</span><span class="pln"> </span><span class="lit">10pt</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+p</span><span class="pun">.</span><span class="pln">verso</span><span class="pun">-</span><span class="pln">cus</span><span class="pun">:</span><span class="pln">after </span><span class="pun">{</span><span class="pln">
+  content</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">string</span><span class="pun">(</span><span class="pln">flow</span><span class="pun">-</span><span class="pln">header</span><span class="pun">-</span><span class="pln">left</span><span class="pun">-</span><span class="pln">rw</span><span class="pun">);</span><span class="pln">
+  display</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">inline</span><span class="pun">;</span><span class="pln">
+  padding</span><span class="pun">-</span><span class="pln">left</span><span class="pun">:</span><span class="pln"> </span><span class="lit">15pt</span><span class="pun">;</span><span class="pln">
+  font</span><span class="pun">-</span><span class="pln">family</span><span class="pun">:</span><span class="pln"> </span><span class="str">'Garamond 3 LT Std'</span><span class="pun">;</span><span class="pln">
+  font</span><span class="pun">-</span><span class="pln">style</span><span class="pun">:</span><span class="pln"> italic</span><span class="pun">;</span><span class="pln">
+  font</span><span class="pun">-</span><span class="pln">size</span><span class="pun">:</span><span class="pln"> </span><span class="lit">10pt</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span></pre>
+
+</div>
+
+
+
+</section>
+
+<section id="placement">
+<h3 id="h3_placement" role="heading" aria-level="2"><span class="secno">5.2 </span>Placement</h3>
+<p>Running heads are generally omitted from the first pages of chapters.</p>
+</section>
+
+
+
+<div class="note"><div id="h_note_1" role="heading" aria-level="2" class="note-title"><span>Note</span></div><div class="">
+<p>Running headers are addressed by [<cite><a href="#bib-css3-gcpm" class="bibref">css3-gcpm</a></cite>].</p>
+<p>[epub3] has minimal support for headers and footers using <code>oeb-page-head</code> and <code>oeb-page-foot</code>.</p>
+<p>[<cite><a href="#bib-css3-gcpm" class="bibref">css3-gcpm</a></cite>] has two mechanisms for placing content in running heads:</p>
+<ol>
+<li>
+<dfn id="dfn-named-strings">named strings</dfn> TK
+</li>
+<li>
+<dfn id="dfn-running-elements">running elements</dfn> TK
+</li>
+</ol>
+</div></div>
+
+</section>
+
+
+<section id="heads"> 
+<!--OddPage--><h2 id="h2_heads" role="heading" aria-level="1"><span class="secno">6. </span>
+	Heads
+</h2>
+<p>
+	how many paras after head at bottom of page 
+</p>
+<p>
+	variable spacing above/below head 
+</p>
+
+<p>Bridge heads, side heads, run-in heads</p>
+</section> <section id="images"> 
+<!--OddPage--><h2 id="h2_images" role="heading" aria-level="1"><span class="secno">7. </span>
+	Images
+</h2>
+
+<section id="tk">
+<h3 id="h3_tk" role="heading" aria-level="2"><span class="secno">7.1 </span>TK</h3>
+
+<figure id="fig-runninghead-ornament"> <img src="Pagination_files/ImageCaptionRunaround.jpg" alt="" width="480"> <figcaption>Fig. <span class="figno">8</span> <span class="fig-title"> Figure with caption and runaround </span></figcaption> </figure> 
+<p>Some things to note about this image</p>
+<ol>
+<li>
+the caption and image are treated as a unit
+</li>
+<li>
+Text runs around the image+caption
+</li>
+<li>
+image runs right up to the gutter of the page (i.e. extends beyond usual content area)
+</li>
+<li>
+caption has internal structure (run-in head, etc.)
+</li>
+</ol>
+
+</section>
+<p>
+	Images that cross spread 
+</p>
+<p>
+	image before callout? 
+</p>
+<p>
+	placing multiple images on page… inside/outside, top/bottom, stagger 
+</p>
+<p>
+	broadside 
+</p>
+<p>
+	placement of caption/title 
+	
+</p>
+</section> <section id="tables"> 
+<!--OddPage--><h2 id="h2_tables" role="heading" aria-level="1"><span class="secno">8. </span>
+	Tables
+</h2>
+<p>
+	broadside 
+</p>
+<p>
+	placement of caption/title 
+</p>
+<p>
+	spread 
+</p>
+<p>
+	multi-page 
+</p>
+</section> <section id="footnotes"> 
+<!--OddPage--><h2 id="h2_footnotes" role="heading" aria-level="1"><span class="secno">9. </span>
+	Footnotes
+</h2>
+<p>In print publishing, a footnote consists of two parts: a reference 
+(often rendered as an asterisk or superscripted number) and the footnote
+ body.</p>
+
+<p>
+Footnotes themselves can be quite complicated. Footnotes can contain 
+multiple paragraphs, block quotes, poems, lists, and tables. Footnotes 
+can contain other footnotes (an edge case, admittedly, but David Foster 
+Wallace was notorious for this). Footnotes can extend across multiple 
+pages. In short, a footnote is a container that can hold almost 
+anything.
+</p>
+
+<p>
+In order to describe footnotes in HTML, one must separate the footnote 
+reference (which is an inline element) from the footnote itself, as HTML
+ frowns on placing complex block structures inside paragraphs. This is 
+quite different from something like DocBook, where the content model 
+allows a footnote element inside a paragraph, and that footnote can 
+itself contain multiple paragraphs, etc. 
+</p>
+
+
+
+<div class="example"><div class="example-title"><span>Example 1</span></div><pre class="example highlight prettyprint"><span class="tag">&lt;p&gt;</span><span class="pln">It was the best of times</span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"ref-footnote-rw"</span><span class="tag">&gt;</span><span class="pln">*</span><span class="tag">&lt;/span&gt;</span><span class="pln">, it was the blurst of times.</span><span class="tag">&lt;/p&gt;</span><span class="pln">
+
+</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"block-rw footnotes-rw"</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;p&gt;&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"num-footnote-rw"</span><span class="tag">&gt;</span><span class="pln">*</span><span class="tag">&lt;/span&gt;</span><span class="pln">Oh yes, but the telephone is so impersonal.</span><span class="tag">&lt;/p&gt;</span><span class="pln">
+</span><span class="tag">&lt;p&gt;</span><span class="pln">I prefer the hands-on touch you only get with hired goons.</span><span class="tag">&lt;/p&gt;</span><span class="pln">
+</span><span class="tag">&lt;/div&gt;</span></pre></div>
+<p>
+There may also be more than one reference to the same footnote.
+</p>
+
+<p>
+Footnote handling as described in  [<cite><a href="#bib-css3-gcpm" class="bibref">css3-gcpm</a></cite>] assumes the footnote is coded inline at the point of reference. This situation is under discussion on the www-style list.
+</p>
+
+
+<section id="inline-footnotes-and-multiple-footnote-regions">
+<h3 id="h3_inline-footnotes-and-multiple-footnote-regions" role="heading" aria-level="2"><span class="secno">9.1 </span>Inline footnotes and multiple footnote regions</h3>
+
+<p>Some types of footnotes may be displayed inline, as in the top <a class="fig-ref" href="#fig-footnote-inline">Fig. <span class="figno">9</span> <span class="fig-title"> Inline footnotes </span></a>. Other books (see <a class="fig-ref" href="#fig-footnote-regions">Fig. <span class="figno">10</span> <span class="fig-title"> Multiple footnote regions </span></a>) may have two separate streams of footnotes, requiring two footnote regions.</p>
+
+<figure id="fig-footnote-inline"> <img src="Pagination_files/exegesis.png" alt="Page of Hamlet showing inline footnotes above block footnotes" width="480"> <figcaption>Fig. <span class="figno">9</span> <span class="fig-title"> Inline footnotes </span></figcaption> </figure> 
+
+<figure id="fig-footnote-regions"> <img src="Pagination_files/hamlet.png" alt="Page of Hamlet showing inline footnotes above block footnotes" width="480"> <figcaption>Fig. <span class="figno">10</span> <span class="fig-title"> Multiple footnote regions </span></figcaption> </figure> 
+
+<figure id="fig-footnote-regions2"> <img src="Pagination_files/PepysFootnotes.jpg" alt="" width="800"> <figcaption>Fig. <span class="figno">11</span> <span class="fig-title"> Multiple footnote regions #2 </span></figcaption> </figure> 
+
+
+
+
+<!-- <p class="note">PrinceXML has implemented inline footnotes, with <code>float: prince-inline-footnote | prince-inline-column-footnote.</code> </p> -->
+</section>
+
+<section id="at-the-foot-of-what">
+<h3 id="h3_at-the-foot-of-what" role="heading" aria-level="2"><span class="secno">9.2 </span>At the foot of what?</h3>
+<p>Footnotes usually fall at the bottom of the page, but may need to be 
+at placed at the end of a column, table, sidebar, or other document 
+structure. 
+</p>
+</section>
+
+<section id="breaking-footnotes-across-pages">
+<h3 id="h3_breaking-footnotes-across-pages" role="heading" aria-level="2"><span class="secno">9.3 </span>Breaking footnotes across pages</h3>
+<p>
+Some footnotes can extend across more than one page. Limits on the size 
+of the footnote area(s) may be required, so that a page containing only 
+footnotes is avoided.
+</p>
+</section>
+
+<section id="numbering">
+<h3 id="h3_numbering" role="heading" aria-level="2"><span class="secno">9.4 </span>Numbering</h3>
+<p>In addition to the usual numbering schemes, footnotes may be 
+identified by a sequence of symbols: *, †, ‡, and §. This sequence 
+usually restarts every page. If there are more than four footnotes per 
+page, the symbols are doubled, tripled, etc.</p>
+</section>
+
+
+
+<div class="note"><div id="h_note_2" role="heading" aria-level="2" class="note-title"><span>Note</span></div><div class="">
+<p>Footnotes are addressed by [<cite><a href="#bib-css3-gcpm" class="bibref">css3-gcpm</a></cite>].</p>
+<p class="issue">TK</p>
+</div></div>
+
+
+</section> 
+
+<section id="sidebars"> 
+<!--OddPage--><h2 id="h2_sidebars" role="heading" aria-level="1"><span class="secno">10. </span>
+Sidebars
+</h2>
+
+
+<figure id="fig-sidebar"> <img src="Pagination_files/Sidebar.jpg" alt="" width="480"> <figcaption>Fig. <span class="figno">12</span> <span class="fig-title"> Sidebar </span></figcaption> </figure> 
+<p>Some things to notice:</p>
+<ol>
+<li>
+The image floats to the top of the column inside the sidebar
+</li>
+<li>
+The columns themselves base-align
+</li>
+<li>
+The sidebar title and “supertitle” are on the same line. 
+</li>
+</ol>
+</section> <section id="marginalia"> 
+<!--OddPage--><h2 id="h2_marginalia" role="heading" aria-level="1"><span class="secno">11. </span>
+	Marginalia
+</h2>
+<p>
+	alignment with reference 
+</p>
+</section> <section id="equations"> 
+<!--OddPage--><h2 id="h2_equations" role="heading" aria-level="1"><span class="secno">12. </span>
+	Equations
+</h2>
+</section> <section id="columns"> 
+<!--OddPage--><h2 id="h2_columns" role="heading" aria-level="1"><span class="secno">13. </span>
+	Columns
+</h2>
+</section> <section id="special-considerations-for-genres"> 
+<!--OddPage--><h2 id="h2_special-considerations-for-genres" role="heading" aria-level="1"><span class="secno">14. </span>
+	Special Considerations for Genres
+</h2>
+<h2 id="education">
+	Education
+</h2>
+<ul>
+	<li> College textbooks </li>
+	<li> Elhi </li>
+	<li> Language </li>
+	<li> Study guides </li>
+</ul>
+<h2 id="trade">
+	Trade
+</h2>
+<ul>
+	<li> Fiction </li>
+	<li> Narrative nonfiction </li>
+	<li> Children’s </li>
+	<li> YA </li>
+	<li> Religious 
+	<ul>
+		<li> Bibles </li>
+	</ul>
+	</li>
+	<li> Travel </li>
+	<li> How-to </li>
+	<li> Manga/Comics/Graphic Novels </li>
+</ul>
+<h3 role="heading" aria-level="1" id="stem">
+	STEM
+</h3>
+<h3 id="reference">
+	Reference
+</h3>
+<h3 id="poetry-drama">
+	Poetry/Drama
+</h3>
+<h3 id="journals">
+	Journals
+</h3>
+<h3 id="magazines">
+	Magazines
+</h3>
+</section> <section id="digital-issues"> 
+<!--OddPage--><h2 id="h2_digital-issues" role="heading" aria-level="1"><span class="secno">15. </span>
+	Digital Issues
+</h2>
+</section> <section id="large-scale-issues-in-pagination"> 
+<!--OddPage--><h2 id="h2_large-scale-issues-in-pagination" role="heading" aria-level="1"><span class="secno">16. </span>
+	Large-Scale Issues in Pagination
+</h2>
+<section id="book-optimization"> 
+<h3 id="h3_book-optimization" role="heading" aria-level="2"><span class="secno">16.1 </span>
+	Book optimization
+</h3>
+<p>
+	In trade publishing, we often know how many pages will be in a book 
+before it is written. The nature of printing and binding also mandate 
+that the number of pages in a book be some multiple of eight, sixteen, 
+or thirty-two pages. 
+</p>
+</section> <section id="chapter-optimization"> 
+<h3 id="h3_chapter-optimization" role="heading" aria-level="2"><span class="secno">16.2 </span>
+	Chapter optimization
+</h3>
+<p>
+	A chapter that ends with only a few lines of text looks like a mistake,
+ and wastes paper (or electrons!) Generally a page should contain at 
+least five lines of text. 
+</p>
+</section> </section> <section id="the-classical-rules-of-hyphenation-and-pagination" class="appendix"> 
+<!--OddPage--><h2 id="h2_the-classical-rules-of-hyphenation-and-pagination" role="heading" aria-level="1"><span class="secno">A. </span>
+	The Classical Rules of Hyphenation and Pagination
+</h2>
+<ol>
+	<li> At hyphenated line-ends, leave at least two characters behind, and take at least three forward. </li>
+	<li> Avoid leaving the stub-end of a hyphenated word, or any word shorter than four letters, as the last line of a paragraph. </li>
+	<li> Avoid more than three consecutive hyphenated lines. </li>
+	<li> Hyphenate proper names only as a last resort unless they occur with the frequency of common nouns. </li>
+	<li> Hyphenate according to the conventions of the language. </li>
+	<li> Link short numerical and mathematical expressions with hard spaces. </li>
+	<li> Avoid beginning more than two consecutive lines with the same word. </li>
+	<li> Never begin a page with the last line of a multi-line paragraph. </li>
+	<li> Balance facing pages by moving single lines. </li>
+	<li> Avoid hyphenated breaks where the text is interrupted. </li>
+	<li> Abandon any and all rules of hyphenation and pagination that fail to serve the needs of the text. </li>
+</ol>
+</section> 
+<section id="acknowledgments">
+<!--OddPage--><h2 id="h2_acknowledgments" role="heading" aria-level="1"><span class="secno">B. </span>Acknowledgments</h2>
+<p>Bert Bos, James Clark, </p>
+</section>
+
+<section id="trick-to-get-links-to-specs"> 
+<!--OddPage--><h2 id="h2_trick-to-get-links-to-specs" role="heading" aria-level="1"><span class="secno">C. </span>
+	Trick to get links to specs
+</h2>
+<p>
+	[<cite><a href="#bib-css3-break" class="bibref">css3-break</a></cite>][<cite><a href="#bib-css3-gcpm" class="bibref">css3-gcpm</a></cite>][<cite><a href="#bib-css3-grid" class="bibref">css3-grid</a></cite>][<cite><a href="#bib-css3-page" class="bibref">css3-page</a></cite>] [<cite><a href="#bib-css3-regions" class="bibref">css3-regions</a></cite>][<cite><a href="#bib-css3-layout" class="bibref">css3-layout</a></cite>]
+</p>
+
+</section> 
+
+
+<section rel="bibo:chapter" resource="#references" typeof="bibo:Chapter" class="appendix" id="references"><!--OddPage--><h2 id="h2_references" role="heading" aria-level="1"><span class="secno">D. </span>References</h2><section rel="bibo:chapter" resource="#normative-references" typeof="bibo:Chapter" id="normative-references"><h3 id="h3_normative-references" role="heading" aria-level="2"><span class="secno">D.1 </span>Normative references</h3><dl about="" class="bibliography"><dt id="bib-RFC2119">[RFC2119]</dt><dd rel="dcterms:requires">S. Bradner. <a href="http://www.ietf.org/rfc/rfc2119.txt"><cite>Key words for use in RFCs to Indicate Requirement Levels.</cite></a> March 1997. Internet RFC 2119.  URL: <a href="http://www.ietf.org/rfc/rfc2119.txt">http://www.ietf.org/rfc/rfc2119.txt</a> 
+</dd></dl></section><section rel="bibo:chapter" resource="#informative-references" typeof="bibo:Chapter" id="informative-references"><h3 id="h3_informative-references" role="heading" aria-level="2"><span class="secno">D.2 </span>Informative references</h3><dl about="" class="bibliography"><dt id="bib-JLREQ">[JLREQ]</dt><dd rel="dcterms:references">Yasuhiro
+ Anan; Hiroyuki Chiba; Junzaburo Edamoto; Richard Ishida; Tatsuo 
+KOBAYASHI; Toshi Kobayashi; Kenzou Onozawa; Felix Sasaki; Seiichi Kato; 
+Hajime Shiozawa et al. <a href="http://www.w3.org/TR/jlreq/"><cite>Requirements for Japanese Text Layout</cite></a>. 3 April 2012. W3C Note. URL: <a href="http://www.w3.org/TR/jlreq/">http://www.w3.org/TR/jlreq/</a>
+</dd><dt id="bib-css3-break">[css3-break]</dt><dd rel="dcterms:references">Rossen Atanassov; Elika Etemad. <a href="http://www.w3.org/TR/css3-break/"><cite>CSS Fragmentation Module Level 3</cite></a>. 23 August 2012. W3C Working Draft. URL: <a href="http://www.w3.org/TR/css3-break/">http://www.w3.org/TR/css3-break/</a>
+</dd><dt id="bib-css3-gcpm">[css3-gcpm]</dt><dd rel="dcterms:references">Håkon Wium Lie. <a href="http://www.w3.org/TR/css3-gcpm/"><cite>CSS Generated Content for Paged Media Module</cite></a>. 29 November 2011. W3C Working Draft. URL: <a href="http://www.w3.org/TR/css3-gcpm/">http://www.w3.org/TR/css3-gcpm/</a>
+</dd><dt id="bib-css3-grid">[css3-grid]</dt><dd rel="dcterms:references">Alex Mogilevsky; Markus Mielke. <a href="http://www.w3.org/TR/css3-grid"><cite>CSS Grid Positioning Module Level 3</cite></a>. 5 September 2007. W3C Working Draft. URL: <a href="http://www.w3.org/TR/css3-grid">http://www.w3.org/TR/css3-grid</a>
+</dd><dt id="bib-css3-layout">[css3-layout]</dt><dd rel="dcterms:references">Bert Bos; César Acebal. <a href="http://www.w3.org/TR/css3-layout/"><cite>CSS Template Layout Module</cite></a>. 29 November 2011. W3C Working Draft. URL: <a href="http://www.w3.org/TR/css3-layout/">http://www.w3.org/TR/css3-layout/</a>
+</dd><dt id="bib-css3-page">[css3-page]</dt><dd rel="dcterms:references">Melinda Grant; Elika Etemad; Håkon Wium Lie; Simon Sapin. <a href="http://www.w3.org/TR/css3-page/"><cite>CSS Paged Media Module Level 3</cite></a>. 14 March 2013. W3C Working Draft. URL: <a href="http://www.w3.org/TR/css3-page/">http://www.w3.org/TR/css3-page/</a>
+</dd><dt id="bib-css3-regions">[css3-regions]</dt><dd rel="dcterms:references">Vincent Hardy; Rossen Atanassov; Alan Stearns. <a href="http://www.w3.org/TR/css3-regions/"><cite>CSS Regions Module Level 1</cite></a>. 28 May 2013. W3C Working Draft. URL: <a href="http://www.w3.org/TR/css3-regions/">http://www.w3.org/TR/css3-regions/</a>
+</dd></dl></section></section></body></html>
