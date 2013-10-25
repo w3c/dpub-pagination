@@ -1,171 +1,693 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<style>
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote {
-    margin: 0;
-    padding: 0;
-}
-body {
-    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
-    font-size: 13px;
-    line-height: 18px;
-    color: #737373;
-    background-color: white;
-    margin: 10px 13px 10px 13px;
-}
-table {
-	margin: 10px 0 15px 0;
-	border-collapse: collapse;
-}
-td,th {	
-	border: 1px solid #ddd;
-	padding: 3px 10px;
-}
-th {
-	padding: 5px 10px;	
-}
+	<title>Pagination</title>
+	<meta charset='utf-8'>
+<script src='http://www.w3.org/Tools/respec/respec-w3c-common' async class='remove'></script> <script class='remove'>
+      var respecConfig = {
+          specStatus: "ED",
+          shortName:  "pagination",
+          editors: [
+                {   name:       "Dave Cramer",
+                    url:        "",
+                    company:    "Hachette Book Group",
+                    companyURL: "http://www.hbgusa.com",
+                    mailto:     "dave.cramer@hbgusa.com"  }
+          ],
+          previousMaturity: "",
+          previousPublishDate:  "",
+          wg:           "Digital Publishing Interest Group",
+          wgURI:        "http://www.w3.org/dpub/IG/",
+          wgPublicList: "public-digipub-ig",
+          wgPatentURI:  "",
+          noRecTrack: "true",
+      };
+      
+    
+    </script> <style type="text/css">
+    .source { text-align: right; font-style: normal;}
+    blockquote p { font-style: italic; }
 
-a {
-    color: #0069d6;
-}
-a:hover {
-    color: #0050a3;
-    text-decoration: none;
-}
-a img {
-    border: none;
-}
-p {
-    margin-bottom: 9px;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #404040;
-    line-height: 36px;
-}
-h1 {
-    margin-bottom: 18px;
-    font-size: 30px;
-}
-h2 {
-    font-size: 24px;
-}
-h3 {
-    font-size: 18px;
-}
-h4 {
-    font-size: 16px;
-}
-h5 {
-    font-size: 14px;
-}
-h6 {
-    font-size: 13px;
-}
-hr {
-    margin: 0 0 19px;
-    border: 0;
-    border-bottom: 1px solid #ccc;
-}
-blockquote {
-    padding: 13px 13px 21px 15px;
-    margin-bottom: 18px;
-    font-family:georgia,serif;
-    font-style: italic;
-}
-blockquote:before {
-    content:"\201C";
-    font-size:40px;
-    margin-left:-10px;
-    font-family:georgia,serif;
-    color:#eee;
-}
-blockquote p {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 18px;
-    margin-bottom: 0;
-    font-style: italic;
-}
-code, pre {
-    font-family: Monaco, Andale Mono, Courier New, monospace;
-}
-code {
-    background-color: #fee9cc;
-    color: rgba(0, 0, 0, 0.75);
-    padding: 1px 3px;
-    font-size: 12px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-}
-pre {
-    display: block;
-    padding: 14px;
-    margin: 0 0 18px;
-    line-height: 16px;
-    font-size: 11px;
-    border: 1px solid #d9d9d9;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
-pre code {
-    background-color: #fff;
-    color:#737373;
-    font-size: 11px;
-    padding: 0;
-}
-sup {
-    font-size: 0.83em;
-    vertical-align: super;
-    line-height: 0;
-}
-* {
-	-webkit-print-color-adjust: exact;
-}
-@media screen and (min-width: 914px) {
-    body {
-        width: 854px;
-        margin:10px auto;
-    }
-}
-@media print {
-	body,code,pre code,h1,h2,h3,h4,h5,h6 {
-		color: black;
-	}
-	table, pre {
-		page-break-inside: avoid;
-	}
-}
-</style>
-<title>Documents produced by the Digital Publishing Interest Group</title>
-
+    </style> 
 </head>
 <body>
-<h1>dpub</h1>
+<section id='abstract'> 
+<p>
+	This document describes requirements for pagination and layout in English (and possibly other Western languages), based on the tradition of print book design and composition. It is hoped that these principles can inform the pagination of digital content as well, and serve as a reference for the CSS Working Group and other interested parties. This work was inspired by [[JLREQ]].
+</p>
+</section>
+<section id='sotd'> 
+<p>
+	If this document had a version number, it would be less than zero. 
+</p>
+</section>
+<section class='informative'> 
+<h2>
+	Introduction
+</h2>
+<p>
+	Not all stories worth telling can fit in a tweet, on a computer screen, or on a single piece of paper. Ever since the codex replaced the scroll, humans have divided our stories into pages. Pagination is the art and the craft of turning that scroll of content into discrete pieces, whether destined for book pages or screens. Pagination requires us to think about the document at all levels, from the total number of pages to the tiny spaces between letters. Along with graphic design and typography, it determines the look of the page. 
+</p>
+<blockquote>
+	<p>
+		Typography is the craft of endowing human language with a durable visual form, and thus with an independent existence. 
+	</p>
+	<p class="source">
+		—Robert Bringhurst, <i>The Elements of Typographic Style</i>
+	</p>
+</blockquote>
+<p>
+	Good pagination, like good typography, aims to be invisible. As the reader turns the page, the stream of words and images in her mind should not be interrupted. Two thousand years of experience have taught us how best to do this. The goal of this document is to describe those rules, as clearly as possible, so they can be implemented in the Open Web Platform. We hope for a day where the pagination of digital books will be as beautiful and transparent as the best printed books. 
+</p>
+</section>
+<section id='conformance'> 
+<p>
+	TK 
+</p>
+</section>
+<section> 
+<h2>
+	Fundamentals
+</h2>
+<blockquote>
+	<p>
+		Makeup is a highly skilled procedure. If the text is merely divided mechanically into portions of equal length, without regard to where the divisions fall, some of the pages that result are bound to be unacceptable logically or aesthetically: they will incorporate bad breaks.
+	</p>
+	<p class="source">
+		—<i>Chicago Manual of Style, 14th Edition</i>, 19.40.
+	</p>
+</blockquote>
+<blockquote>
+	<p>
+		What therefore God hath joined together, let not man put asunder.
+	</p>
+	<p class="source">
+		—<i>The Bible</i>, Matthew 19:6
+	</p>
+</blockquote>
+<p>
+	Every rule of pagination boils down to a single principle: break pages with as little disruption to the reading experience as possible. A widow leaves the last line of a paragraph isolated from the rest of the thought. A recto hyphen means a word is interrupted by a page turn. A heading at the bottom of a page removes the title from the section, and the section from the title. 
+</p>
+<section> 
+<h2>
+	Tradeoffs
+</h2>
+<p>
+	Pagination involves tradeoffs. Fixing a widow may result in a misaligned spread. Fixing that may result in a loose line or paragraph. What is acceptable in one book, or for one publisher, may be unacceptable to another. What is acceptable in one country, or language, may be unacceptable elsewhere. 
+</p>
+</section> <section> 
+<h2>
+	Untangling the Vertical and the Horizontal
+</h2>
+<p>
+	Page breaks are often line breaks. The tiniest change in kerning can make a paragraph longer or shorter, and thus create a widow or an orphan. The work of pagination, as done by typesetters, human or machine, inevitably involves the consideration of the lines of text. And so we will not try too hard to avoid talking about line breaks, when they potentially influence pagination. 
+</p>
+</section> </section> 
+<section> 
+<h2>
+	Paginating Single-Column Text
+</h2>
+<p>
+	The simplest situation, which is very common, is when the content is only text, in a single column. Aside from chapter and book optimizations (to be discussed later) and line-breaking, the biggest issue is likely to be widows (see <a href='#fig-widow1'></a> for an example). 
+</p>
+<section> 
+<h2>
+	Widows
+</h2>
+<p>
+A <dfn>widow</dfn> is when the last line(s) of a paragraph falls at the top of a page. Publishers have different standards. Most frown on a single line at the top of the page, although some are OK if that line spans at least three-quarters of the page. Others require at least two lines of a paragraph at the top of a page. 
 
-<p>Documents produced by the <a href="http://www.w3.org/dpub/IG">Digital Publishing Interest Group</a> of the W3C. See the <a href="https://github.com/w3c/dpub">Github repo</a> of the project. The current drafts are:</p>
+</p>
 
+<p class="issue">[[css3-break]] does not consider a fractional value for the widow property.</p>
+<figure id="fig-widow1"> <img src="images/image01.png" width="480" alt="diagram of facing text pages with widow at top of verso page" /> <figcaption> Text spread with widow </figcaption> </figure> 
+<p>
+	Many typesetting systems have settings to prevent widows. CSS discusses these issues in [[css3-break]]. Unfortunately, these systems usually create another problem when they fix the widow. In <a href='#fig-widow2'></a>, there&rsquo;s no longer a widow at the top of the page, but since the system merely moved a line from the left page to the right, it left behind an empty line, and the pages no longer align at the bottom. 
+</p>
+<figure id="fig-widow2"> <img src="images/image02.png" width="480" alt="diagram of facing text pages where left page is one line shorter than right page" /> <figcaption> Widow fixed, but pages don’t align </figcaption> </figure> 
+<p>
+	More needs to be done. Removing one line of text from each page of the spread, shown in <a href='#fig-widow3'></a> solves the problem. 
+</p>
+<figure id="fig-widow3"> <img src="images/image03.png" width="480" alt="diagram of facing text pages where left page is one line shorter than right page" /> <figcaption> Widow fixed by &ldquo;running short.&rdquo; </figcaption> </figure> </section>
+
+
+<section>
+<h2>Orphans</h2>
+<p>
+An <dfn>orphan</dfn> has two possible meanings in typesetting. It can refer to the minimum number of lines required before a page break (as in [[css3-break]]). It can also refer to the last line of a paragraph in any context. In the former context, many publishers now accept a single line of a paragraph before a page break. For the latter, standards vary widely. Some publishers want the last line to be longer than the paragraph indent. Some require one or two full words, or a certain number of characters. Most avoid having only a fragment of a word as the last line. 
+</p>
+<p class="issue">CSS does not currently address the second meaning of orphan. </p>
+</section>
+
+<section> 
+<h2>
+	Constraints on page depth
+</h2>
+<p>
+	In traditional typesetting, the first defense against bad breaks is to change the depth of the page. &ldquo;Running long&rdquo; or &ldquo;running short&rdquo; means including one more (or one less) line of text on each page of the spread, thus sidestepping the previously-identified issue. 
+</p>
+<p>
+	A typical book design includes instructions on whether it&rsquo;s acceptable to run short, long, or (more rarely) both. Often there are also constraints on how many consecutive spreads (or pages) may be altered in this way. If running both long and short, it&rsquo;s usually forbidden to go from one to another without an intervening normal spread. 
+</p>
+<p>
+Running long or short may affect the space between the last line of text and a page footer or folio. Most publishers prefer  footers to be in a fixed position. If, instead, the space between the last line of text and the footer is fixed, the footer is said to "bounce."
+</p>
+</section> 
+
+
+
+<section>
+<h2>
+	Facing Pages
+</h2>
+<p>
+	If a document has facing pages, the publisher usually requires that they align top and bottom. Exceptions include:
+</p>
+<ol>
+<li>
+It's the last page of a chapter.
+</li>
+<li>
+The page contains no text—only images or tables
+</li>
+<li>
+When aligning facing pages will make some other issue worse
+</li>
+</ol>
+</section> 
+<section> 
+<h2>
+	Recto and Verso Hyphens
+</h2>
+<p>
+Publishers sometimes constrain what characters may appear before a page break. Most commonly, the right-hand page of a spread may not end with a word fragment, as the reader must turn the page before reading the rest of the word. Less common is a prohibition on the verso page ending with a hyphen.
+</p>
+</section> 
+
+<section> 
+<h2>
+	Space Breaks and Ornaments
+</h2>
+<p>
+	Many novels, and some narrative non-fiction books, include small breaks in the text. These are usually represented by one to three blank lines, or by a small ornament or dingbat. Problems arise when these breaks fall at the top or bottom of a page. 
+</p>
+<figure id="fig-spacebreak1"> <img src="images/image04.png" width="480" alt="" /> <figcaption> Space break </figcaption> </figure> 
+<p>
+	If, however, the space break falls at the bottom of the page, confusion can result. In <a href='#fig-spacebreak2'></a>, it&rsquo;s hard to tell there&rsquo;s a space break, as it just looks like the page is a few lines short. 
+</p>
+<figure id="fig-spacebreak2"> <img src="images/image05.png" width="480" alt="" /> <figcaption> Incorrect: Space break at bottom of page </figcaption> </figure> 
+<p>
+	In that case, asterisks or some other ornament is added to the top or bottom of a page, as a visual reminder of the break. To get everything to work out, the spread was run short, and the space break (now with ornament) pushed to the top of the second page. See <a href='#fig-spacebreak3'></a>. 
+</p>
+<figure id="fig-spacebreak3"> <img src="images/image00.png" width="480" alt="" /> <figcaption> Space break at top of page with asterisks </figcaption> </figure> 
+
+<p class="issue">The editors are not aware of any implementation of this concept.</p>
+</section> 
+
+
+</section> 
+
+
+<section>
+<h2>Running headers and footers</h2>
+
+<p>Books often have material printed at the top and/or bottom of each page, outside the normal content area. These headers or footers may serve as guideposts for reader, fodder for designers, low-tech DRM, or merely a way to know what book your fellow train passenger is reading. There’s more to running headers than is dreamt of in the open web platform…</p>
+
+<section>
+<h2>Content</h2>
+<p>Running heads and footers may contain:</p>
+<ol>
+<li>
+Content from the document: book title, chapter or part titles, author name(s). Indexes and notes sections may have running heads to identify which entries are on a particular page.
+</li>
+<li>
+Content intended only for running heads: shortened versions of chapter titles…</li>
+<li>
+Page or section numbers
+</li>
+<li>
+Chapter numbers
+</li>
+
+<li>
+ornaments or other decorative type
+</li>
+<li>
+combinations of the above
+</li>
+</ol>
+<p>In some cases the content of running heads may have an internal structure—a chapter title might have an italic word—or may require different text styles or fonts.</p>
+
+
+<div class="example">
+<figure id="fig-runninghead-ornament"> <img src="images/RunningHead.png" width="480" alt="" /> <figcaption> Running head with text ornament </figcaption> </figure> 
+
+<p>In this example, the running header contains the author name, the page number, and an ornament. This seemingly simple case was quite complex, using [[css3-gcpm]]-like features implemented by PrinceXML.</p>
+
+<pre class="highlight">
+@page body:left {
+  @top-center { 
+    content: flow(verso);
+    }
+  }
+
+p.verso-cus {
+  flow: static(verso);
+  content: prince-glyph-index(80);
+  font-family: 'Type Embellishments One';
+  font-size: 10pt;
+  text-align: center;
+}
+
+p.verso-cus:before {
+  content: counter(page);
+  display: inline;
+  padding-right: 15pt;
+  font-family: 'Garamond 3 LT Std';
+  font-style: italic;
+  font-size: 10pt;
+}
+
+p.verso-cus:after {
+  content: string(flow-header-left-rw);
+  display: inline;
+  padding-left: 15pt;
+  font-family: 'Garamond 3 LT Std';
+  font-style: italic;
+  font-size: 10pt;
+}
+
+</pre>
+
+</div>
+
+
+
+</section>
+
+<section>
+<h2>Placement</h2>
+<p>Running heads are generally omitted from the first pages of chapters.</p>
+</section>
+
+
+
+<div class="note">
+<p>Running headers are addressed by [[css3-gcpm]].</p>
+<p>[epub3] has minimal support for headers and footers using <code>oeb-page-head</code> and <code>oeb-page-foot</code>.</p>
+
+<p class="issue">Has any EPUB reading system implemented <code>oeb-page-*</code>?</p>
+<p>[[css3-gcpm]] has two mechanisms for placing content in running heads:</p>
+<ol>
+<li>
+<dfn>named strings</dfn> TK
+</li>
+<li>
+<dfn>running elements</dfn> TK
+</li>
+</ol>
+</div>
+
+</section>
+
+
+<section> 
+<h2>
+	Heads
+</h2>
+<section>
+<h2>Heads at the top of a page</h2>
+<p>When a head falls at the top of a page, a spacing adjustment is often necessary. Here's a typical arrangement, with a line and a half of space above the head, and a half-line-space below, so that the text stays on the proper baselines. </p>
+<figure id="fig-head-text"> <img src="images/HeadInText.png" width="480" alt="" /> <figcaption> Level One Head in Text </figcaption> </figure> 
+
+<p>If that head appears at the top of the page, the subsequent text will be off by a half-line. 
+
+<figure id="fig-head-text2"> <img src="images/HeadInText2.png" width="480" alt="" /> <figcaption> Head at top of page</figcaption> </figure> 
+
+<p>Everything works out if we add a half-line-space back.
+
+<figure id="fig-head-text3"> <img src="images/HeadInText3.png" width="480" alt="" /> <figcaption> Head sunk to get back on lead</figcaption> </figure> 
+
+</section>
+
+<section>
+<h2>Heads at the bottom of a page</h2>
+<p>A head should never be the last thing on a page; it must be followed by two or three lines of text. </p>
+</section>
+<section>
+<h2>Bridge heads, side heads, and run-in heads</h2>
+<p>TK</p>
+</section>
+</section> <section> 
+<h2>
+	Images
+</h2>
+
+<section>
+<h2>TK</h2>
+
+<figure id="fig-image-caption"> <img src="images/ImageCaptionRunaround.png" width="480" alt="" /> <figcaption> Figure with caption and runaround </figcaption> </figure> 
+<p>Some things to note about this image</p>
+<ol>
+<li>
+the caption and image are treated as a unit
+</li>
+<li>
+Text runs around the image+caption
+</li>
+<li>
+image runs right up to the gutter of the page (i.e. extends beyond usual content area)
+</li>
+
+</ol>
+
+</section>
+<p>
+	Images that cross spread 
+</p>
+<p>
+	image before callout? 
+</p>
+<p>
+	placing multiple images on page… inside/outside, top/bottom, stagger 
+</p>
+<p>
+	broadside 
+</p>
+<p>
+	placement of caption/title 
+	
+</p>
+</section> <section> 
+<h2>
+	Tables
+</h2>
+<p>
+	broadside 
+</p>
+<p>
+	placement of caption/title 
+</p>
+<p>
+	spread 
+</p>
+<p>
+	multi-page 
+</p>
+</section> <section> 
+<h2>
+	Footnotes
+</h2>
+<p>In print publishing, a footnote consists of two parts: a reference (often rendered as an asterisk or superscripted number) and the footnote body.</p>
+
+<p>
+Footnotes themselves can be quite complicated. Footnotes can contain multiple paragraphs, block quotes, poems, lists, and tables. Footnotes can contain other footnotes (an edge case, admittedly, but David Foster Wallace was notorious for this). Footnotes can extend across multiple pages. In short, a footnote is a container that can hold almost anything.
+</p>
+
+<p>
+In order to describe footnotes in HTML, one must separate the footnote reference (which is an inline element) from the footnote itself, as HTML frowns on placing complex block structures inside paragraphs. This is quite different from something like DocBook, where the content model allows a footnote element inside a paragraph, and that footnote can itself contain multiple paragraphs, etc. 
+</p>
+
+
+
+<pre class="example highlight">
+&lt;p>It was the best of times&lt;span class="ref-footnote-rw">*&lt;/span>, it was the blurst of times.&lt;/p>
+
+&lt;div class="block-rw footnotes-rw">
+&lt;p>&lt;span class="num-footnote-rw">*&lt;/span>Oh yes, but the telephone is so impersonal.&lt;/p>
+&lt;p>I prefer the hands-on touch you only get with hired goons.&lt;/p>
+&lt;/div>
+</pre>
+<p>
+There may also be more than one reference to the same footnote.
+</p>
+
+<p>
+Footnote handling as described in  [[css3-gcpm]] assumes the footnote is coded inline at the point of reference. This situation is under discussion on the www-style list.
+</p>
+
+
+<section>
+<h2>Inline footnotes and multiple footnote regions</h2>
+
+<p>Some types of footnotes may be displayed inline, as in the top <a href="#fig-footnote-inline"></a>. Other books (see <a href="#fig-footnote-regions"></a>) may have two separate streams of footnotes, requiring two footnote regions.</p>
+
+<figure id="fig-footnote-inline"> <img src="images/exegesis.png" width="480" alt="Page of Hamlet showing inline footnotes above block footnotes" /> <figcaption> Inline footnotes </figcaption> </figure> 
+
+<figure id="fig-footnote-regions"> <img src="images/hamlet.png" width="480" alt="Page of Hamlet showing inline footnotes above block footnotes" /> <figcaption> Multiple footnote regions </figcaption> </figure> 
+
+<figure id="fig-footnote-regions2"> <img src="images/PepysFootnotes.jpg" width="800" alt="" /> <figcaption> Multiple footnote regions #2 </figcaption> </figure> 
+
+
+
+
+<!-- <p class="note">PrinceXML has implemented inline footnotes, with <code>float: prince-inline-footnote | prince-inline-column-footnote.</code> </p> -->
+</section>
+
+<section>
+<h2>At the foot of what?</h2>
+<p>Footnotes usually fall at the bottom of the page, but may need to be at placed at the end of a column, table, sidebar, or other document structure. 
+</p>
+</section>
+
+<section>
+<h2>Breaking footnotes across pages</h2>
+<p>
+Some footnotes can extend across more than one page. Limits on the size of the footnote area(s) may be required, so that a page containing only footnotes is avoided.
+</p>
+</section>
+
+<section>
+<h2>Numbering</h2>
+<p>In addition to the usual numbering schemes, footnotes may be identified by a sequence of symbols: *, †, ‡, and §. This sequence usually restarts every page. If there are more than four footnotes per page, the symbols are doubled, tripled, etc.</p>
+</section>
+
+
+
+<div class="note">
+<p>Footnotes are addressed by [[css3-gcpm]].</p>
+<p class="issue">Digital publications often render footnotes differently from print. They may become pop-ups, or move to the end of the section, or even to the end of the document.</p>
+</div>
+
+
+</section> 
+
+
+<section>
+<h2>Cross-references</h2>
+<p>TK</p>
+</section>
+
+<section> 
+<h2>
+Sidebars
+</h2>
+
+
+<figure id="fig-sidebar"> <img src="images/Sidebar.jpg" width="480" alt="" /> <figcaption> Sidebar </figcaption> </figure> 
+<p>Some things to notice:</p>
+<ol>
+<li>
+The image floats to the top of the column inside the sidebar
+</li>
+<li>
+The columns themselves base-align
+</li>
+<li>
+The sidebar title and “supertitle” are on the same line. 
+</li>
+</ol>
+</section> <section> 
+<h2>
+	Marginalia
+</h2>
+<p>
+	alignment with reference 
+</p>
+</section> <section> 
+<h2>
+	Equations
+</h2>
+<section>
+<h2>Breaking equations</h2>
+<p>TK</p>
+</section>
+<section>
+<h2>Numbering equations</h2>
+<p>TK</p>
+</section>
+
+</section> <section> 
+<h2>
+	Columns
+</h2>
+</section> <section> 
+<h2>
+	Special Considerations for Genres
+</h2>
+
+<section>
+<h2>
+	Education
+</h2>
 <ul>
-    <li><a href="Pagination/dpig-pagination-respec.html">Pagination</a></li>
+	<li> College textbooks </li>
+	<li> Elhi </li>
+	<li> Language </li>
+	<li> Study guides </li>
+</ul>
+</section>
+<section>
+<h2>
+	Trade
+</h2>
+<ul>
+	<li> Fiction </li>
+	<li> Narrative nonfiction </li>
+	<li> Children’s </li>
+	<li> YA </li>
+	<li> Religious 
+	<ul>
+		<li> Bibles </li>
+	</ul>
+	</li>
+	<li> Travel </li>
+	<li> How-to </li>
+	<li> Manga/Comics/Graphic Novels </li>
+</ul>
+</section>
+<section>
+<h2>
+	STEM
+</h2>
+</section>
+<section>
+<h2>
+	Reference
+</h2>
+<ul>
+<li>
+Legal
+</li>
+<li>
+Dictionaries
+</li>
+</ul>
+</section>
+<section>
+<h2>
+	Poetry/Drama
+</h2>
+</section>
+<section>
+<h2>
+	Journals
+</h2>
+</section>
+<section>
+<h2>
+	Magazines
+</h2>
+</section>
+</section> <section> 
+<h2>
+	Digital Issues
+</h2>
+</section> <section> 
+<h2>
+	Large-Scale Issues in Pagination
+</h2>
+<section> 
+<h2>
+	Book optimization
+</h2>
+<p>
+	In trade publishing, we often know how many pages will be in a book before it is written. The nature of printing and binding also mandate that the number of pages in a book be some multiple of eight, sixteen, or thirty-two pages. Publishers often limit how many blank pages are allowed at the end of a book.
+</p>
+</section> <section> 
+<h2>
+	Chapter optimization
+</h2>
+<p>
+	A chapter that ends with only a few lines of text looks like a mistake, and wastes paper (or electrons!) Generally a page should contain at least five lines of text. 
+</p>
+</section> </section> 
+
+<section class="appendix"> 
+<h2>Of Leading and Sinkage: The Language of Print</h2>
+<p>Translating print designs to the open web platform can be tricky. </p>
+<ul>
+<li>
+vertical distances are usually measured baseline to baseline. 
+</li>
+<li>
+print designers sometimes talk about a "text page" which includes the running head. 
+</li>
+<li>
+The basic text area is often specified with a gutter margin and a text "measure". In [[css3-page]] this area is described by left/right or inside/outside margins.
+</li>
+
+
+
 </ul>
 
-<p>If you are member of the interest group, and you wish to contribute to the content of the repo, please contact Ivan Herman (<a href="mailto:ivan@w3.org">&lt;ivan@w3.org&gt;</a>) or Thierry Michel (<a href="mailto:tmichel@w3.org">&lt;tmichel@w3.org&gt;</a>), giving them your github login.</p>
+<dl>
+<dt>
+Leading
+</dt>
+<dd>
+Line-height
+</dd>
 
 
+<dt>
+Recto
+</dt>
+<dd>
+Right-hand page of a spread
+</dd>
+<dt>
+Verso
+</dt>
+<dd>
+Left-hand page of a spread
+</dd>
+</dl>
+</section>
+
+
+
+<section class="appendix"> 
+<h2>
+	The Classical Rules of Hyphenation and Pagination
+</h2>
+<ol>
+	<li> At hyphenated line-ends, leave at least two characters behind, and take at least three forward. </li>
+	<li> Avoid leaving the stub-end of a hyphenated word, or any word shorter than four letters, as the last line of a paragraph. </li>
+	<li> Avoid more than three consecutive hyphenated lines. </li>
+	<li> Hyphenate proper names only as a last resort unless they occur with the frequency of common nouns. </li>
+	<li> Hyphenate according to the conventions of the language. </li>
+	<li> Link short numerical and mathematical expressions with hard spaces. </li>
+	<li> Avoid beginning more than two consecutive lines with the same word. </li>
+	<li> Never begin a page with the last line of a multi-line paragraph. </li>
+	<li> Balance facing pages by moving single lines. </li>
+	<li> Avoid hyphenated breaks where the text is interrupted. </li>
+	<li> Abandon any and all rules of hyphenation and pagination that fail to serve the needs of the text. </li>
+</ol>
+</section> 
+<section>
+<h2>Acknowledgments</h2>
+<p>Bert Bos, James Clark, </p>
+</section>
+
+<section> 
+<h2>
+	Trick to get links to specs
+</h2>
+<p>
+	[[css3-break]][[css3-gcpm]][[css3-grid]][[css3-page]] [[css3-regions]][[css3-layout]]
+</p>
+
+</section> 
 </body>
 </html>
