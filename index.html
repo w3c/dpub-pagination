@@ -39,13 +39,54 @@
     </script> <style type="text/css">
     .source { text-align: right; font-style: normal;}
     blockquote p { font-style: italic; }
+    
+    
+        /* --- status --- */
+div.status-title {
+    min-width: 7.5em;
+    color: #b9ab2d;
+}
+div.status-title span {
+    text-transform: uppercase;   
+}
+aside.status, div.status, div.illegal-status {
+    padding: 0.5em;
+    margin: 1em 0;
+    position: relative;
+    clear: both;
+}
+div.illegal-status { color: red }
+div.illegal-status p { color: black }
+aside.status, div.status {
+    padding: .5em;
+    border-left-width: .5em;
+    border-left-style: solid;
+    border-color: #00008B;
+    background: #fcfaee;    
+}
+
+aside.status div.status {
+    border-left-width: .1em;
+    border-color: #999;
+    background: #fff;
+}
+aside.status div.status div.status-title {
+    color: #999;
+}
+
+div.status:before { 
+content: 'Can CSS Do This?';
+text-transform: uppercase;
+font-family: sans-serif;
+color: #00008B;
+}
 
     </style> 
 </head>
 <body>
 <section id='abstract'> 
 <p>
-	This document describes requirements for pagination and layout in English (and possibly other Western languages), based on the tradition of print book design and composition. It is hoped that these principles can inform the pagination of digital content as well, and serve as a reference for the CSS Working Group and other interested parties. This work was inspired by [[JLREQ]].
+	This document describes requirements for pagination and layout, based on the tradition of print book design and composition. It is hoped that these principles can inform the pagination of digital content as well, and serve as a reference for the CSS Working Group and other interested parties. This work was inspired by [[JLREQ]].
 </p>
 </section>
 <section id='sotd'> 
@@ -136,11 +177,25 @@ A <dfn>widow</dfn> is when the last line(s) of a paragraph falls at the top of a
 <p>
 	Many typesetting systems have settings to prevent widows. CSS discusses these issues in [[css3-break]]. Unfortunately, these systems usually create another problem when they fix the widow. In <a href='#fig-widow2'></a>, there&rsquo;s no longer a widow at the top of the page, but since the system merely moved a line from the left page to the right, it left behind an empty line, and the pages no longer align at the bottom. 
 </p>
-<figure id="fig-widow2"> <img src="images/image02.png" width="480" alt="diagram of facing text pages where left page is one line shorter than right page" /> <figcaption> Widow fixed, but pages don’t align </figcaption> </figure> 
+<figure id="fig-widow2"> <img src="images/image03.png" width="480" alt="diagram of facing text pages where left page is one line shorter than right page" /> <figcaption> Widow fixed, but pages don’t align </figcaption> </figure> 
 <p>
 	More needs to be done. Removing one line of text from each page of the spread, shown in <a href='#fig-widow3'></a> solves the problem. 
 </p>
-<figure id="fig-widow3"> <img src="images/image03.png" width="480" alt="diagram of facing text pages where left page is one line shorter than right page" /> <figcaption> Widow fixed by &ldquo;running short.&rdquo; </figcaption> </figure> </section>
+<figure id="fig-widow3"> <img src="images/image02.png" width="480" alt="diagram of facing text pages where left page is one line shorter than right page" /> <figcaption> Widow fixed by &ldquo;running short.&rdquo; </figcaption> </figure> </section>
+
+
+<div class="status">
+
+<p>[[css3-break]] has a setting for widows:</p>
+
+<pre>
+p {
+widows: 2;
+}
+</pre>
+<p>This will keep the last two lines of a paragraph on the same page, usually by leaving an empty space on the previous page.</p>
+
+</div>
 
 
 <section>
@@ -533,7 +588,59 @@ The sidebar title and “supertitle” are on the same line.
 <h2>
 	Columns
 </h2>
-</section> <section> 
+</section> 
+
+<section> 
+<h2>
+	Punctuation
+</h2>
+<p>
+Spacing around punctuation marks is a known obsession of typographers. 
+</p>
+
+<ul>
+<li>
+In French, there should be a space before :, !, and ? (but not the full stop). 
+</li>
+<li>
+Americans argue endlessly about the existence and size of spaces around em-dashes.
+</li>
+<li>
+In England, there should be a space between a currency sign and the amount.
+</li>
+</ul>
+<section> 
+<h2>
+	Em-dashes and en-dashes
+</h2>
+
+<p>
+To space or not to space? That is the question. Even within publishing houses, arguments continue over the proper display of em-dashes. Some imprints at Hachette use closed em-dashes, others insist on thin spaces around em-dashes. If the same book is to be published in the United Kingdom, em-dashes would be replaced with en-dashes, with larger spaces around them.
+</p>
+
+
+
+<p>
+Given the subtlety of many of these rules, it’s helpful to use CSS to generate typographically-sophisticated output from material written by lay authors, or to adapt content to varying publisher or language requirements. 
+</p>
+
+<div class="status">
+<p>Older drafts of [[css3-gcpm]] contained a <dfn>text-replace</dfn> property, which has been implemented by PrinceXML.</p>
+
+<pre>
+body {
+prince-text-replace: "—" "\200A—\200A";
+}
+</pre>
+
+<p>In this example, we’re adding hair spaces around em-dashes.</p>
+
+</div>
+
+</section>
+</section>
+
+<section> 
 <h2>
 	Special Considerations for Genres
 </h2>
@@ -689,7 +796,7 @@ Left-hand page of a spread
 </section> 
 <section>
 <h2>Acknowledgments</h2>
-<p>Bert Bos, James Clark, </p>
+<p>Eric Aubourg, Bert Bos, James Clark, Brady Duga, Ivan Herman, Bill Kasdorf, Liam Quin, Tzviya Seigman</p>
 </section>
 
 <section> 
