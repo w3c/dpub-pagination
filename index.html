@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Pagination</title>
+	<title>Requirements for Latin Text Layout and Pagination</title>
 	<meta charset='utf-8'>
 <script src='http://www.w3.org/Tools/respec/respec-w3c-common' async class='remove'></script> <script class='remove'>
       var respecConfig = {
           specStatus: "ED",
-          shortName:  "pagination",
+          shortName:  "latinrec",
           editors: [
                 {   name:       "Dave Cramer",
                     url:        "",
@@ -17,7 +17,6 @@
           previousMaturity:     "",
           previousPublishDate:  "",
           previousURI:          "",
-          shortName:            "pagination",
           edDraftURI:           "http://w3c.github.io/dpub-pagination/",
           wg:                   "Digital Publishing Interest Group",
           wgURI:                "http://www.w3.org/dpub/IG/",
@@ -86,12 +85,12 @@ color: #00008B;
 <body>
 <section id='abstract'> 
 <p>
-	This document describes requirements for pagination and layout, based on the tradition of print book design and composition. It is hoped that these principles can inform the pagination of digital content as well, and serve as a reference for the CSS Working Group and other interested parties. This work was inspired by [[JLREQ]].
+	This document describes requirements for pagination and layout of latin languages, based on the tradition of print book design and composition. It is hoped that these principles can inform the pagination of digital content as well, and serve as a reference for the CSS Working Group and other interested parties. This work was inspired by [[JLREQ]].
 </p>
 </section>
 <section id='sotd'> 
 <p>
-	If this document had a version number, it would be less than zero. 
+	This is a work in progress. The initial version of this document will focus on books, and at this time will not include requirements specific to magazines or newspapers. The scope will depend heavily on the willingness of people to contribute to this document. Please contact the Digital Publishing Interest Group if you would like to help.
 </p>
 </section>
 <section class='informative'> 
@@ -184,6 +183,7 @@ A <dfn>widow</dfn> is when the last line(s) of a paragraph falls at the top of a
 <figure id="fig-widow3"> <img src="images/image02.png" width="480" alt="diagram of facing text pages where left page is one line shorter than right page" /> <figcaption> Widow fixed by &ldquo;running short.&rdquo; </figcaption> </figure> </section>
 
 
+<!-- 
 <div class="status">
 
 <p>[[css3-break]] has a setting for widows:</p>
@@ -196,6 +196,7 @@ widows: 2;
 <p>This will keep the last two lines of a paragraph on the same page, usually by leaving an empty space on the previous page.</p>
 
 </div>
+ -->
 
 
 <section>
@@ -241,6 +242,7 @@ The page contains no text—only images or tables
 When aligning facing pages will make some other issue worse
 </li>
 </ol>
+
 </section> 
 <section> 
 <h2>
@@ -437,6 +439,14 @@ image runs right up to the gutter of the page (i.e. extends beyond usual content
 </li>
 
 </ol>
+
+</section>
+
+<section>
+<h2>Inline images</h2>
+
+<p>TK</p>
+
 
 </section>
 <p>
@@ -885,7 +895,7 @@ Left-hand page of a spread
 </section> 
 <section>
 <h2>Acknowledgments</h2>
-<p>Eric Aubourg, Bert Bos, James Clark, Brady Duga, Ivan Herman, Bill Kasdorf, Liam Quin, Tzviya Seigman</p>
+<p>Eric Aubourg, Bert Bos, James Clark, Brady Duga, Ivan Herman, Tony Graham, Bill Kasdorf, Liam Quin, Tzviya Seigman</p>
 </section>
 
 <section> 
