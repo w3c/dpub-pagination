@@ -90,7 +90,7 @@ color: #00008B;
 </section>
 <section id='sotd'> 
 <p>
-	This is a work in progress. The initial version of this document will focus on books, and at this time will not include requirements specific to magazines or newspapers. The scope will depend heavily on the willingness of people to contribute to this document. Please contact the Digital Publishing Interest Group if you would like to help.
+	<strong>This is a work in progress. No section should be considered final, and the absence of any content does not imply that such content is out of scope, or may not appear in the future. If you feel something should be covered here, tell us!</strong> The initial version of this document will focus on books, and at this time will not include requirements specific to magazines or newspapers. The scope will depend heavily on the willingness of people to contribute to this document. Please contact the Digital Publishing Interest Group if you would like to help.
 </p>
 </section>
 <section class='informative'> 
@@ -275,7 +275,7 @@ Publishers sometimes constrain what characters may appear before a page break. M
 <p>This is an example where the page position of an element determines its content as well as design. A ::page-top or ::page-bottom pseudo-element might prove useful.</p>
 </div>
 </section> 
-
+</section>
 
 
 <section>
@@ -284,13 +284,14 @@ Publishers sometimes constrain what characters may appear before a page break. M
 </section>
 
 
-</section> 
 
 <section>
-<h2>Drop caps and raised caps</h2>
+<h2>Initial Capitals</h2>
 <p>
 Large, decorative letters have been used to start new sections of text since long before printing. In fact, their use predates lowercase letters entirely.
 </p>
+<section>
+<h2>Drop caps</h2>
 <p>
 A <dfn>drop cap</dfn> is a larger-than-usual letter at the start of a paragraph, with a baseline at least one line lower than the first baseline of the paragraph. The size of drop caps is usually indicated by how many lines they occupy—two-line and three-line drop caps are the most common. 
 </p>
@@ -307,7 +308,41 @@ Aligning the letter vertically is a challenge. The top of the letter should alig
 <p>The horizontal position of the drop cap and the surrounding text is also an issue, as variations in glyph shapes may require increasing or decreasing space to the right of the drop cap, and in some cases separate adjustments may be required for each line adjacent to the drop cap.</p>
 <figure id="fig-drop-cap-no-runaround"> <img src="images/drop-cap-no-runaround.png" width="480" alt="" /> <figcaption> Drop cap without runaround </figcaption> </figure>
 
-<figure id="fig-drop-cap-runaround"> <img src="images/drop-cap-with-runaround.png" width="480" alt="" /> <figcaption> Drop cap with runaround </figcaption> </figure> 
+<figure id="fig-drop-cap-runaround"> <img src="images/drop-cap-with-runaround.png" width="480" alt="" /> <figcaption> Drop cap with runaround </figcaption> </figure>
+
+<p>The position of a drop cap in relation to the left margin may also need to be adjusted. Letters like "C" may need to move left slightly to visually align with the left margin.</p>
+
+
+<p>A drop cap may be desired on a paragraph which starts with a punctuation mark, most often a quotation mark. In this case, one option is to delete the quotation mark entirely.</p>
+
+<div class="note">
+<p>Input on techniques for coping with initial punctuation on drop caps would be appreciated.</p>
+
+</div>
+
+<div class="note">
+<p>CSS needs a better mechanism to define drop caps. Right now, people typically apply a span to the letter, and then use:
+<pre>
+span.dropcap {
+float: left;
+font-size: 2.95em;
+line-height: .9em;
+margin-bottom: -.1em;
+}
+</pre>
+This requires much trial and error to get the drop cap both the right height, and with the right vertical position. If the font changed, the measurements would likely change. This really should be calculated by the user agent. 
+</p>
+</div>
+</section>
+<section>
+<h2>Raised caps</h2>
+<p>A <dfn>raised cap</dfn> is a large letter used to start a paragraph, which uses the same baseline as the rest of the first line.</p>
+
+<div class="note">
+<p>Raised caps are much easier than drop caps in CSS, as often one needs only to define the font size.</p>
+
+</div>
+</section>
 
 </section>
 
@@ -946,7 +981,7 @@ Left-hand page of a spread
 </section> 
 <section>
 <h2>Acknowledgments</h2>
-<p>Eric Aubourg, Bert Bos, Tom Byrer, James Clark, Brady Duga, Ivan Herman, Tony Graham, Bill Kasdorf, Liam Quin, Tzviya Seigman</p>
+<p>Eric Aubourg, Bert Bos, Tom Byrer, James Clark, Brady Duga, Ivan Herman, Tony Graham, Bill Kasdorf, Jean Kaplansky, Liam Quin, Tzviya Seigman</p>
 </section>
 
 <section> 
