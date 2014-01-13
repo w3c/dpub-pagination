@@ -166,6 +166,136 @@ Good hyphenation and justification is critically important to the appearance and
 
 <section>
 <h2>Hyphenation</h2>
+<p>Text is often easier to read when words are allowed to break at the end of lines, thus avoiding massive variations in word-spacing or margins. But determining acceptable places to break words is a difficult problem:</p>
+
+<div class="example">
+<p>All of the following are the results of automated hyphenation algorithms:</p>
+<pre>
+pre-ached
+wee-knights
+read-just
+leg-ends
+ex-acting
+reap-ear
+co-inage
+</pre>
+</div>
+
+<p>Words hyphenate differently based on pronunciation or meaning:</p>
+
+<div class="example">
+<pre>
+ photo-graph
+ pho-togra-pher
+ 
+ re-cord (verb)
+ rec-ord (noun)
+ 
+ pres-ent (verb)
+ pre-sent (noun)
+ 
+ cre-ator
+ crea-ture
+ 
+</pre>
+</div>
+
+<section>
+<h2>Parameters for Hyphenation</h2>
+<p>
+The following choices need to be made when considering hyphenation of text.
+</p>
+<ol>
+<li>
+Should this text be hyphenated at all? Hyphenation is generally suppressed in headings. 
+</li>
+<li>
+What’s the shortest word that can be hyphenated? Five or six is typical.
+</li>
+<li>
+What's the minimum number of characters allowed before a hyphen? Two is typical, and is sometimes stated as “two-up.”
+</li>
+<li>
+What's the minimum number of characters allowed after a hyphen? Three is typical, and can be stated as “three-down.”
+</li>
+<li>
+How many consecutive lines can end with a hyphen (known as a “ladder”)? Two or three is typical. 
+</li>
+<li>
+Should capitalized words be hyphenated?
+</li>
+<li>
+Can the last word of a paragraph be hyphenated?
+</li>
+<li>
+Can the last word in a column, page, or spread be hyphenated?
+</li>
+</ol>
+
+
+</section>
+
+
+<section>
+<h2>Choosing hyphenation points</h2>
+<p>A key question is, “who decides what is acceptable?” The answer depends on the language, the culture, the subject matter, and the material being typeset.</p>
+
+<section>
+<h2>Language</h2>
+<p>Each language has its own conventions about hyphenation. U.S. English hyphenates differently than U.K. English. In some European languages, words may be spelled differently when hyphenated.</p>
+
+<div class="example">
+
+<pre>
+TK
+</pre>
+
+</div>
+
+<p>Of course, the same text may include words from many different languages.</p>
+</section>
+
+<section>
+<h2>Culture</h2>
+<p>Even within the same language, authorities differ on the proper hyphenation of words.</p>
+
+<div class="example">
+<pre>
+in-de-pen-dent (American Heritage Dictionary)
+in-de-pend-ent (Webster’s)
+</pre>
+</div>
+<p>Copyeditors will often specify a canonical reference for hyphenation, which is usually a particular edition of a particular dictionary.</p>
+
+</section>
+
+<section>
+<h2>Subject Matter</h2>
+<p>Specialized subject matter may require additional hyphenation dictionaries. This is common in medicine, law, and science.</p>
+</section>
+
+<section>
+<h2>Exceptions</h2>
+<p>Authors should be able to provide a list of exceptions, which add to or override what the system would normally do. The format for doing so should be easily understood.</p>
+
+<div class="example">
+<p>TeX uses the following format. Possible hyphenation positions are indicated with (surprise!) hyphens. Hyphenation should be prevented where hyphens are absent.</p>
+
+<pre>
+\hyphenation { sur-pris-ingly tan-ta-liz-ing-ly these }
+</pre>
+
+
+</div>
+</section>
+
+</section>
+
+
+
+
+
+
 </section>
 
 <section>
@@ -180,11 +310,11 @@ Good hyphenation and justification is critically important to the appearance and
 </section>
 
 <section>
-<h2>TeX</h2>
+<h2>Knuth-Plass (TeX)</h2>
 </section>
 
 <section>
-<h2>InDesign</h2>
+<h2>Adobe (InDesign)</h2>
 </section>
 
 </section>
@@ -593,6 +723,56 @@ image runs right up to the gutter of the page (i.e. extends beyond usual content
 <h2>
 	Tables
 </h2>
+
+<section>
+<h2>Alignment</h2>
+
+<p>Many tables have specialized requirements for the alignment of cells in a given column.</p>
+
+<section>
+<h2>Align on character</h2>
+<p>All entries in a given column may need to align to a predetermined character, most commonly a decimal point. Typically, the longest entry in the column should be centered, and then the other entries should align to that entry. </p>
+
+<p>In some cases, a composite “longest entry” needs to be constructed:
+<pre>
+|   445.85  |
+| 12345.6   |
+|     1.234 |
+|      .1   |
+</pre>
+In this case, the user agent should act as if 12345.234 was the longest line, so the margin to the left of 12345.6 will be equal to the margin to the right of 1.234.
+</p>
+
+<p>When a collection of whole numbers with no decimal points are in a column and are asked to align, the longest whole number should center in the column and the rest of the whole numbers should right align on the right indent of the longest whole number.</p>
+
+<p>If the content of a table cell is being aligned to a character, that content should not have wrapping applied by the rendering system.</p>
+
+</section>
+
+<section>
+<h2>Flush left center alignment</h2>
+<p class="issue">What should we call this?</p>
+<p>Also known as centering on the longest line, the longest line in a column is found and centered, and other entries in the column are aligned to the left edge of the longest line.</p>
+
+<p>As before, header and footer cells are ignored, and the author should be able to exclude specified cells from the alignment process.</p>
+<p>This type of alignment is often used in text, for poetry or prose extracts. </p>
+
+<p>User agents should not break single-word cells.</p> 
+
+</section>
+
+
+
+
+</section>
+
+<section>
+<h2>Table widths</h2>
+<p>
+In print, tables are not randomly sized but typically set to one of a few fixed widths. This requirement necessitates that a composition engine know how to “snap to” one of the desired widths. This may help show relationships between separate tables.
+</p>
+</section>
+
 <p>
 	broadside 
 </p>
@@ -739,6 +919,17 @@ The sidebar title and “supertitle” are on the same line.
 <section>
 <h2>Numbering equations</h2>
 <p>TK</p>
+</section>
+
+<section>
+<h2>Aligning equations</h2>
+<p>Many educational publishers require that all equations on a page align on the equals sign.</p>
+
+<pre>
+    x + 3z = 7 + 2y
+2x + y + z = 4
+   10 + 2y = 3x + 2z
+</pre>
 </section>
 
 </section> <section> 
