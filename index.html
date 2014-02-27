@@ -495,13 +495,21 @@ Aligning the letter vertically is a challenge. The top of the letter should alig
 <pre>
 span.dropcap {
 float: left;
-font-size: 2.95em;
-line-height: .9em;
+font-size: 5.3em;
+line-height: .85em;
 margin-bottom: -.1em;
 }
 </pre>
-This requires much trial and error to get the drop cap both the right height, and with the right vertical position. If the font changed, the measurements would likely change. This really should be calculated by the user agent. 
+
+<figure id="css-drop-cap-garamond"> <img src="images/garamond.png" width="320" alt="" /> <figcaption> CSS Drop cap with Apple Garamond </figcaption> </figure> 
+
+This requires much trial and error to get the drop cap both the right height, and with the right vertical position. But what if the font changes?
 </p>
+<figure id="css-drop-cap-georgia"> <img src="images/georgia.png" width="320" alt="" /> <figcaption> CSS Drop cap with Georgia </figcaption> </figure> 
+
+<figure id="css-drop-cap-georgia"> <img src="images/palatino.png" width="320" alt="" /> <figcaption> CSS Drop cap with Palatino </figcaption> </figure> 
+
+<p>As you can see, when the font changes, the alignment is not preserved, and the drop cap may even crash into the adjacent text.</p>
 </div>
 </section>
 <section>
@@ -802,6 +810,13 @@ continued lines
 <h2>
 	Footnotes
 </h2>
+
+<blockquote>
+<p>Having to read footnotes resembles having to go downstairs to answer the door while in the midst of making love.</p>
+<p class="source">—Noël Coward</p>
+</blockquote>
+
+
 <p>In print publishing, a footnote consists of two parts: a reference (often rendered as an asterisk or superscripted number) and the footnote body.</p>
 
 <p>
@@ -1285,7 +1300,7 @@ Left-hand page of a spread
 
 <section>
 <h2>Acknowledgments</h2>
-<p>Eric Aubourg, Bert Bos, Tom Byrer, James Clark, Brady Duga, Ivan Herman, Tony Graham, Bill Kasdorf, Jean Kaplansky, Liam Quin, Alan Stearns, Tzviya Seigman</p>
+<p>Eric Aubourg, Luc Audrain, Bert Bos, Tom Byrer, James Clark, Brady Duga, Ivan Herman, Tony Graham, Bill Kasdorf, Jean Kaplansky, Liam Quin, Alan Stearns, Tzviya Seigman</p>
 </section>
 
 <section> 
