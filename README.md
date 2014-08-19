@@ -1,7 +1,7 @@
 dpub
 ====
 
-Documents produced by the Pagination task force of the [Digital Publishing Interest Group](http://www.w3.org/dpub/IG) of the W3C.
+Documents produced by the [Layout and Styling](https://www.w3.org/dpub/IG/wiki/Task_Forces/Latinreq) task force of the [Digital Publishing Interest Group](http://www.w3.org/dpub/IG) of the W3C.
 
 See also a [paged view](http://w3c.github.io/dpub-pagination/) of the document served in HTML.
 
