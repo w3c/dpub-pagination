@@ -184,7 +184,6 @@ wee-knights
 read-just
 leg-ends
 ex-acting
-reap-ear
 co-inage
 </pre>
 </div>
@@ -511,7 +510,7 @@ margin-bottom: -.1em;
 
 <figure id="css-drop-cap-garamond"> <img src="images/garamond.png" width="320" alt="" /> <figcaption> CSS Drop cap with Apple Garamond </figcaption> </figure> 
 
-This requires much trial and error to get the drop cap both the right height, and with the right vertical position. But what if the font changes?
+<p>This requires much trial and error to get the drop cap both the right height, and with the right vertical position. But what if the font changes?
 </p>
 <figure id="css-drop-cap-georgia"> <img src="images/georgia.png" width="320" alt="" /> <figcaption> CSS Drop cap with Georgia </figcaption> </figure> 
 
@@ -859,7 +858,7 @@ Footnote handling as described in  [[css3-gcpm]] assumes the footnote is coded i
 
 <p>Some types of footnotes may be displayed inline, as in the top <a href="#fig-footnote-inline"></a>. Other books (see <a href="#fig-footnote-regions"></a>) may have two separate streams of footnotes, requiring two footnote regions.</p>
 
-<figure id="fig-footnote-inline"> <img src="images/exegesis.png" width="480" alt="Page of Hamlet showing inline footnotes above block footnotes" /> <figcaption> Inline footnotes </figcaption> </figure> 
+<figure id="fig-footnote-inline"> <img src="images/exegesis.png" width="480" alt="Page of Hamlet showing inline footnotes above block footnotes" /> <figcaption>Inline footnotes</figcaption> </figure> 
 
 <figure id="fig-footnote-regions"> <img src="images/hamlet.png" width="480" alt="Page of Hamlet showing inline footnotes above block footnotes" /> <figcaption> Multiple footnote regions </figcaption> </figure> 
 
@@ -880,22 +879,56 @@ Footnote handling as described in  [[css3-gcpm]] assumes the footnote is coded i
 <section>
 <h2>Breaking footnotes across pages</h2>
 <p>
-Some footnotes can extend across more than one page. Limits on the size of the footnote area(s) may be required, so that a page containing only footnotes is avoided.
+Some footnotes can extend across more than one page. Limits on the size of the footnote area(s) may be required, so that a page containing only footnotes is avoided. 
 </p>
+
+<div class="note">
+<p>Sometimes, footnotes may require so much space that they cannot all be placed before the end of a document section. In this case, it’s acceptable to have pages that consist only of footnotes.</p>
+
+</div>
 </section>
 
 <section>
 <h2>Numbering</h2>
-<p>In addition to the usual numbering schemes, footnotes may be identified by a sequence of symbols: *, †, ‡, and §. This sequence usually restarts every page. If there are more than four footnotes per page, the symbols are doubled, tripled, etc.</p>
+<p>Three questions must be answered when numbering footnotes. First, which numbering scheme should be used? Second, what are we actually numbering? Third, is the numbering system reset at some point in the document?</p>
+
+
+<section>
+<h2>Numbering schemes</h2>
+
+<p>Footnotes are most commonly numbered with arabic numerals, lower-case letters, or a sequence of symbols: *, †, ‡, and §, ||, and #. With symbols, they may be doubled or tripled after exhausting the sequence, but long before |||||| is used, the choice of numbering should be re-evaluated.</p>
+
+
+
+</section>
+
+<section>
+<h2>What are we counting?</h2>
+
+<p>Usually, footnote numbers count footnotes. But in some cases, the reference may be a line number, paragraph number, or section number.</p>
+
+</section>
+
+<section>
+<h2>Resetting numbers</h2>
+
+<p>Footnote numbering may restart with each new chapter, or each new page. The former is common with numeric footnotes, the latter with footnotes using symbols.</p>
+
+</section>
+
+
+
 </section>
 
 
 
 <div class="note">
 <p>Footnotes are addressed by [[css3-gcpm]].</p>
-<p class="issue">Digital publications often render footnotes differently from print. They may become pop-ups, or move to the end of the section, or even to the end of the document.</p>
 </div>
 
+<div class="note">
+<p>Digital publications often render footnotes differently from print. They may become pop-ups, move to the end of the section, or to the end of the document. We are not currently attempting to document digital best practices around footnotes.</p>
+</div>
 
 </section> 
 
