@@ -540,24 +540,22 @@ margin-bottom: -.1em;
 <section>
 <h2>Content</h2>
 <p>Running heads and footers may contain:</p>
-<ol>
+<ul>
 <li>
 Content from the document: book title, chapter or part titles, author name(s). Indexes and notes sections may have running heads to identify which entries are on a particular page.
 </li>
 <li>
 Content intended only for running heads: shortened versions of chapter titles…</li>
 <li>
-Page or section numbers
-</li>
-<li>
-Chapter numbers
+Counters of all sorts: page numbers, section numbers, chapter numbers. 
 </li>
 
+
 <li>
-ornaments or other decorative type
+Ornaments, decorative type, or images
 </li>
 <li>
-Copyright statements
+Copyright statements or other boilerplate
 </li>
 <li>
 Date and/or time stamps
@@ -571,7 +569,10 @@ Version numbers
 <li>
 combinations of the above
 </li>
-</ol>
+</ul>
+
+
+
 <p>In some cases the content of running heads may have an internal structure—a chapter title might have an italic word—or may require different text styles or fonts.</p>
 
 
@@ -618,21 +619,46 @@ p.verso-cus:after {
 </div>
 
 
+<h3>Which content?</h3>
+<p>An element whose content is used in running heads may appear many times on a page. Authors must be able to specify which instance is used. [[css3-gcpm]] provides the start, first, last, and first-except keywords to accomplish this:</p>
+
+<dl> 
+	<dt>first</dt>
+	<dd>The value of the first assignment on the page is used. If there is no assignment on the page, the "entry value" is used.</dd>
+	<dt>start</dt>
+	<dd>If the element is the first element on the page, the value of the first assignment is used. Otherwise the "entry value" is used. The "entry value" may be empty if the element hasn’t yet appeared.</dd>
+	<dt>last</dt>
+	<dd>The "exit value" of the named string is used.</dd>
+	<dt>first-except</dt>
+	<dd>This is identical to <code>first</code>, except that the empty string is used on the page where the value is assigned.</dd>
+</dl>
+
+<p class="issue">Are these values enough to handle indexes, dictionaries, and other use cases?</p>
 
 </section>
 
 <section>
 <h2>Placement</h2>
-<p>Running heads are generally omitted from the first pages of chapters.</p>
+
+
+<p>Running headers and footers may appear in almost any position on a page.</p>
+
+<ul>
+<li>The position of the running head may be different on first pages vs subsequent pages, or the running head may be omitted on first pages</li>
+<li>Running heads may align to the inside or outside, and thus be different on left and right pages. </li>
+<li>Authors may need to control the layering of running head text (i.e. “z-index”).</li>
+<li>The running head may overflow the page boundary (i.e. “bleed”)</li>
+<li>The running head may be rotated</li>
+</ul>
+
 </section>
 
 
 
 <div class="note">
 <p>Running headers are addressed by [[css3-gcpm]].</p>
-<p>[epub3] has minimal support for headers and footers using <code>oeb-page-head</code> and <code>oeb-page-foot</code>.</p>
+<p>[[epub-3]] has now deprecated support for headers and footers using <code>oeb-page-head</code> and <code>oeb-page-foot</code>.</p>
 
-<p class="issue">Has any EPUB reading system implemented <code>oeb-page-*</code>?</p>
 <p>[[css3-gcpm]] has two mechanisms for placing content in running heads:</p>
 <ol>
 <li>
@@ -992,6 +1018,10 @@ The sidebar title and “supertitle” are on the same line.
 <h2>
 	Columns
 </h2>
+
+<p>Often the first page of a chapter or article will be set in a single column, and subsequent pages set in multiple columns.</p>
+
+<figure id="fig-1to2col"> <img src="images/OneColumnToTwoColumns.png" width="480" alt="diagram of facing text pages with one column on first page, and two on second page" /> <figcaption> One column text flows to two columns </figcaption> </figure> 
 </section> 
 
 <section> 
