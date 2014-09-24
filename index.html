@@ -473,10 +473,10 @@ Large, decorative letters have been used to start new sections of text since lon
 A <dfn>drop cap</dfn> is a larger-than-usual letter at the start of a paragraph, with a baseline at least one line lower than the first baseline of the paragraph. The size of drop caps is usually indicated by how many lines they occupy—two-line and three-line drop caps are the most common. 
 </p>
 
-<figure id="fig-2-line-drop-cap"> <img src="images/2-line-drop-cap.png" width="480" alt="" /> <figcaption> Two-line drop cap </figcaption> </figure> 
+<figure id="fig-2-line-drop-cap"> <img src="images/Dropcap-lines.png" width="480" alt="" /> <figcaption> Two-line drop cap </figcaption> </figure> 
 
 <p>
-Aligning the letter vertically is a challenge. The top of the letter should align with the ascenders of the first line of text. The baseline of the letter should fall on the baseline of one of the following lines (the second for a 2-line drop cap, etc.). 
+Aligning the letter vertically is a challenge. The cap height of the letter should align with the cap height of the first line of text. The baseline of the letter should fall on the baseline of one of the following lines (the second for a 2-line drop cap, etc.). 
 </p>
 
 <figure id="fig-3-line-drop-cap"> <img src="images/3-line-drop-cap.png" width="480" alt="" /> <figcaption> Three-line drop cap </figcaption> </figure> 
@@ -497,6 +497,9 @@ Aligning the letter vertically is a challenge. The top of the letter should alig
 
 </div>
 
+
+
+<!-- 
 <div class="note">
 <p>CSS needs a better mechanism to define drop caps. Right now, people typically apply a span to the letter, and then use:
 <pre>
@@ -518,15 +521,28 @@ margin-bottom: -.1em;
 
 <p>As you can see, when the font changes, the alignment is not preserved, and the drop cap may even crash into the adjacent text.</p>
 </div>
+ -->
 </section>
 <section>
-<h2>Raised caps</h2>
-<p>A <dfn>raised cap</dfn> is a large letter used to start a paragraph, which uses the same baseline as the rest of the first line.</p>
+<h2>Raised caps and sunken caps</h2>
+<p>A <dfn>raised cap</dfn> is a large letter used to start a paragraph, which uses the same baseline as the rest of the first line. A <dfn>sunken cap</dfn> both sinks below the text baseline, and extends above. </p>
+
+<figure>
+<img src="images/RaisedCap.png" width="480" alt="raised cap"/>
+<figcaption>Raised cap. The initial letter is the size of a 3-line initial, but does not drop.</figcaption>
+</figure>
+
+
+<figure>
+<img src="images/SunkenCapA.png" width="480" alt="sunken drop initial"/>
+<figcaption>Sunken cap. The letter drops to the second line, but is the size of a three-line initial letter.</figcaption>
+</figure>
 
 <div class="note">
-<p>Raised caps are much easier than drop caps in CSS, as often one needs only to define the font size.</p>
 
+<p>The CSS Working Group has proposed an initial-letter property to allow for properly-aligned drop caps. See <a href="http://dev.w3.org/csswg/css-inline/#DropInitial">dev.w3.org/csswg/css-inline/#DropInitial</a>.</p>
 </div>
+
 </section>
 
 </section>
@@ -659,6 +675,7 @@ p.verso-cus:after {
 <p>Running headers are addressed by [[css3-gcpm]].</p>
 <p>[[epub-3]] has now deprecated support for headers and footers using <code>oeb-page-head</code> and <code>oeb-page-foot</code>.</p>
 
+<!-- 
 <p>[[css3-gcpm]] has two mechanisms for placing content in running heads:</p>
 <ol>
 <li>
@@ -668,6 +685,7 @@ p.verso-cus:after {
 <dfn>running elements</dfn> TK
 </li>
 </ol>
+ -->
 </div>
 
 </section>
@@ -1005,11 +1023,17 @@ The sidebar title and “supertitle” are on the same line.
 
 <section>
 <h2>Aligning equations</h2>
-<p>Many educational publishers require that all equations on a page align on the equals sign.</p>
+<p>Many publishers require that all equations on a page align on the equals sign.</p>
 
 <pre>
     x + 3z = 7 + 2y
+    
 2x + y + z = 4
+
+Intervening text which may
+extend for several lines
+
+
    10 + 2y = 3x + 2z
 </pre>
 </section>
