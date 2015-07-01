@@ -619,7 +619,7 @@ table.summary td.footnote::before {
    <h1 class="p-name no-ref" id="title">Priorities for CSS from the Digital Publishing Interest Group</h1>
   
    <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">A Collection of Interesting Ideas,
-    <time class="dt-updated" datetime="2015-06-30">30 June 2015</time></span></h2>
+    <time class="dt-updated" datetime="2015-07-01">1 July 2015</time></span></h2>
   
    <div data-fill-with="spec-metadata">
     <dl>
@@ -638,7 +638,7 @@ table.summary td.footnote::before {
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" src="https://licensebuttons.net/p/zero/1.0/80x15.png"></a>
 To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 30 June 2015,
+In addition, as of 1 July 2015,
 the editors have made this specification available under the
 <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
@@ -668,82 +668,93 @@ Parts of this work may be from another specification document.  If so, those par
     <li><a href="#intro"><span class="secno">1</span> <span class="content">
 Introduction
 </span></a>
-    <li><a href="#typography"><span class="secno">2</span> <span class="content">
+    <li><a href="#summary"><span class="secno">2</span> <span class="content">
+List of Priorities
+</span></a>
+    <li><a href="#typography"><span class="secno">3</span> <span class="content">
 Typography and Fonts
 </span></a>
      <ul class="toc">
-      <li><a href="#hyphenation"><span class="secno">2.1</span> <span class="content">
+      <li><a href="#fonts"><span class="secno">3.1</span> <span class="content">
+Fonts
+</span></a>
+       <ul class="toc">
+        <li><a href="#font_feature_settings"><span class="secno">3.1.1</span> <span class="content">
+font-feature-settings
+</span></a>
+       </ul>
+      <li><a href="#hyphenation"><span class="secno">3.2</span> <span class="content">
 Hyphenation
 </span></a>
        <ul class="toc">
-        <li><a href="#the-hyphens-property"><span class="secno">2.1.1</span> <span class="content">
+        <li><a href="#the-hyphens-property"><span class="secno">3.2.1</span> <span class="content">
 The hyphens property
 </span></a>
-        <li><a href="#hyphenation-parameters"><span class="secno">2.1.2</span> <span class="content">
+        <li><a href="#hyphenation-parameters"><span class="secno">3.2.2</span> <span class="content">
 Hyphenation parameters
 </span></a>
          <ul class="toc">
-          <li><a href="#hyphenate_before"><span class="secno">2.1.2.1</span> <span class="content">
+          <li><a href="#hyphenate_before"><span class="secno">3.2.2.1</span> <span class="content">
 <span class="property">hyphenate-before</span>
 </span></a>
-          <li><a href="#hyphenate_after"><span class="secno">2.1.2.2</span> <span class="content">
+          <li><a href="#hyphenate_after"><span class="secno">3.2.2.2</span> <span class="content">
 <span class="property">hyphenate-after</span>
 </span></a>
-          <li><a href="#hyphenate_lines"><span class="secno">2.1.2.3</span> <span class="content">
+          <li><a href="#hyphenate_lines"><span class="secno">3.2.2.3</span> <span class="content">
 <span class="property">hyphenate-lines</span>
 </span></a>
-          <li><a href="#hyphenation-dictionaries"><span class="secno">2.1.2.4</span> <span class="content">
+          <li><a href="#hyphenation-dictionaries"><span class="secno">3.2.2.4</span> <span class="content">
 Hyphenation dictionaries
 </span></a>
-          <li><a href="#hyphenation-exception-list"><span class="secno">2.1.2.5</span> <span class="content">
+          <li><a href="#hyphenation-exception-list"><span class="secno">3.2.2.5</span> <span class="content">
 Hyphenation exception list
 </span></a>
-          <li><a href="#min_length_of_last_line"><span class="secno">2.1.2.6</span> <span class="content">
+          <li><a href="#min_length_of_last_line"><span class="secno">3.2.2.6</span> <span class="content">
 min-length-of-last-line
 </span></a>
          </ul>
        </ul>
-      <li><a href="#a18n"><span class="secno">2.2</span> <span class="content">
+      <li><a href="#a18n"><span class="secno">3.3</span> <span class="content">
 East Asian Language Support
 </span></a>
      </ul>
-    <li><a href="#pagination"><span class="secno">3</span> <span class="content">
+    <li><a href="#pagination"><span class="secno">4</span> <span class="content">
 Pagination
 </span></a>
-    <li><a href="#gencon"><span class="secno">4</span> <span class="content">
+    <li><a href="#gencon"><span class="secno">5</span> <span class="content">
 Generated Content and Cross-References
 </span></a>
      <ul class="toc">
-      <li><a href="#cross_references"><span class="secno">4.1</span> <span class="content">
+      <li><a href="#cross_references"><span class="secno">5.1</span> <span class="content">
 Cross-References
 </span></a>
        <ul class="toc">
-        <li><a href="#the-target_counter-function"><span class="secno">4.1.1</span> <span class="content">
+        <li><a href="#the-target_counter-function"><span class="secno">5.1.1</span> <span class="content">
 The <span class="css">target-counter()</span> function
 </span></a>
-        <li><a href="#the-target_counters-function"><span class="secno">4.1.2</span> <span class="content">
+        <li><a href="#the-target_counters-function"><span class="secno">5.1.2</span> <span class="content">
 The <span class="css">target-counters()</span> function
 </span></a>
-        <li><a href="#the-target_text-function"><span class="secno">4.1.3</span> <span class="content">
+        <li><a href="#the-target_text-function"><span class="secno">5.1.3</span> <span class="content">
 The <span class="css">target-text()</span> function
 </span></a>
        </ul>
-      <li><a href="#collapsing-page-ranges"><span class="secno">4.2</span> <span class="content">
+      <li><a href="#collapsing-page-ranges"><span class="secno">5.2</span> <span class="content">
 Collapsing Page Ranges
 </span></a>
      </ul>
-    <li><a href="#math"><span class="secno">5</span> <span class="content">
+    <li><a href="#math"><span class="secno">6</span> <span class="content">
 Math
 </span></a>
-    <li><a href="#tables"><span class="secno">6</span> <span class="content">
+    <li><a href="#tables"><span class="secno">7</span> <span class="content">
 Tables
 </span></a>
      <ul class="toc">
-      <li><a href="#character_based-alignment"><span class="secno">6.1</span> <span class="content">
+      <li><a href="#character_based-alignment"><span class="secno">7.1</span> <span class="content">
 Character-based alignment
 </span></a>
      </ul>
-    <li><a href="#a11y"><span class="secno">7</span> <span class="content">
+    <li><a href="#a11y"><span class="secno">8</span> <span class="content">
 Accessibility
 </span></a>
     <li><a href="#conformance"><span class="secno"></span> <span class="content">
@@ -799,10 +810,9 @@ Introduction
    <p class="note" role="note">Note: Many of the features described here are documented in  <a data-link-type="biblio" href="#biblio-dpub-latinreq">[dpub-latinreq]</a>.</p>
 
 
-   <h2 class="heading settled" data-level="2" id="typography"><span class="secno">2. </span><span class="content">
-Typography and Fonts
-</span><a class="self-link" href="#typography"></a></h2>
-
+   <h2 class="heading settled" data-level="2" id="summary"><span class="secno">2. </span><span class="content">
+List of Priorities
+</span><a class="self-link" href="#summary"></a></h2>
 
    <table class="summary">
 
@@ -825,6 +835,35 @@ Typography and Fonts
       
 
 
+
+     <tr>
+
+      <td><a class="property" data-link-type="propdesc" href="http://dev.w3.org/csswg/css-fonts-3/#propdef-font-feature-settings">font-feature-settings</a>
+
+      <td>5
+
+      <td><a data-link-type="biblio" href="#biblio-css3-fonts">[CSS3-FONTS]</a>
+
+      <td>Firefox, IE, Chrome, Opera, Prince, AH
+
+      <td>Safari
+
+
+
+     <tr>
+
+      <td>character-based alignment in tables
+
+      <td>5
+
+      <td>Removed from <a data-link-type="biblio" href="#biblio-css3text">[CSS3TEXT]</a>, spec at http://www.w3.org/TR/2012/WD-css3-text-20121113/#character-alignment
+
+      <td>
+
+      <td>Chrome, Firefox, IE, Opera, Safari, Prince, AH
+
+
+
      <tr>
 
       <td><a class="property" data-link-type="propdesc" href="http://dev.w3.org/csswg/css-text-3/#propdef-hyphens">hyphens</a>
@@ -836,6 +875,48 @@ Typography and Fonts
       <td>Firefox, IE, Opera, Safari, Prince, AH
 
       <td>Chrome
+
+
+
+
+     <tr>
+
+      <td><a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#funcdef-target-counter">target-counter()</a>
+
+      <td>5
+
+      <td><a data-link-type="biblio" href="#biblio-css3-content">[css3-content]</a>, WD
+
+      <td>Prince, AH
+
+      <td>Chrome, Firefox, IE, Opera, Safari
+
+
+     <tr>
+
+      <td><a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#funcdef-target-counters">target-counters()</a>
+
+      <td>5
+
+      <td><a data-link-type="biblio" href="#biblio-css3-content">[css3-content]</a>, WD
+
+      <td>Prince, AH
+
+      <td>Chrome, Firefox, IE, Opera, Safari
+
+
+     <tr>
+
+      <td><a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#target-text-function">target-text()</a>
+
+      <td>5
+
+      <td><a data-link-type="biblio" href="#biblio-css3-content">[css3-content]</a>, WD
+
+      <td>Prince, AH
+
+      <td>Chrome, Firefox, IE, Opera, Safari
+
 
 
 
@@ -908,10 +989,45 @@ Typography and Fonts
       <td>Chrome, Firefox, IE, Opera, Safari, Prince, AH
 
 
+
+
+     <tr>
+
+      <td><a class="property" data-link-type="propdesc" href="#propdef-merge-sequential-page-numbers">merge-sequential-page-numbers</a>
+
+      <td>2
+
+      <td>Unspecified
+
+      <td>AH
+
+      <td>Chrome, Firefox, IE, Opera, Safari, Prince
+
+
 </table>
 
 
-   <h3 class="heading settled" data-level="2.1" id="hyphenation"><span class="secno">2.1. </span><span class="content">
+   <h2 class="heading settled" data-level="3" id="typography"><span class="secno">3. </span><span class="content">
+Typography and Fonts
+</span><a class="self-link" href="#typography"></a></h2>
+
+
+
+
+   <h3 class="heading settled" data-level="3.1" id="fonts"><span class="secno">3.1. </span><span class="content">
+Fonts
+</span><a class="self-link" href="#fonts"></a></h3>
+
+
+   <h4 class="heading settled" data-level="3.1.1" id="font_feature_settings"><span class="secno">3.1.1. </span><span class="content">
+font-feature-settings
+</span><a class="self-link" href="#font_feature_settings"></a></h4>
+
+
+   <p class="issue" id="issue-a7dbef9c"><a class="self-link" href="#issue-a7dbef9c"></a> Not supported in Safari</p>
+
+
+   <h3 class="heading settled" data-level="3.2" id="hyphenation"><span class="secno">3.2. </span><span class="content">
 Hyphenation
 </span><a class="self-link" href="#hyphenation"></a></h3>
 
@@ -919,7 +1035,7 @@ Hyphenation
 
 
 
-   <h4 class="heading settled" data-level="2.1.1" id="the-hyphens-property"><span class="secno">2.1.1. </span><span class="content">
+   <h4 class="heading settled" data-level="3.2.1" id="the-hyphens-property"><span class="secno">3.2.1. </span><span class="content">
 The hyphens property
 </span><a class="self-link" href="#the-hyphens-property"></a></h4>
 
@@ -930,12 +1046,12 @@ The hyphens property
    <p class="issue" id="issue-85d128c4"><a class="self-link" href="#issue-85d128c4"></a> <a class="property" data-link-type="propdesc" href="http://dev.w3.org/csswg/css-text-3/#propdef-hyphens">hyphens</a> property not supported in Chrome: https://code.google.com/p/chromium/issues/detail?id=47083</p>
 
 
-   <h4 class="heading settled" data-level="2.1.2" id="hyphenation-parameters"><span class="secno">2.1.2. </span><span class="content">
+   <h4 class="heading settled" data-level="3.2.2" id="hyphenation-parameters"><span class="secno">3.2.2. </span><span class="content">
 Hyphenation parameters
 </span><a class="self-link" href="#hyphenation-parameters"></a></h4>
 
 
-   <h5 class="heading settled" data-level="2.1.2.1" id="hyphenate_before"><span class="secno">2.1.2.1. </span><span class="content">
+   <h5 class="heading settled" data-level="3.2.2.1" id="hyphenate_before"><span class="secno">3.2.2.1. </span><span class="content">
 <a class="property" data-link-type="propdesc" href="#propdef-hyphenate-before">hyphenate-before</a>
 </span><a class="self-link" href="#hyphenate_before"></a></h5>
 
@@ -983,7 +1099,7 @@ Hyphenation parameters
    <p class="issue" id="issue-e1b4fc97"><a class="self-link" href="#issue-e1b4fc97"></a> implemented only by PrinceXML</p>
 
 
-   <h5 class="heading settled" data-level="2.1.2.2" id="hyphenate_after"><span class="secno">2.1.2.2. </span><span class="content">
+   <h5 class="heading settled" data-level="3.2.2.2" id="hyphenate_after"><span class="secno">3.2.2.2. </span><span class="content">
 <a class="property" data-link-type="propdesc" href="#propdef-hyphenate-after">hyphenate-after</a>
 </span><a class="self-link" href="#hyphenate_after"></a></h5>
 
@@ -1031,7 +1147,7 @@ Hyphenation parameters
    <p class="issue" id="issue-e1b4fc970"><a class="self-link" href="#issue-e1b4fc970"></a> implemented only by PrinceXML</p>
 
 
-   <h5 class="heading settled" data-level="2.1.2.3" id="hyphenate_lines"><span class="secno">2.1.2.3. </span><span class="content">
+   <h5 class="heading settled" data-level="3.2.2.3" id="hyphenate_lines"><span class="secno">3.2.2.3. </span><span class="content">
 <a class="property" data-link-type="propdesc" href="#propdef-hyphenate-lines">hyphenate-lines</a>
 </span><a class="self-link" href="#hyphenate_lines"></a></h5>
 
@@ -1076,7 +1192,7 @@ Hyphenation parameters
    <p class="issue" id="issue-e1b4fc971"><a class="self-link" href="#issue-e1b4fc971"></a> implemented only by PrinceXML</p>
 
 
-   <h5 class="heading settled" data-level="2.1.2.4" id="hyphenation-dictionaries"><span class="secno">2.1.2.4. </span><span class="content">
+   <h5 class="heading settled" data-level="3.2.2.4" id="hyphenation-dictionaries"><span class="secno">3.2.2.4. </span><span class="content">
 Hyphenation dictionaries
 </span><a class="self-link" href="#hyphenation-dictionaries"></a></h5>
 
@@ -1154,7 +1270,7 @@ Hyphenation dictionaries
    <p class="issue" id="issue-e1b4fc972"><a class="self-link" href="#issue-e1b4fc972"></a> implemented only by PrinceXML</p>
 
 
-   <h5 class="heading settled" data-level="2.1.2.5" id="hyphenation-exception-list"><span class="secno">2.1.2.5. </span><span class="content">
+   <h5 class="heading settled" data-level="3.2.2.5" id="hyphenation-exception-list"><span class="secno">3.2.2.5. </span><span class="content">
 Hyphenation exception list
 </span><a class="self-link" href="#hyphenation-exception-list"></a></h5>
 
@@ -1182,7 +1298,7 @@ Issue: Not in a CSS spec</p>
 
 
 
-   <h5 class="heading settled" data-level="2.1.2.6" id="min_length_of_last_line"><span class="secno">2.1.2.6. </span><span class="content">
+   <h5 class="heading settled" data-level="3.2.2.6" id="min_length_of_last_line"><span class="secno">3.2.2.6. </span><span class="content">
 min-length-of-last-line
 </span><a class="self-link" href="#min_length_of_last_line"></a></h5>
 
@@ -1228,99 +1344,22 @@ min-length-of-last-line
 
 
 
-   <h3 class="heading settled" data-level="2.2" id="a18n"><span class="secno">2.2. </span><span class="content">
+   <h3 class="heading settled" data-level="3.3" id="a18n"><span class="secno">3.3. </span><span class="content">
 East Asian Language Support
 </span><a class="self-link" href="#a18n"></a></h3>
 
 
 
-   <h2 class="heading settled" data-level="3" id="pagination"><span class="secno">3. </span><span class="content">
+   <h2 class="heading settled" data-level="4" id="pagination"><span class="secno">4. </span><span class="content">
 Pagination
 </span><a class="self-link" href="#pagination"></a></h2>
 
 
-   <h2 class="heading settled" data-level="4" id="gencon"><span class="secno">4. </span><span class="content">
+   <h2 class="heading settled" data-level="5" id="gencon"><span class="secno">5. </span><span class="content">
 Generated Content and Cross-References
 </span><a class="self-link" href="#gencon"></a></h2>
 
 
-
-   <table class="summary">
-
-    <tbody>
-     <tr>
-
-      <th>Feature
-      
-
-      <th>Priority
-      
-
-      <th>Spec, Status
-      
-
-      <th>Implemented
-      
-
-      <th>Not Implemented
-      
-
-
-     <tr>
-
-      <td><a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#funcdef-target-counter">target-counter()</a>
-
-      <td>5
-
-      <td><a data-link-type="biblio" href="#biblio-css3-content">[css3-content]</a>, WD
-
-      <td>Prince, AH
-
-      <td>Chrome, Firefox, IE, Opera, Safari
-
-
-     <tr>
-
-      <td><a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#funcdef-target-counters">target-counters()</a>
-
-      <td>5
-
-      <td><a data-link-type="biblio" href="#biblio-css3-content">[css3-content]</a>, WD
-
-      <td>Prince, AH
-
-      <td>Chrome, Firefox, IE, Opera, Safari
-
-
-     <tr>
-
-      <td><a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#target-text-function">target-text()</a>
-
-      <td>5
-
-      <td><a data-link-type="biblio" href="#biblio-css3-content">[css3-content]</a>, WD
-
-      <td>Prince, AH
-
-      <td>Chrome, Firefox, IE, Opera, Safari
-
-
-
-     <tr>
-
-      <td><a class="property" data-link-type="propdesc" href="#propdef-merge-sequential-page-numbers">merge-sequential-page-numbers</a>
-
-      <td>2
-
-      <td>Unspecified
-
-      <td>AH
-
-      <td>Chrome, Firefox, IE, Opera, Safari, Prince
-
-
-
-</table>
 
 
    <p>Many publication elements, such as figures, tables, and even chapters, can be automatically numbered or labelled. We need to be able to both display those labels and reference them from elsewhere in the document (see Figure 1.3).</p>
@@ -1329,12 +1368,12 @@ Generated Content and Cross-References
    <p><a data-link-type="biblio" href="#biblio-css3-content">[css3-content]</a>] describes functions for referencing the values of counters and text.</p>
 
 
-   <h3 class="heading settled" data-level="4.1" id="cross_references"><span class="secno">4.1. </span><span class="content">
+   <h3 class="heading settled" data-level="5.1" id="cross_references"><span class="secno">5.1. </span><span class="content">
 Cross-References
 </span><a class="self-link" href="#cross_references"></a></h3>
 
 
-   <h4 class="heading settled" data-level="4.1.1" id="the-target_counter-function"><span class="secno">4.1.1. </span><span class="content">
+   <h4 class="heading settled" data-level="5.1.1" id="the-target_counter-function"><span class="secno">5.1.1. </span><span class="content">
 The <a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#funcdef-target-counter">target-counter()</a> function
 </span><a class="self-link" href="#the-target_counter-function"></a></h4>
 
@@ -1342,7 +1381,7 @@ The <a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-cont
    <p class="issue" id="issue-c6f7555b"><a class="self-link" href="#issue-c6f7555b"></a> <a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#funcdef-target-counter">target-counter()</a> is not implemented in browsers</p>
 
 
-   <h4 class="heading settled" data-level="4.1.2" id="the-target_counters-function"><span class="secno">4.1.2. </span><span class="content">
+   <h4 class="heading settled" data-level="5.1.2" id="the-target_counters-function"><span class="secno">5.1.2. </span><span class="content">
 The <a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#funcdef-target-counters">target-counters()</a> function
 </span><a class="self-link" href="#the-target_counters-function"></a></h4>
 
@@ -1350,7 +1389,7 @@ The <a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-cont
    <p class="issue" id="issue-9406ab50"><a class="self-link" href="#issue-9406ab50"></a> <a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#funcdef-target-counters">target-counters()</a> is not implemented in browsers</p>
 
 
-   <h4 class="heading settled" data-level="4.1.3" id="the-target_text-function"><span class="secno">4.1.3. </span><span class="content">
+   <h4 class="heading settled" data-level="5.1.3" id="the-target_text-function"><span class="secno">5.1.3. </span><span class="content">
 The <a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#target-text-function">target-text()</a> function
 </span><a class="self-link" href="#the-target_text-function"></a></h4>
 
@@ -1359,7 +1398,7 @@ The <a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-cont
 
 
 
-   <h3 class="heading settled" data-level="4.2" id="collapsing-page-ranges"><span class="secno">4.2. </span><span class="content">
+   <h3 class="heading settled" data-level="5.2" id="collapsing-page-ranges"><span class="secno">5.2. </span><span class="content">
 Collapsing Page Ranges
 </span><a class="self-link" href="#collapsing-page-ranges"></a></h3>
 
@@ -1421,53 +1460,19 @@ Collapsing Page Ranges
    <p class="note" role="note">Note: <a data-link-type="biblio" href="#biblio-xslfo20">[XSLFO20]</a> has a merge-sequential-page-numbers feature: http://www.w3.org/TR/xslfo20/#merge-sequential-page-numbers</p>
 
 
-   <h2 class="heading settled" data-level="5" id="math"><span class="secno">5. </span><span class="content">
+   <h2 class="heading settled" data-level="6" id="math"><span class="secno">6. </span><span class="content">
 Math
 </span><a class="self-link" href="#math"></a></h2>
 
 
-   <h2 class="heading settled" data-level="6" id="tables"><span class="secno">6. </span><span class="content">
+   <h2 class="heading settled" data-level="7" id="tables"><span class="secno">7. </span><span class="content">
 Tables
 </span><a class="self-link" href="#tables"></a></h2>
 
 
-   <table class="summary">
-
-    <tbody>
-     <tr>
-
-      <th>Feature
-      
-
-      <th>Priority
-      
-
-      <th>Spec, Status
-      
-
-      <th>Implemented
-      
-
-      <th>Not Implemented
-      
 
 
-     <tr>
-
-      <td>character-based alignment
-
-      <td>5
-
-      <td>
-
-      <td>
-
-      <td>Chrome, Firefox, IE, Opera, Safari, Prince, AH
-
-</table>
-
-
-   <h3 class="heading settled" data-level="6.1" id="character_based-alignment"><span class="secno">6.1. </span><span class="content">
+   <h3 class="heading settled" data-level="7.1" id="character_based-alignment"><span class="secno">7.1. </span><span class="content">
 Character-based alignment
 </span><a class="self-link" href="#character_based-alignment"></a></h3>
 
@@ -1495,7 +1500,7 @@ Character-based alignment
 
 
 
-   <h2 class="heading settled" data-level="7" id="a11y"><span class="secno">7. </span><span class="content">
+   <h2 class="heading settled" data-level="8" id="a11y"><span class="secno">8. </span><span class="content">
 Accessibility
 </span><a class="self-link" href="#a11y"></a></h2>
 
@@ -1544,12 +1549,12 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
   <h2 class="no-num heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="indexlist">
-   <li>hyphenate-after, <a href="#propdef-hyphenate-after">2.1.2.2</a>
-   <li>hyphenate-before, <a href="#propdef-hyphenate-before">2.1.2.1</a>
-   <li>hyphenate-lines, <a href="#propdef-hyphenate-lines">2.1.2.3</a>
-   <li>hyphenate-patterns, <a href="#propdef-hyphenate-patterns">2.1.2.4</a>
-   <li>merge-sequential-page-numbers, <a href="#propdef-merge-sequential-page-numbers">4.2</a>
-   <li>min-length-of-last-line, <a href="#propdef-min-length-of-last-line">2.1.2.6</a>
+   <li>hyphenate-after, <a href="#propdef-hyphenate-after">3.2.2.2</a>
+   <li>hyphenate-before, <a href="#propdef-hyphenate-before">3.2.2.1</a>
+   <li>hyphenate-lines, <a href="#propdef-hyphenate-lines">3.2.2.3</a>
+   <li>hyphenate-patterns, <a href="#propdef-hyphenate-patterns">3.2.2.4</a>
+   <li>merge-sequential-page-numbers, <a href="#propdef-merge-sequential-page-numbers">5.2</a>
+   <li>min-length-of-last-line, <a href="#propdef-min-length-of-last-line">3.2.2.6</a>
   </ul>
   <h3 class="no-num heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="indexlist">
@@ -1558,6 +1563,10 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
      <li><a href="http://dev.w3.org/csswg/css-content-3/#funcdef-target-counter">target-counter()</a>
      <li><a href="http://dev.w3.org/csswg/css-content-3/#funcdef-target-counters">target-counters()</a>
      <li><a href="http://dev.w3.org/csswg/css-content-3/#target-text-function">target-text()</a>
+    </ul>
+   <li><a data-link-type="biblio" href="#biblio-css-fonts-3">[css-fonts-3]</a> defines the following terms:
+    <ul>
+     <li><a href="http://dev.w3.org/csswg/css-fonts-3/#propdef-font-feature-settings">font-feature-settings</a>
     </ul>
    <li><a data-link-type="biblio" href="#biblio-css-text-3">[css-text-3]</a> defines the following terms:
     <ul>
@@ -1575,6 +1584,8 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
   <dl>
    <dt id="biblio-css-content-3"><a class="self-link" href="#biblio-css-content-3"></a>[CSS-CONTENT-3]
    <dd>CSS Generated Content Module Level 3 URL: <a href="http://dev.w3.org/csswg/css-content-3/">http://dev.w3.org/csswg/css-content-3/</a>
+   <dt id="biblio-css-fonts-3"><a class="self-link" href="#biblio-css-fonts-3"></a>[CSS-FONTS-3]
+   <dd>John Daggett. <a href="http://www.w3.org/TR/css-fonts-3/">CSS Fonts Module Level 3</a>. 3 October 2013. CR. URL: <a href="http://www.w3.org/TR/css-fonts-3/">http://www.w3.org/TR/css-fonts-3/</a>
    <dt id="biblio-css-text-3"><a class="self-link" href="#biblio-css-text-3"></a>[CSS-TEXT-3]
    <dd>Elika Etemad; Koji Ishii. <a href="http://www.w3.org/TR/css-text-3/">CSS Text Module Level 3</a>. 10 October 2013. LCWD. URL: <a href="http://www.w3.org/TR/css-text-3/">http://www.w3.org/TR/css-text-3/</a>
    <dt id="biblio-css-values-3"><a class="self-link" href="#biblio-css-values-3"></a>[CSS-VALUES-3]
@@ -1588,6 +1599,8 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
    <dd>Elika Etemad; Koji Ishii. <a href="http://www.w3.org/TR/css-text-3/">CSS Text Module Level 3</a>. 10 October 2013. LCWD. URL: <a href="http://www.w3.org/TR/css-text-3/">http://www.w3.org/TR/css-text-3/</a>
    <dt id="biblio-css3-content"><a class="self-link" href="#biblio-css3-content"></a>[CSS3-CONTENT]
    <dd>Ian Hickson. <a href="http://www.w3.org/TR/css3-content">CSS3 Generated and Replaced Content Module</a>. 14 May 2003. WD. URL: <a href="http://www.w3.org/TR/css3-content">http://www.w3.org/TR/css3-content</a>
+   <dt id="biblio-css3-fonts"><a class="self-link" href="#biblio-css3-fonts"></a>[CSS3-FONTS]
+   <dd>John Daggett. <a href="http://www.w3.org/TR/css3-fonts/">CSS Fonts Module Level 3</a>. 11 December 2012. WD. URL: <a href="http://www.w3.org/TR/css3-fonts/">http://www.w3.org/TR/css3-fonts/</a>
    <dt id="biblio-dpub-latinreq"><a class="self-link" href="#biblio-dpub-latinreq"></a>[DPUB-LATINREQ]
    <dd>Dave Cramer. <a href="http://www.w3.org/TR/dpub-latinreq/">Requirements for Latin Text Layout and Pagination</a>. 30 September 2014. WD. URL: <a href="http://www.w3.org/TR/dpub-latinreq/">http://www.w3.org/TR/dpub-latinreq/</a>
    <dt id="biblio-xslfo20"><a class="self-link" href="#biblio-xslfo20"></a>[XSLFO20]
@@ -1670,6 +1683,7 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
   </table>
   <h2 class="no-num heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
   <div style="counter-reset:issue">
+   <div class="issue"> Not supported in Safari<a href="#issue-a7dbef9c"> ↵ </a></div>
    <div class="issue"> <a class="property" data-link-type="propdesc" href="http://dev.w3.org/csswg/css-text-3/#propdef-hyphens">hyphens</a> property not supported in Chrome: https://code.google.com/p/chromium/issues/detail?id=47083<a href="#issue-85d128c4"> ↵ </a></div>
    <div class="issue"> Not in a CSS spec<a href="#issue-27a16ea9"> ↵ </a></div>
    <div class="issue"> implemented only by PrinceXML<a href="#issue-e1b4fc97"> ↵ </a></div>
