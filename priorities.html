@@ -619,7 +619,7 @@ table.summary td.footnote::before {
    <h1 class="p-name no-ref" id="title">Priorities for CSS from the Digital Publishing Interest Group</h1>
   
    <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">A Collection of Interesting Ideas,
-    <time class="dt-updated" datetime="2015-07-01">1 July 2015</time></span></h2>
+    <time class="dt-updated" datetime="2015-07-06">6 July 2015</time></span></h2>
   
    <div data-fill-with="spec-metadata">
     <dl>
@@ -638,7 +638,7 @@ table.summary td.footnote::before {
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" src="https://licensebuttons.net/p/zero/1.0/80x15.png"></a>
 To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 1 July 2015,
+In addition, as of 6 July 2015,
 the editors have made this specification available under the
 <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
@@ -694,22 +694,19 @@ The hyphens property
 Hyphenation parameters
 </span></a>
          <ul class="toc">
-          <li><a href="#hyphenate_before"><span class="secno">3.2.2.1</span> <span class="content">
-<span class="property">hyphenate-before</span>
+          <li><a href="#hyphenate_limit_chars"><span class="secno">3.2.2.1</span> <span class="content">
+hyphenate-limit-chars
 </span></a>
-          <li><a href="#hyphenate_after"><span class="secno">3.2.2.2</span> <span class="content">
-<span class="property">hyphenate-after</span>
+          <li><a href="#hyphenate_limit_lines"><span class="secno">3.2.2.2</span> <span class="content">
+hyphenate-limit-lines
 </span></a>
-          <li><a href="#hyphenate_lines"><span class="secno">3.2.2.3</span> <span class="content">
-<span class="property">hyphenate-lines</span>
-</span></a>
-          <li><a href="#hyphenation-dictionaries"><span class="secno">3.2.2.4</span> <span class="content">
+          <li><a href="#hyphenation-dictionaries"><span class="secno">3.2.2.3</span> <span class="content">
 Hyphenation dictionaries
 </span></a>
-          <li><a href="#hyphenation-exception-list"><span class="secno">3.2.2.5</span> <span class="content">
+          <li><a href="#hyphenation-exception-list"><span class="secno">3.2.2.4</span> <span class="content">
 Hyphenation exception list
 </span></a>
-          <li><a href="#min_length_of_last_line"><span class="secno">3.2.2.6</span> <span class="content">
+          <li><a href="#min_length_of_last_line"><span class="secno">3.2.2.5</span> <span class="content">
 min-length-of-last-line
 </span></a>
          </ul>
@@ -717,6 +714,17 @@ min-length-of-last-line
       <li><a href="#a18n"><span class="secno">3.3</span> <span class="content">
 East Asian Language Support
 </span></a>
+       <ul class="toc">
+        <li><a href="#emphasis-marks"><span class="secno">3.3.1</span> <span class="content">
+Emphasis Marks
+</span></a>
+        <li><a href="#ruby"><span class="secno">3.3.2</span> <span class="content">
+Ruby
+</span></a>
+        <li><a href="#text_spacing"><span class="secno">3.3.3</span> <span class="content">
+text-spacing
+</span></a>
+       </ul>
      </ul>
     <li><a href="#pagination"><span class="secno">4</span> <span class="content">
 Pagination
@@ -842,7 +850,7 @@ List of Priorities
 
       <td>5
 
-      <td><a data-link-type="biblio" href="#biblio-css3-fonts">[CSS3-FONTS]</a>
+      <td><a data-link-type="biblio" href="#biblio-css3-fonts">[CSS3-FONTS]</a>, CR
 
       <td>Firefox, IE, Chrome, Opera, Prince, AH
 
@@ -856,7 +864,7 @@ List of Priorities
 
       <td>5
 
-      <td>Removed from <a data-link-type="biblio" href="#biblio-css3text">[CSS3TEXT]</a>, spec at http://www.w3.org/TR/2012/WD-css3-text-20121113/#character-alignment
+      <td><a data-link-type="biblio" href="#biblio-css4-text">[css4-text]</a>, unofficial draft
 
       <td>
 
@@ -875,6 +883,20 @@ List of Priorities
       <td>Firefox, IE, Opera, Safari, Prince, AH
 
       <td>Chrome
+
+
+
+     <tr>
+
+      <td>vertical text
+
+      <td>5
+
+      <td><a data-link-type="biblio" href="#biblio-css3-writing-modes">[css3-writing-modes]</a>, CR
+
+      <td>Chrome, IE, Opera, Safari, AH
+
+      <td>Firefox
 
 
 
@@ -922,11 +944,71 @@ List of Priorities
 
      <tr>
 
-      <td><a class="property" data-link-type="propdesc" href="#propdef-hyphenate-before">hyphenate-before</a>
+      <td>Pagination
+
+      <td>5
+
+      <td><a data-link-type="biblio" href="#biblio-css-overflow-3">[css-overflow-3]</a>, ED
+
+      <td>Prince, AH, Opera 12.16 (Presto)
+
+      <td>Chrome, Firefox, IE, Current Opera, Safari
+
+
+
+
+     <tr>
+
+      <td>Ruby
+
+      <td>4
+
+      <td><a data-link-type="biblio" href="#biblio-css-ruby-1">[css-ruby-1]</a>, WD
+
+      <td>unknown
+
+      <td>unknown
+
+
+
+
+     <tr>
+
+      <td>Emphasis Marks
+
+      <td>4
+
+      <td><a data-link-type="biblio" href="#biblio-css3-text-decor">[CSS3-TEXT-DECOR]</a>, CR
+
+      <td>Safari, partial support in Chrome, Opera
+
+      <td>Chrome, Firefox, IE
+
+
+
+     <tr>
+
+      <td>text-spacing
+
+      <td>4
+
+      <td><a data-link-type="biblio" href="#biblio-css4-text">[css4-text]</a>, unofficial draft
+
+      <td>Prince, AH, Opera 12.16 (Presto)
+
+      <td>Chrome, Firefox, IE, Current Opera, Safari
+
+
+
+
+
+     <tr>
+
+      <td>hyphenate-limit-chars
 
       <td>3
 
-      <td>Unspecified
+      <td><a data-link-type="biblio" href="#biblio-css4-text">[css4-text]</a>, unofficial draft
 
       <td>AH, Prince
 
@@ -934,27 +1016,14 @@ List of Priorities
 
 
 
-     <tr>
-
-      <td><a class="property" data-link-type="propdesc" href="#propdef-hyphenate-after">hyphenate-after</a>
-
-      <td>3
-
-      <td>Unspecified
-
-      <td>AH, Prince
-
-      <td>Chrome, Firefox, IE, Opera, Safari
-
-
 
      <tr>
 
-      <td><a class="property" data-link-type="propdesc" href="#propdef-hyphenate-lines">hyphenate-lines</a>
+      <td>hyphenate-limit-lines
 
       <td>3
 
-      <td>Unspecified
+      <td><a data-link-type="biblio" href="#biblio-css4-text">[css4-text]</a>, unofficial draft
 
       <td>AH, Prince
 
@@ -1051,148 +1120,62 @@ Hyphenation parameters
 </span><a class="self-link" href="#hyphenation-parameters"></a></h4>
 
 
-   <h5 class="heading settled" data-level="3.2.2.1" id="hyphenate_before"><span class="secno">3.2.2.1. </span><span class="content">
-<a class="property" data-link-type="propdesc" href="#propdef-hyphenate-before">hyphenate-before</a>
-</span><a class="self-link" href="#hyphenate_before"></a></h5>
+   <h5 class="heading settled" data-level="3.2.2.1" id="hyphenate_limit_chars"><span class="secno">3.2.2.1. </span><span class="content">
+hyphenate-limit-chars
+</span><a class="self-link" href="#hyphenate_limit_chars"></a></h5>
 
 
-   <p>This property specifies the minimum number of letters in a word that may be left at the end of a line when the word is hyphenated.</p>
+   <p>This property specifies three different things:</p>
 
 
-   <table class="definition propdef" data-link-for-hint="hyphenate-before">
-    <tbody>
-     <tr>
-      <th>Name:
-      <td><dfn class="css" data-dfn-type="property" data-export="" id="propdef-hyphenate-before">hyphenate-before<a class="self-link" href="#propdef-hyphenate-before"></a></dfn>
-     <tr class="value">
-      <th>Value:
-      <td class="prod"><a class="production css" data-link-type="type" href="http://dev.w3.org/csswg/css-values-3/#integer-value">&lt;integer></a>
-     <tr>
-      <th>Initial:
-      <td>2
-     <tr>
-      <th>Applies to:
-      <td>all elements
-     <tr>
-      <th>Inherited:
-      <td>yes
-     <tr>
-      <th>Percentages:
-      <td>n/a
-     <tr>
-      <th>Media:
-      <td>visual
-     <tr>
-      <th>Computed value:
-      <td>as specified
-     <tr>
-      <th>Animatable:
-      <td>no</table>
+   <ol>
+    <li data-md="">
+     <p>the shortest word that can be hyphenated.</p>
+     
+
+    <li data-md="">
+     <p>the minimum number of letters in a word that may be left at the end of a line when the word is hyphenated.</p>
+     
+
+    <li data-md="">
+     <p>the minimum number of letters in a word that may be moved to the next line when the word is hyphenated.</p>
+     
+
+</ol>
+
+   <p class="note" role="note">Note: The second parameter is called <code>hyphenation-remain-character-count</code> in <a data-link-type="biblio" href="#biblio-xslfo20">[XSLFO20]</a>, and <code>hyphenate-after</code> in Prince. The third parameter is called <code>hyphenation-push-character-count</code> in <a data-link-type="biblio" href="#biblio-xslfo20">[XSLFO20]</a>, and <code>hyphenate-before</code> in Prince.</p>
 
 
-   <p class="note" role="note">Note: Called hyphenation-remain-character-count in <a data-link-type="biblio" href="#biblio-xslfo20">[XSLFO20]</a></p>
+   <p class="issue" id="issue-66d0de53"><a class="self-link" href="#issue-66d0de53"></a> Defined in <a data-link-type="biblio" href="#biblio-css4-text">[css4-text]</a> which is not yet an official spec.</p>
 
 
-   <p class="issue" id="issue-27a16ea9"><a class="self-link" href="#issue-27a16ea9"></a> Not in a CSS spec</p>
+   <p class="issue" id="issue-f5d5acc7"><a class="self-link" href="#issue-f5d5acc7"></a> implemented only by Prince and AH.</p>
 
 
-   <p class="issue" id="issue-e1b4fc97"><a class="self-link" href="#issue-e1b4fc97"></a> implemented only by PrinceXML</p>
 
 
-   <h5 class="heading settled" data-level="3.2.2.2" id="hyphenate_after"><span class="secno">3.2.2.2. </span><span class="content">
-<a class="property" data-link-type="propdesc" href="#propdef-hyphenate-after">hyphenate-after</a>
-</span><a class="self-link" href="#hyphenate_after"></a></h5>
 
 
-   <p>This property specifies the minimum number of letters in a word that may be moved to the next line when the word is hyphenated.</p>
-
-
-   <table class="definition propdef" data-link-for-hint="hyphenate-after">
-    <tbody>
-     <tr>
-      <th>Name:
-      <td><dfn class="css" data-dfn-type="property" data-export="" id="propdef-hyphenate-after">hyphenate-after<a class="self-link" href="#propdef-hyphenate-after"></a></dfn>
-     <tr class="value">
-      <th>Value:
-      <td class="prod"><a class="production css" data-link-type="type" href="http://dev.w3.org/csswg/css-values-3/#integer-value" title="Expands to: ">&lt;integer></a>
-     <tr>
-      <th>Initial:
-      <td>2
-     <tr>
-      <th>Applies to:
-      <td>all elements
-     <tr>
-      <th>Inherited:
-      <td>yes
-     <tr>
-      <th>Percentages:
-      <td>n/a
-     <tr>
-      <th>Media:
-      <td>visual
-     <tr>
-      <th>Computed value:
-      <td>as specified
-     <tr>
-      <th>Animatable:
-      <td>no</table>
-
-
-   <p class="note" role="note">Note: Called hyphenation-push-character-count in <a data-link-type="biblio" href="#biblio-xslfo20">[XSLFO20]</a></p>
-
-
-   <p class="issue" id="issue-27a16ea90"><a class="self-link" href="#issue-27a16ea90"></a> Not in a CSS spec</p>
-
-
-   <p class="issue" id="issue-e1b4fc970"><a class="self-link" href="#issue-e1b4fc970"></a> implemented only by PrinceXML</p>
-
-
-   <h5 class="heading settled" data-level="3.2.2.3" id="hyphenate_lines"><span class="secno">3.2.2.3. </span><span class="content">
-<a class="property" data-link-type="propdesc" href="#propdef-hyphenate-lines">hyphenate-lines</a>
-</span><a class="self-link" href="#hyphenate_lines"></a></h5>
+   <h5 class="heading settled" data-level="3.2.2.2" id="hyphenate_limit_lines"><span class="secno">3.2.2.2. </span><span class="content">
+hyphenate-limit-lines
+</span><a class="self-link" href="#hyphenate_limit_lines"></a></h5>
 
 
    <p>This property specifies the maximum number of consecutive lines that may end with a hyphenated word.</p>
 
 
-   <table class="definition propdef" data-link-for-hint="hyphenate-lines">
-    <tbody>
-     <tr>
-      <th>Name:
-      <td><dfn class="css" data-dfn-type="property" data-export="" id="propdef-hyphenate-lines">hyphenate-lines<a class="self-link" href="#propdef-hyphenate-lines"></a></dfn>
-     <tr class="value">
-      <th>Value:
-      <td class="prod">no-limit <a data-link-type="grammar" href="http://dev.w3.org/csswg/css-values-3/#comb-one">|</a> <a class="production css" data-link-type="type" href="http://dev.w3.org/csswg/css-values-3/#integer-value" title="Expands to: ">&lt;integer></a>
-     <tr>
-      <th>Initial:
-      <td>no-limit
-     <tr>
-      <th>Applies to:
-      <td>all elements
-     <tr>
-      <th>Inherited:
-      <td>yes
-     <tr>
-      <th>Percentages:
-      <td>n/a
-     <tr>
-      <th>Media:
-      <td>visual
-     <tr>
-      <th>Computed value:
-      <td>as specified
-     <tr>
-      <th>Animatable:
-      <td>no</table>
+
+   <p class="note" role="note">Note: Called <code>hyphenate-limit</code> in Prince</p>
 
 
-   <p class="issue" id="issue-27a16ea91"><a class="self-link" href="#issue-27a16ea91"></a> Not in a CSS spec</p>
+   <p class="issue" id="issue-66d0de530"><a class="self-link" href="#issue-66d0de530"></a> Defined in <a data-link-type="biblio" href="#biblio-css4-text">[css4-text]</a> which is not yet an official spec.</p>
 
 
-   <p class="issue" id="issue-e1b4fc971"><a class="self-link" href="#issue-e1b4fc971"></a> implemented only by PrinceXML</p>
+
+   <p class="issue" id="issue-ce8a0154"><a class="self-link" href="#issue-ce8a0154"></a> implemented only by Prince and AH</p>
 
 
-   <h5 class="heading settled" data-level="3.2.2.4" id="hyphenation-dictionaries"><span class="secno">3.2.2.4. </span><span class="content">
+   <h5 class="heading settled" data-level="3.2.2.3" id="hyphenation-dictionaries"><span class="secno">3.2.2.3. </span><span class="content">
 Hyphenation dictionaries
 </span><a class="self-link" href="#hyphenation-dictionaries"></a></h5>
 
@@ -1264,13 +1247,13 @@ Hyphenation dictionaries
 </div>
 
 
-   <p class="issue" id="issue-27a16ea92"><a class="self-link" href="#issue-27a16ea92"></a> Not in a CSS spec</p>
+   <p class="issue" id="issue-27a16ea9"><a class="self-link" href="#issue-27a16ea9"></a> Not in a CSS spec</p>
 
 
-   <p class="issue" id="issue-e1b4fc972"><a class="self-link" href="#issue-e1b4fc972"></a> implemented only by PrinceXML</p>
+   <p class="issue" id="issue-e1b4fc97"><a class="self-link" href="#issue-e1b4fc97"></a> implemented only by PrinceXML</p>
 
 
-   <h5 class="heading settled" data-level="3.2.2.5" id="hyphenation-exception-list"><span class="secno">3.2.2.5. </span><span class="content">
+   <h5 class="heading settled" data-level="3.2.2.4" id="hyphenation-exception-list"><span class="secno">3.2.2.4. </span><span class="content">
 Hyphenation exception list
 </span><a class="self-link" href="#hyphenation-exception-list"></a></h5>
 
@@ -1290,15 +1273,17 @@ Kabba-list
 </pre>
 
 
-   <p class="note" role="note">Note: Called hyphenation-exceptions in <a data-link-type="biblio" href="#biblio-xslfo20">[XSLFO20]</a>
-Issue: Not in a CSS spec</p>
+   <p class="note" role="note">Note: Called hyphenation-exceptions in <a data-link-type="biblio" href="#biblio-xslfo20">[XSLFO20]</a></p>
+
+
+   <p class="issue" id="issue-27a16ea90"><a class="self-link" href="#issue-27a16ea90"></a> Not in a CSS spec</p>
 
 
    <p class="issue" id="issue-d0d69509"><a class="self-link" href="#issue-d0d69509"></a> Not implemented</p>
 
 
 
-   <h5 class="heading settled" data-level="3.2.2.6" id="min_length_of_last_line"><span class="secno">3.2.2.6. </span><span class="content">
+   <h5 class="heading settled" data-level="3.2.2.5" id="min_length_of_last_line"><span class="secno">3.2.2.5. </span><span class="content">
 min-length-of-last-line
 </span><a class="self-link" href="#min_length_of_last_line"></a></h5>
 
@@ -1337,7 +1322,7 @@ min-length-of-last-line
    <p class="note" role="note">Note: This property is from <a data-link-type="biblio" href="#biblio-xslfo20">[XSLFO20]</a></p>
 
 
-   <p class="issue" id="issue-27a16ea93"><a class="self-link" href="#issue-27a16ea93"></a> Not in a CSS spec</p>
+   <p class="issue" id="issue-27a16ea91"><a class="self-link" href="#issue-27a16ea91"></a> Not in a CSS spec</p>
 
 
    <p class="issue" id="issue-d0d695090"><a class="self-link" href="#issue-d0d695090"></a> Not implemented</p>
@@ -1347,6 +1332,31 @@ min-length-of-last-line
    <h3 class="heading settled" data-level="3.3" id="a18n"><span class="secno">3.3. </span><span class="content">
 East Asian Language Support
 </span><a class="self-link" href="#a18n"></a></h3>
+
+
+   <h4 class="heading settled" data-level="3.3.1" id="emphasis-marks"><span class="secno">3.3.1. </span><span class="content">
+Emphasis Marks
+</span><a class="self-link" href="#emphasis-marks"></a></h4>
+
+
+   <p class="issue" id="issue-83f59f97"><a class="self-link" href="#issue-83f59f97"></a> not supported in Firefox and IE</p>
+
+
+
+   <h4 class="heading settled" data-level="3.3.2" id="ruby"><span class="secno">3.3.2. </span><span class="content">
+Ruby
+</span><a class="self-link" href="#ruby"></a></h4>
+
+
+   <p class="issue" id="issue-6f561c44"><a class="self-link" href="#issue-6f561c44"></a> Details needed on level of support in different browsers, and priorities for implementing features</p>
+
+
+   <h4 class="heading settled" data-level="3.3.3" id="text_spacing"><span class="secno">3.3.3. </span><span class="content">
+text-spacing
+</span><a class="self-link" href="#text_spacing"></a></h4>
+
+
+   <p class="issue" id="issue-10b2e175"><a class="self-link" href="#issue-10b2e175"></a> <a data-link-type="biblio" href="#biblio-css4-text">[css4-text]</a> is not yet an official spec</p>
 
 
 
@@ -1492,10 +1502,8 @@ Character-based alignment
 </div>
 
 
-   <p class="issue" id="issue-570314ed"><a class="self-link" href="#issue-570314ed"></a> This feature was removed from <a data-link-type="biblio" href="#biblio-css3text">[CSS3TEXT]</a>.</p>
+   <p class="issue" id="issue-66d0de531"><a class="self-link" href="#issue-66d0de531"></a> Defined in <a data-link-type="biblio" href="#biblio-css4-text">[css4-text]</a> which is not yet an official spec.</p>
 
-
-   <p class="issue" id="issue-fcc45103"><a class="self-link" href="#issue-fcc45103"></a> Action: Add to CSS Text Level 4</p>
 
 
 
@@ -1549,12 +1557,9 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
   <h2 class="no-num heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="indexlist">
-   <li>hyphenate-after, <a href="#propdef-hyphenate-after">3.2.2.2</a>
-   <li>hyphenate-before, <a href="#propdef-hyphenate-before">3.2.2.1</a>
-   <li>hyphenate-lines, <a href="#propdef-hyphenate-lines">3.2.2.3</a>
-   <li>hyphenate-patterns, <a href="#propdef-hyphenate-patterns">3.2.2.4</a>
+   <li>hyphenate-patterns, <a href="#propdef-hyphenate-patterns">3.2.2.3</a>
    <li>merge-sequential-page-numbers, <a href="#propdef-merge-sequential-page-numbers">5.2</a>
-   <li>min-length-of-last-line, <a href="#propdef-min-length-of-last-line">3.2.2.6</a>
+   <li>min-length-of-last-line, <a href="#propdef-min-length-of-last-line">3.2.2.5</a>
   </ul>
   <h3 class="no-num heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="indexlist">
@@ -1574,7 +1579,6 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
     </ul>
    <li><a data-link-type="biblio" href="#biblio-css-values-3">[css-values-3]</a> defines the following terms:
     <ul>
-     <li><a href="http://dev.w3.org/csswg/css-values-3/#integer-value">&lt;integer></a>
      <li><a href="http://dev.w3.org/csswg/css-values-3/#length-value">&lt;length></a>
      <li><a href="http://dev.w3.org/csswg/css-values-3/#comb-one">|</a>
     </ul>
@@ -1595,12 +1599,22 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
   </dl>
   <h3 class="no-num heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
+   <dt id="biblio-css3-text-decor"><a class="self-link" href="#biblio-css3-text-decor"></a>[CSS3-TEXT-DECOR]
+   <dd>Elika Etemad; Koji Ishii. <a href="http://www.w3.org/TR/css-text-decor-3/">CSS Text Decoration Module Level 3</a>. 1 August 2013. CR. URL: <a href="http://www.w3.org/TR/css-text-decor-3/">http://www.w3.org/TR/css-text-decor-3/</a>
    <dt id="biblio-css3text"><a class="self-link" href="#biblio-css3text"></a>[CSS3TEXT]
    <dd>Elika Etemad; Koji Ishii. <a href="http://www.w3.org/TR/css-text-3/">CSS Text Module Level 3</a>. 10 October 2013. LCWD. URL: <a href="http://www.w3.org/TR/css-text-3/">http://www.w3.org/TR/css-text-3/</a>
+   <dt id="biblio-css-overflow-3"><a class="self-link" href="#biblio-css-overflow-3"></a>[CSS-OVERFLOW-3]
+   <dd>David Baron. <a href="http://www.w3.org/TR/css-overflow-3/">CSS Overflow Module Level 3</a>. 18 April 2013. WD. URL: <a href="http://www.w3.org/TR/css-overflow-3/">http://www.w3.org/TR/css-overflow-3/</a>
+   <dt id="biblio-css-ruby-1"><a class="self-link" href="#biblio-css-ruby-1"></a>[CSS-RUBY-1]
+   <dd>Elika Etemad; Koji Ishii. <a href="http://www.w3.org/TR/css-ruby-1/">CSS Ruby Layout Module Level 1</a>. 5 August 2014. WD. URL: <a href="http://www.w3.org/TR/css-ruby-1/">http://www.w3.org/TR/css-ruby-1/</a>
    <dt id="biblio-css3-content"><a class="self-link" href="#biblio-css3-content"></a>[CSS3-CONTENT]
    <dd>Ian Hickson. <a href="http://www.w3.org/TR/css3-content">CSS3 Generated and Replaced Content Module</a>. 14 May 2003. WD. URL: <a href="http://www.w3.org/TR/css3-content">http://www.w3.org/TR/css3-content</a>
    <dt id="biblio-css3-fonts"><a class="self-link" href="#biblio-css3-fonts"></a>[CSS3-FONTS]
    <dd>John Daggett. <a href="http://www.w3.org/TR/css3-fonts/">CSS Fonts Module Level 3</a>. 11 December 2012. WD. URL: <a href="http://www.w3.org/TR/css3-fonts/">http://www.w3.org/TR/css3-fonts/</a>
+   <dt id="biblio-css3-writing-modes"><a class="self-link" href="#biblio-css3-writing-modes"></a>[CSS3-WRITING-MODES]
+   <dd>Elika Etemad; Koji Ishii. <a href="http://www.w3.org/TR/css-writing-modes-3/">CSS Writing Modes Level 3</a>. 20 March 2014. CR. URL: <a href="http://www.w3.org/TR/css-writing-modes-3/">http://www.w3.org/TR/css-writing-modes-3/</a>
+   <dt id="biblio-css4-text"><a class="self-link" href="#biblio-css4-text"></a>[CSS4-TEXT]
+   <dd>fantasai; Koji Ishii; Alan Stearns. <a href="http://dev.w3.org/csswg/css-text-4/">CSS Text Module Level 4</a>. ER. URL: <a href="http://dev.w3.org/csswg/css-text-4/">http://dev.w3.org/csswg/css-text-4/</a>
    <dt id="biblio-dpub-latinreq"><a class="self-link" href="#biblio-dpub-latinreq"></a>[DPUB-LATINREQ]
    <dd>Dave Cramer. <a href="http://www.w3.org/TR/dpub-latinreq/">Requirements for Latin Text Layout and Pagination</a>. 30 September 2014. WD. URL: <a href="http://www.w3.org/TR/dpub-latinreq/">http://www.w3.org/TR/dpub-latinreq/</a>
    <dt id="biblio-xslfo20"><a class="self-link" href="#biblio-xslfo20"></a>[XSLFO20]
@@ -1620,36 +1634,6 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
      <th scope="col">Animatable
      <th scope="col">Computed value
    <tbody>
-    <tr>
-     <th scope="row"><a class="css" data-link-type="property" href="#propdef-hyphenate-before">hyphenate-before</a>
-     <td>&lt;integer>
-     <td>2
-     <td>all elements
-     <td>yes
-     <td>n/a
-     <td>visual
-     <td>no
-     <td>as specified
-    <tr>
-     <th scope="row"><a class="css" data-link-type="property" href="#propdef-hyphenate-after">hyphenate-after</a>
-     <td>&lt;integer>
-     <td>2
-     <td>all elements
-     <td>yes
-     <td>n/a
-     <td>visual
-     <td>no
-     <td>as specified
-    <tr>
-     <th scope="row"><a class="css" data-link-type="property" href="#propdef-hyphenate-lines">hyphenate-lines</a>
-     <td>no-limit | &lt;integer>
-     <td>no-limit
-     <td>all elements
-     <td>yes
-     <td>n/a
-     <td>visual
-     <td>no
-     <td>as specified
     <tr>
      <th scope="row"><a class="css" data-link-type="property" href="#propdef-hyphenate-patterns">hyphenate-patterns</a>
      <td>none | url(patterns-url)
@@ -1685,22 +1669,23 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
   <div style="counter-reset:issue">
    <div class="issue"> Not supported in Safari<a href="#issue-a7dbef9c"> ↵ </a></div>
    <div class="issue"> <a class="property" data-link-type="propdesc" href="http://dev.w3.org/csswg/css-text-3/#propdef-hyphens">hyphens</a> property not supported in Chrome: https://code.google.com/p/chromium/issues/detail?id=47083<a href="#issue-85d128c4"> ↵ </a></div>
+   <div class="issue"> Defined in <a data-link-type="biblio" href="#biblio-css4-text">[css4-text]</a> which is not yet an official spec.<a href="#issue-66d0de53"> ↵ </a></div>
+   <div class="issue"> implemented only by Prince and AH.<a href="#issue-f5d5acc7"> ↵ </a></div>
+   <div class="issue"> Defined in <a data-link-type="biblio" href="#biblio-css4-text">[css4-text]</a> which is not yet an official spec.<a href="#issue-66d0de530"> ↵ </a></div>
+   <div class="issue"> implemented only by Prince and AH<a href="#issue-ce8a0154"> ↵ </a></div>
    <div class="issue"> Not in a CSS spec<a href="#issue-27a16ea9"> ↵ </a></div>
    <div class="issue"> implemented only by PrinceXML<a href="#issue-e1b4fc97"> ↵ </a></div>
    <div class="issue"> Not in a CSS spec<a href="#issue-27a16ea90"> ↵ </a></div>
-   <div class="issue"> implemented only by PrinceXML<a href="#issue-e1b4fc970"> ↵ </a></div>
-   <div class="issue"> Not in a CSS spec<a href="#issue-27a16ea91"> ↵ </a></div>
-   <div class="issue"> implemented only by PrinceXML<a href="#issue-e1b4fc971"> ↵ </a></div>
-   <div class="issue"> Not in a CSS spec<a href="#issue-27a16ea92"> ↵ </a></div>
-   <div class="issue"> implemented only by PrinceXML<a href="#issue-e1b4fc972"> ↵ </a></div>
    <div class="issue"> Not implemented<a href="#issue-d0d69509"> ↵ </a></div>
-   <div class="issue"> Not in a CSS spec<a href="#issue-27a16ea93"> ↵ </a></div>
+   <div class="issue"> Not in a CSS spec<a href="#issue-27a16ea91"> ↵ </a></div>
    <div class="issue"> Not implemented<a href="#issue-d0d695090"> ↵ </a></div>
+   <div class="issue"> not supported in Firefox and IE<a href="#issue-83f59f97"> ↵ </a></div>
+   <div class="issue"> Details needed on level of support in different browsers, and priorities for implementing features<a href="#issue-6f561c44"> ↵ </a></div>
+   <div class="issue"> <a data-link-type="biblio" href="#biblio-css4-text">[css4-text]</a> is not yet an official spec<a href="#issue-10b2e175"> ↵ </a></div>
    <div class="issue"> <a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#funcdef-target-counter">target-counter()</a> is not implemented in browsers<a href="#issue-c6f7555b"> ↵ </a></div>
    <div class="issue"> <a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#funcdef-target-counters">target-counters()</a> is not implemented in browsers<a href="#issue-9406ab50"> ↵ </a></div>
    <div class="issue"> <a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#target-text-function">target-text()</a> is not implemented in browsers<a href="#issue-3864b94a"> ↵ </a></div>
    <div class="issue"> Not in a CSS spec.<a href="#issue-622d4c4f"> ↵ </a></div>
-   <div class="issue"> This feature was removed from <a data-link-type="biblio" href="#biblio-css3text">[CSS3TEXT]</a>.<a href="#issue-570314ed"> ↵ </a></div>
-   <div class="issue"> Action: Add to CSS Text Level 4<a href="#issue-fcc45103"> ↵ </a></div>
+   <div class="issue"> Defined in <a data-link-type="biblio" href="#biblio-css4-text">[css4-text]</a> which is not yet an official spec.<a href="#issue-66d0de531"> ↵ </a></div>
   </div></body>
 </html>
