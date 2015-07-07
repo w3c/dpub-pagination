@@ -563,6 +563,55 @@ span.issue, span.note {
   <meta content="Bikeshed 1.0.0" name="generator">
   <style type="text/css">
 
+body { 
+counter-reset: exampleno figure issue polyfill action;
+}
+
+div.polyfill, div.action {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.polyfill > p:first-child, .action > p:first-child {
+	margin-top: 0;
+}
+
+
+.polyfill, .action {
+	padding: .5em;
+	/* padding: .5rem; /* proposed unit in css3-values */
+	border-left-width: .5em;
+	/* border-left-width: .5rem; /* proposed unit in css3-values */
+	border-left-style: solid;
+}
+
+
+.action {
+	border-color: #E05252;
+	background: #FBE9E9;
+	counter-increment: action;
+}
+
+.action:before {
+	content: "Action " counter(action);
+	padding-right: 1em;
+	text-transform: uppercase;
+	color: #E05252;    
+}
+
+.polyfill {
+	border-color: #52E052;
+	background: #E9FBE9;
+}
+
+.polyfill:before {
+	content: "Polyfill ";
+	padding-right: 1em;
+	text-transform: uppercase;
+	color: #E05252;    
+}
+
+
 blockquote p { font-style: italic; }
 p.source { text-align: right; font-style: normal }
 
@@ -904,7 +953,7 @@ Features requiring implementation
       <th>Not Implemented
       
 
-      <th>Note
+      <th>Polyfill?
       
 
 
@@ -922,7 +971,7 @@ Features requiring implementation
 
       <td>Safari ("<a href="https://twitter.com/grorgwork/status/616342681329885184">high on their list</a>" but <a href="https://bugs.webkit.org/show_bug.cgi?id=134332">several</a> <a href="https://bugs.webkit.org/show_bug.cgi?id=96982">unassigned</a> bugs
 
-      <td>
+      <td><a href="#font-feature-settings-polyfill">No</a>
 
 
 
@@ -938,7 +987,7 @@ Features requiring implementation
 
       <td>Chrome (<a href="https://code.google.com/p/chromium/issues/detail?id=47083">bug filed</a> but there does not appear to be activity)
 
-      <td>
+      <td><a href="#hyphens-polyfill">Yes</a>
 
 
 
@@ -970,7 +1019,7 @@ Features requiring implementation
 
       <td>Chrome, Firefox, Opera Prince, AH
 
-      <td>
+      <td><a href="#regions-polyfill">Yes</a>
 
 
 
@@ -987,7 +1036,7 @@ Features requiring implementation
 
       <td>unknown
 
-      <td>
+      <td><a href="#ruby-polyfill">Yes</a>
 
 
 
@@ -1396,6 +1445,11 @@ font-feature-settings
    <p class="note" role="note">Note: support for this would help with ligatures</p>
 
 
+   <div class="polyfill" id="font-feature-settings-polyfill">
+Can be polyfilled by subsetting fonts, but this does not seem to be viable in a production environment. 
+</div>
+
+
 
    <h4 class="heading settled" data-level="3.1.2" id="font-metric-api"><span class="secno">3.1.2. </span><span class="content">
 Font Metric API
@@ -1421,6 +1475,25 @@ The hyphens property
 
 
    <p class="issue" id="issue-85d128c4"><a class="self-link" href="#issue-85d128c4"></a> <a class="property" data-link-type="propdesc" href="http://dev.w3.org/csswg/css-text-3/#propdef-hyphens">hyphens</a> property not supported in Chrome: https://code.google.com/p/chromium/issues/detail?id=47083</p>
+
+
+   <div class="polyfill" id="hyphens-polyfill">
+
+
+    <ul>
+     <li data-md="">
+      <p>https://github.com/mnater/hyphenator</p>
+      
+
+
+     <li data-md="">
+      <p>https://github.com/bramstein/Hypher</p>
+      
+</ul>
+
+    <p>Some polyfills may pollute the source document with discretionary hyphens, causing difficulty for search and other functions.</p>
+
+</div>
 
 
    <h4 class="heading settled" data-level="3.2.2" id="hyphenation-parameters"><span class="secno">3.2.2. </span><span class="content">
@@ -1666,6 +1739,14 @@ Ruby
 
 
    <p class="issue" id="issue-fa46a009"><a class="self-link" href="#issue-fa46a009"></a> is the spec stable?</p>
+
+
+   <div class="polyfill" id="ruby-polyfill">
+
+
+    <p><a href="http://www.useragentman.com/blog/2010/10/29/cross-browser-html5-ruby-annotations-using-css/">CSS stylesheet polyfill</a> for Ruby</p>
+
+</div>
 
 
    <h4 class="heading settled" data-level="3.3.3" id="text-spacing"><span class="secno">3.3.3. </span><span class="content">
@@ -1981,6 +2062,11 @@ Regions
 
 
    <p class="issue" id="issue-a7ff44ed"><a class="self-link" href="#issue-a7ff44ed"></a> not implemented in Chrome, Firefox, and Opera</p>
+
+
+   <div class="polyfill" id="regions-polyfill">
+<a href="https://github.com/FremyCompany/css-regions-polyfill">CSS Regions Polyfill</a> by François Remy
+</div>
 
 
    <h3 class="heading settled" data-level="8.2" id="line-grid"><span class="secno">8.2. </span><span class="content">
