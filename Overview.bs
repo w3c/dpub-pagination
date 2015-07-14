@@ -316,6 +316,14 @@ Fonts
 
 Note: [[CSS3-FONTS]] includes mechanisms for selecting alternate glyphs from open-type fonts. See http://www.w3.org/TR/css-fonts-3/#font-variant-alternates-prop
 
+<h3 id="ligatures">
+Ligatures
+</h3>
+
+<h3 id="font-variants">
+Font variants and glyph selection
+</h3>
+
 
 
 
@@ -776,8 +784,32 @@ continued lines
 
 
 <h2 id="lists">
-Lists
+Lists, Indexes, and Tables of Contents
 </h2>
+
+<h3 id="indexes">
+Indexes
+</h3>
+
+<h4 id="collapsing-page-ranges">
+Collapsing Page Ranges
+</h4>
+
+When generating indexes or referring to page ranges, one often ends up with duplicated or sequential numbers.
+
+<div class="example">
+<pre>
+1, 3, 3, 7, 8, 9, 10, 16
+</pre>
+
+This should be formatted as:
+<pre>
+1, 3, 7–10, 16
+</pre>
+
+with duplicates removed and consecutive numbers replaced by ranges.
+
+</div>
 
 
 <h2 id="footnotes">
@@ -922,13 +954,17 @@ TK
 <h3 id="numbering-equations">Numbering equations
 </h3>
 
-TK
+Equations are often numbered. In the figure below, note that the equations are centered horizontally, the equation number is flush right, and the equation number is centered vertically relative to the equation. 
+
+<figure id="fig-numbering-equations"> <img src="images/Maxwell.png" width="480" alt="Excerpt from Wikipedia article on differential forms, showing Maxwell’s equations in two lines, centered horizontally, with equation number aligned to the right margin and vertically centered" /> <figcaption> Equation Number </figcaption> </figure> 
+
+Note: The alignment in this figure was implemented with [[css-flexbox-1]].
 
 <h3 id="aligning-equations">
 Aligning equations
 </h3>
 
-Many publishers require that all equations on a page align on the equals sign.
+Some publishers require that all equations on a page align on the equals sign.
 
 <pre>
     x + 3z = 7 + 2y
@@ -942,6 +978,9 @@ extend for several lines
    10 + 2y = 3x + 2z
 </pre>
 
+Note: the alignment is generally scoped to a page or (more likely) a defined set of equations. 
+
+Note: this is similar to how numbers in a table column may align on a decimal point or other character. 
 
 <h2 id="columns">
 	Columns
