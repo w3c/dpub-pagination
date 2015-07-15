@@ -476,6 +476,12 @@ Text may be set in a mix of uppercase and lowercase, exclusively in upper- or lo
 Swashes and Stylistic Alternates
 </h4>
 
+<div class="example">
+<figure>
+<img src="images/swsh.png" alt="two identical headings, the top without swashes and the bottom with swashes" width="480"/>
+<figcaption>Bickham Script Pro without (top) and with (bottom) swashes</figcaption> </figure>
+</div>
+
 
 
 <h2 id="initial-capitals">
