@@ -310,20 +310,6 @@ Greedy
 <h5 id="adobe-indesign">Adobe (InDesign)
 </h5>
 
-<h2 id="fonts">
-Fonts
-</h2>
-
-Note: [[CSS3-FONTS]] includes mechanisms for selecting alternate glyphs from open-type fonts. See http://www.w3.org/TR/css-fonts-3/#font-variant-alternates-prop
-
-<h3 id="ligatures">
-Ligatures
-</h3>
-
-<h3 id="font-variants">
-Font variants and glyph selection
-</h3>
-
 
 
 
@@ -429,6 +415,66 @@ Issue: This is an example where the page position of an element determines its c
 <h2 id="paragraphs-and-indentation">
 Paragraphs and indentation
 </h2>
+
+
+
+<h2 id="fonts">
+Fonts
+</h2>
+
+Texts are built from letters. Modern typesetting systems must be able to choose from hundreds or thousands of glyphs depending on the circumstances. 
+
+<h3 id="ligatures">
+Ligatures
+</h3>
+
+Two or more letters may be better displayed as a single glyph: 
+
+<div class="example">
+Example TK
+</div>
+
+
+
+<h3 id="numbers">
+Numbers and math
+</h3>
+
+<h4 id="lining-figures">
+Lining, oldstyle, and tabular figures
+</h4>
+
+Traditionally, text set in mixed-case type should use old-style figures. Text set in all caps should use lining figures. Columns of numbers (such as in tables) are clearer using tabular figures, which are of uniform width. 
+
+<div class="example">
+<figure>
+<img src="images/onum.png" alt="excerpt from Moby-Dick showing old-style figures" width="480"/>
+<figcaption>Old-style figures in text</figcaption> </figure>
+
+<figure>
+<img src="images/lnum.png" alt="excerpt from Moby-Dick showing lining figures" width="480"/>
+<figcaption>Lining figures in headline</figcaption> </figure>
+
+
+</div>
+
+
+
+
+
+<h3 id="alternate-forms">
+Alternate forms
+</h3>
+
+<h4>
+Caps
+</h4>
+
+Text may be set in a mix of uppercase and lowercase, exclusively in upper- or lowercase, in small caps, in caps/small caps, etc. In many cases this is purely a design choice, and the displayed text may use a different case than the source document. 
+
+<h4>
+Swashes and Stylistic Alternates
+</h4>
 
 
 

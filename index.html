@@ -580,7 +580,7 @@ p.source { text-align: right; font-style: normal }
    <h1 class="p-name no-ref" id="title">Requirements for Latin Text Layout and Pagination</h1>
   
    <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft,
-    <time class="dt-updated" datetime="2015-07-14">14 July 2015</time></span></h2>
+    <time class="dt-updated" datetime="2015-07-15">15 July 2015</time></span></h2>
   
    <div data-fill-with="spec-metadata">
     <dl>
@@ -603,7 +603,7 @@ p.source { text-align: right; font-style: normal }
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" src="https://licensebuttons.net/p/zero/1.0/80x15.png"></a>
 To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 14 July 2015,
+In addition, as of 15 July 2015,
 the editors have made this specification available under the
 <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
@@ -705,43 +705,59 @@ Greedy
          </ul>
        </ul>
      </ul>
-    <li><a href="#fonts"><span class="secno">5</span> <span class="content">
-Fonts
-</span></a>
-     <ul class="toc">
-      <li><a href="#ligatures"><span class="secno">5.1</span> <span class="content">
-Ligatures
-</span></a>
-      <li><a href="#font-variants"><span class="secno">5.2</span> <span class="content">
-Font variants and glyph selection
-</span></a>
-     </ul>
-    <li><a href="#paginating-single-column-text"><span class="secno">6</span> <span class="content">
+    <li><a href="#paginating-single-column-text"><span class="secno">5</span> <span class="content">
 Paginating Single-Column Text
 </span></a>
      <ul class="toc">
-      <li><a href="#widows"><span class="secno">6.1</span> <span class="content">
+      <li><a href="#widows"><span class="secno">5.1</span> <span class="content">
 Widows
 </span></a>
-      <li><a href="#orphans"><span class="secno">6.2</span> <span class="content">
+      <li><a href="#orphans"><span class="secno">5.2</span> <span class="content">
 Orphans
 </span></a>
-      <li><a href="#constraints-on-page-depth"><span class="secno">6.3</span> <span class="content">
+      <li><a href="#constraints-on-page-depth"><span class="secno">5.3</span> <span class="content">
 Constraints on page depth
 </span></a>
-      <li><a href="#facing-pages"><span class="secno">6.4</span> <span class="content">
+      <li><a href="#facing-pages"><span class="secno">5.4</span> <span class="content">
 Facing Pages
 </span></a>
-      <li><a href="#recto-and-verso-hyphens"><span class="secno">6.5</span> <span class="content">
+      <li><a href="#recto-and-verso-hyphens"><span class="secno">5.5</span> <span class="content">
 Recto and Verso Hyphens
 </span></a>
-      <li><a href="#space-breaks-and-ornaments"><span class="secno">6.6</span> <span class="content">
+      <li><a href="#space-breaks-and-ornaments"><span class="secno">5.6</span> <span class="content">
 Space Breaks and Ornaments
 </span></a>
      </ul>
-    <li><a href="#paragraphs-and-indentation"><span class="secno">7</span> <span class="content">
+    <li><a href="#paragraphs-and-indentation"><span class="secno">6</span> <span class="content">
 Paragraphs and indentation
 </span></a>
+    <li><a href="#fonts"><span class="secno">7</span> <span class="content">
+Fonts
+</span></a>
+     <ul class="toc">
+      <li><a href="#ligatures"><span class="secno">7.1</span> <span class="content">
+Ligatures
+</span></a>
+      <li><a href="#numbers"><span class="secno">7.2</span> <span class="content">
+Numbers and math
+</span></a>
+       <ul class="toc">
+        <li><a href="#lining-figures"><span class="secno">7.2.1</span> <span class="content">
+Lining, oldstyle, and tabular figures
+</span></a>
+       </ul>
+      <li><a href="#alternate-forms"><span class="secno">7.3</span> <span class="content">
+Alternate forms
+</span></a>
+       <ul class="toc">
+        <li><a href="#caps"><span class="secno">7.3.1</span> <span class="content">
+Caps
+</span></a>
+        <li><a href="#swashes-and-stylistic-alternates"><span class="secno">7.3.2</span> <span class="content">
+Swashes and Stylistic Alternates
+</span></a>
+       </ul>
+     </ul>
     <li><a href="#initial-capitals"><span class="secno">8</span> <span class="content">
 Initial Capitals
 </span></a>
@@ -1333,28 +1349,10 @@ Greedy
 </span><a class="self-link" href="#adobe-indesign"></a></h5>
 
 
-   <h2 class="heading settled" data-level="5" id="fonts"><span class="secno">5. </span><span class="content">
-Fonts
-</span><a class="self-link" href="#fonts"></a></h2>
-
-
-   <p class="note" role="note">Note: <a data-link-type="biblio" href="#biblio-css3-fonts">[CSS3-FONTS]</a> includes mechanisms for selecting alternate glyphs from open-type fonts. See http://www.w3.org/TR/css-fonts-3/#font-variant-alternates-prop</p>
-
-
-   <h3 class="heading settled" data-level="5.1" id="ligatures"><span class="secno">5.1. </span><span class="content">
-Ligatures
-</span><a class="self-link" href="#ligatures"></a></h3>
-
-
-   <h3 class="heading settled" data-level="5.2" id="font-variants"><span class="secno">5.2. </span><span class="content">
-Font variants and glyph selection
-</span><a class="self-link" href="#font-variants"></a></h3>
 
 
 
-
-
-   <h2 class="heading settled" data-level="6" id="paginating-single-column-text"><span class="secno">6. </span><span class="content">
+   <h2 class="heading settled" data-level="5" id="paginating-single-column-text"><span class="secno">5. </span><span class="content">
 Paginating Single-Column Text
 </span><a class="self-link" href="#paginating-single-column-text"></a></h2>
 
@@ -1363,7 +1361,7 @@ Paginating Single-Column Text
 
 
 
-   <h3 class="heading settled" data-level="6.1" id="widows"><span class="secno">6.1. </span><span class="content">
+   <h3 class="heading settled" data-level="5.1" id="widows"><span class="secno">5.1. </span><span class="content">
 Widows
 </span><a class="self-link" href="#widows"></a></h3>
 
@@ -1398,7 +1396,7 @@ Widows
 
 
 
-   <h3 class="heading settled" data-level="6.2" id="orphans"><span class="secno">6.2. </span><span class="content">
+   <h3 class="heading settled" data-level="5.2" id="orphans"><span class="secno">5.2. </span><span class="content">
 Orphans
 </span><a class="self-link" href="#orphans"></a></h3>
 
@@ -1411,7 +1409,7 @@ Orphans
    <p class="issue" id="issue-251abe22"><a class="self-link" href="#issue-251abe22"></a> CSS does not currently address the second meaning of orphan.</p>
 
 
-   <h3 class="heading settled" data-level="6.3" id="constraints-on-page-depth"><span class="secno">6.3. </span><span class="content">
+   <h3 class="heading settled" data-level="5.3" id="constraints-on-page-depth"><span class="secno">5.3. </span><span class="content">
 Constraints on page depth
 </span><a class="self-link" href="#constraints-on-page-depth"></a></h3>
 
@@ -1426,7 +1424,7 @@ Constraints on page depth
    <p>Running long or short may affect the space between the last line of text and a page footer or folio. Most publishers prefer  footers to be in a fixed position. If, instead, the space between the last line of text and the footer is fixed, the footer is said to "bounce."</p>
 
 
-   <h3 class="heading settled" data-level="6.4" id="facing-pages"><span class="secno">6.4. </span><span class="content">
+   <h3 class="heading settled" data-level="5.4" id="facing-pages"><span class="secno">5.4. </span><span class="content">
 Facing Pages
 </span><a class="self-link" href="#facing-pages"></a></h3>
 
@@ -1450,7 +1448,7 @@ When aligning facing pages will make some other issue worse
 </ol>
 
 
-   <h3 class="heading settled" data-level="6.5" id="recto-and-verso-hyphens"><span class="secno">6.5. </span><span class="content">
+   <h3 class="heading settled" data-level="5.5" id="recto-and-verso-hyphens"><span class="secno">5.5. </span><span class="content">
 Recto and Verso Hyphens
 </span><a class="self-link" href="#recto-and-verso-hyphens"></a></h3>
 
@@ -1459,7 +1457,7 @@ Recto and Verso Hyphens
 
 
 
-   <h3 class="heading settled" data-level="6.6" id="space-breaks-and-ornaments"><span class="secno">6.6. </span><span class="content">
+   <h3 class="heading settled" data-level="5.6" id="space-breaks-and-ornaments"><span class="secno">5.6. </span><span class="content">
 Space Breaks and Ornaments
 </span><a class="self-link" href="#space-breaks-and-ornaments"></a></h3>
 
@@ -1493,9 +1491,86 @@ Space Breaks and Ornaments
 
 
 
-   <h2 class="heading settled" data-level="7" id="paragraphs-and-indentation"><span class="secno">7. </span><span class="content">
+   <h2 class="heading settled" data-level="6" id="paragraphs-and-indentation"><span class="secno">6. </span><span class="content">
 Paragraphs and indentation
 </span><a class="self-link" href="#paragraphs-and-indentation"></a></h2>
+
+
+
+
+   <h2 class="heading settled" data-level="7" id="fonts"><span class="secno">7. </span><span class="content">
+Fonts
+</span><a class="self-link" href="#fonts"></a></h2>
+
+
+   <p>Texts are built from letters. Modern typesetting systems must be able to choose from hundreds or thousands of glyphs depending on the circumstances.</p>
+
+
+   <h3 class="heading settled" data-level="7.1" id="ligatures"><span class="secno">7.1. </span><span class="content">
+Ligatures
+</span><a class="self-link" href="#ligatures"></a></h3>
+
+
+   <p>Two or more letters may be better displayed as a single glyph:</p>
+
+
+   <div class="example" id="example-21a6c3ca"><a class="self-link" href="#example-21a6c3ca"></a>
+Example TK
+</div>
+
+
+
+
+   <h3 class="heading settled" data-level="7.2" id="numbers"><span class="secno">7.2. </span><span class="content">
+Numbers and math
+</span><a class="self-link" href="#numbers"></a></h3>
+
+
+   <h4 class="heading settled" data-level="7.2.1" id="lining-figures"><span class="secno">7.2.1. </span><span class="content">
+Lining, oldstyle, and tabular figures
+</span><a class="self-link" href="#lining-figures"></a></h4>
+
+
+   <p>Traditionally, text set in mixed-case type should use old-style figures. Text set in all caps should use lining figures. Columns of numbers (such as in tables) are clearer using tabular figures, which are of uniform width.</p>
+
+
+   <div class="example" id="example-889ebc06"><a class="self-link" href="#example-889ebc06"></a>
+
+    <figure>
+<img alt="excerpt from Moby-Dick showing old-style figures" src="images/onum.png" width="480">
+
+     <figcaption>Old-style figures in text</figcaption> </figure>
+
+
+    <figure>
+<img alt="excerpt from Moby-Dick showing lining figures" src="images/lnum.png" width="480">
+
+     <figcaption>Lining figures in headline</figcaption> </figure>
+
+
+</div>
+
+
+
+
+
+
+   <h3 class="heading settled" data-level="7.3" id="alternate-forms"><span class="secno">7.3. </span><span class="content">
+Alternate forms
+</span><a class="self-link" href="#alternate-forms"></a></h3>
+
+
+   <h4 class="heading settled" data-level="7.3.1" id="caps"><span class="secno">7.3.1. </span><span class="content">
+Caps
+</span><a class="self-link" href="#caps"></a></h4>
+
+
+   <p>Text may be set in a mix of uppercase and lowercase, exclusively in upper- or lowercase, in small caps, in caps/small caps, etc. In many cases this is purely a design choice, and the displayed text may use a different case than the source document.</p>
+
+
+   <h4 class="heading settled" data-level="7.3.2" id="swashes-and-stylistic-alternates"><span class="secno">7.3.2. </span><span class="content">
+Swashes and Stylistic Alternates
+</span><a class="self-link" href="#swashes-and-stylistic-alternates"></a></h4>
 
 
 
@@ -2715,12 +2790,12 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
    <li>bleed, <a href="#bleed">3.3</a>
    <li>drop cap, <a href="#drop-cap">8.1</a>
    <li>Foldouts, <a href="#foldouts">3.2</a>
-   <li>orphan, <a href="#orphan">6.2</a>
+   <li>orphan, <a href="#orphan">5.2</a>
    <li>raised cap, <a href="#raised-cap">8.2</a>
    <li>sunken cap, <a href="#sunken-cap">8.2</a>
    <li>text-replace, <a href="#text_replace">20.2</a>
    <li>Turned pages, <a href="#turned-pages">3.2</a>
-   <li>widow, <a href="#widow">6.1</a>
+   <li>widow, <a href="#widow">5.1</a>
   </ul>
   <h2 class="no-num heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
@@ -2736,8 +2811,6 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
    <dd>Tab Atkins Jr.; Elika Etemad; Rossen Atanassov. <a href="http://www.w3.org/TR/css-flexbox-1/">CSS Flexible Box Layout Module Level 1</a>. 14 May 2015. LCWD. URL: <a href="http://www.w3.org/TR/css-flexbox-1/">http://www.w3.org/TR/css-flexbox-1/</a>
    <dt id="biblio-css3-break"><a class="self-link" href="#biblio-css3-break"></a>[CSS3-BREAK]
    <dd>Rossen Atanassov; Elika Etemad. <a href="http://www.w3.org/TR/css3-break/">CSS Fragmentation Module Level 3</a>. 29 January 2015. WD. URL: <a href="http://www.w3.org/TR/css3-break/">http://www.w3.org/TR/css3-break/</a>
-   <dt id="biblio-css3-fonts"><a class="self-link" href="#biblio-css3-fonts"></a>[CSS3-FONTS]
-   <dd>John Daggett. <a href="http://www.w3.org/TR/css3-fonts/">CSS Fonts Module Level 3</a>. 11 December 2012. WD. URL: <a href="http://www.w3.org/TR/css3-fonts/">http://www.w3.org/TR/css3-fonts/</a>
    <dt id="biblio-css3-gcpm"><a class="self-link" href="#biblio-css3-gcpm"></a>[CSS3-GCPM]
    <dd>Dave Cramer. <a href="http://www.w3.org/TR/css-gcpm-3/">CSS Generated Content for Paged Media Module</a>. 13 May 2014. WD. URL: <a href="http://www.w3.org/TR/css-gcpm-3/">http://www.w3.org/TR/css-gcpm-3/</a>
    <dt id="biblio-css3-page"><a class="self-link" href="#biblio-css3-page"></a>[CSS3-PAGE]
