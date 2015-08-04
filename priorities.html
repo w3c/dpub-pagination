@@ -8,556 +8,969 @@
   <title>Priorities for CSS from the Digital Publishing Interest Group</title>
   
   
-  <style>
-@media print {
-  html { margin: 0 !important; }
-  body { font-family: serif; }
-  th, td { font-family: inherit; }
-  a { color: inherit !important; }
-  .example:before { font-family: serif !important; }
-  a:link, a:visited { text-decoration: none !important; }
-  a:link:after, a:visited:after { /* create a cross-ref "see..." */; }
-}
-@page {
-  margin: 1.5cm 1.1cm;
-}
-h1, h2, h3, h4, h5, h6 { page-break-after: avoid; }
-figure, div.figure, div.sidefigure, pre, table.propdef, table.propdef-extra,
-.example { page-break-inside: avoid; }
-dt { page-break-after: avoid; }
+  <style data-fill-with="stylesheet">  body {
+    color: black;
+    font-family: sans-serif;
+    margin: 0 auto;
+    max-width: 50em;
+    padding: 2em 1em 2em 70px;
+  }
+  :link { color: #00C; background: transparent }
+  :visited { color: #609; background: transparent }
+  a[href]:active { color: #C00; background: transparent }
+  a[href]:hover { background: #ffa }
 
-body {
-  background: white;
-  /* background-image: floating-margin-image-goes-here; */
-  background-position: top left;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  color: black;
-  counter-reset: exampleno figure issue;
-  font-family: sans-serif;
-  line-height: 1.5;
-  margin: 0 auto;
-  max-width: 50em;
-  padding: 2em 1em 2em 70px;
-}
+  a[href] img { border-style: none }
 
-/* General structural markup */
+  h1, h2, h3, h4, h5, h6 { text-align: left }
+  h1, h2, h3 { color: #005A9C; }
+  h1 { font: 170% sans-serif }
+  h2 { font: 140% sans-serif }
+  h3 { font: 120% sans-serif }
+  h4 { font: bold 100% sans-serif }
+  h5 { font: italic 100% sans-serif }
+  h6 { font: small-caps 100% sans-serif }
 
-h1, h2, h3, h4, h5, h6 { text-align: left; }
-h1, h2, h3 { color: #005A9C; }
-h1 { font: 170% sans-serif; }
-h2 { font: 140% sans-serif; }
-h3 { font: 120% sans-serif; }
-h4 { font: bold 100% sans-serif; }
-h5 { font: italic 100% sans-serif; }
-h6 { font: small-caps 100% sans-serif; }
-h2, h3, h4, h5, h6 { margin-top: 3em; }
-h1 + h2 { margin-top: 0em; }
-h2 + h3, h3 + h4, h4 + h5, h5 + h6 { margin-top: 1.2em; }
+  .hide { display: none }
 
-.head { margin-bottom: 1em; }
-.head h1 { margin-top: 2em; clear: both; }
-.head table { margin-left: 2em; margin-top: 2em; }
-.head dd { margin-bottom: 0; }
+  div.head { margin-bottom: 1em }
+  div.head h1 { margin-top: 2em; clear: both }
+  div.head table { margin-left: 2em; margin-top: 2em }
 
-p.copyright { font-size: small; }
-p.copyright small { font-size: small; }
+  p.copyright { font-size: small }
+  p.copyright small { font-size: small }
 
-pre { margin: 1em 0 1em 2em; overflow: auto; }
-pre, code, .idl-code {
-  font-size: .9em;
-  font-family: Menlo, Consolas, "DejaVu Sans Mono", monospace;
-}
-pre .idl-code, pre code { font-size: 1em; }
-dt dfn code { font-size: inherit; }
+  pre { margin-left: 2em }
+  dt { font-weight: bold }
 
-dfn { font-weight: bolder; }
-dfn var { font-style: normal; }
+  ul.toc, ol.toc {
+    list-style: none;
+  }
 
-s, del {text-decoration: line-through; color: red; }
-u, ins {text-decoration: underline; background: #bfa; }
+  body {
+    counter-reset: exampleno figure issue;
+    max-width: 50em;
+    margin: 0 auto !important;
+    line-height: 1.5;
+  }
 
-sup {
-  vertical-align: super;
-  font-size: 80%
-}
+/******************************************************************************/
+/*                                Sectioning                                  */
+/******************************************************************************/
 
-details { display: block; }
+/** Headings ******************************************************************/
 
-dt { font-weight: bold; }
-dd { margin: 0 0 1em 2em; }
-ul, ol { margin-left: 0; padding-left: 2em; }
-li { margin: 0.25em 2em 0.5em 0; padding-left: 0; }
-[data-md] > :first-child { margin-top: 0; }
-[data-md] > :last-child { margin-bottom: 0; }
+  h1, h2, h3, h4, h5, h6, dt {
+    page-break-after: avoid;
+  }
 
-td.pre {
-  white-space: pre-wrap;
-}
+  h2, h3, h5, h6 {
+    margin-top: 3em;
+  }
+  h4 {
+     margin-top: 4em;
+  }
 
-.css, .property { color: #005a9c; }
-.property { white-space: nowrap; }
+/** Subheadings ***************************************************************/
 
+  h1 + h2,
+  #subtitle + h2 {
+    /* #subtitle is a subtitle in an H2 under the H1 */
+    margin-top: 0;
+  }
+  h2 + h3,
+  h3 + h4,
+  h4 + h5,
+  h5 + h6 {
+    margin-top: 1.2em; /* = 1 x line-height */
+  }
 
-/* Boilerplate sections */
+/** Section divider ***********************************************************/
+  /* <hr> used to separate TMI into the second half of a section              */
+  hr:not([title]) {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 1em auto;
+    height: auto;
+    border: transparent solid 0;
+    background: transparent;
+  }
+  hr:not([title])::before {
+    content: "\1F411\2003\2003\1F411\2003\2003\1F411";
+  }
+  /* note: <hr> with title separates document header from contents */
 
-ul.indexlist { margin-left: 0; columns: 13em; }
-ul.indexlist li { margin-left: 0; list-style: none }
-ul.indexlist li li { margin-left: 1em; }
-ul.indexlist a { font-weight: bold; }
-ul.indexlist ul, ul.indexlist dl { font-size: smaller; }
-ul.indexlist dl { margin-top: 0; }
-ul.indexlist dt { margin: .2em 0 .2em 20px; }
-ul.indexlist dd { margin: .2em 0 .2em 40px; }
+/******************************************************************************/
+/*                            Paragraphs and Lists                            */
+/******************************************************************************/
 
-.toc {
-  font-weight: bold;
-  line-height: 1.3;
-  list-style: none;
-  margin: 1em 0 0 5em;
-  padding: 0;
-}
-.toc ul { margin: 0; padding: 0; font-weight: normal; }
-.toc ul ul { margin: 0 0 0 2em; font-style: italic; }
-.toc ul ul ul { margin: 0}
-.toc > li { margin: 1.5em 0; padding: 0; }
-.toc li { clear: both; }
-.toc ul.toc li { margin: 0.3em 0 0 0; }
-.toc a { border-bottom-style: none; }
-.toc a:hover, ul.toc a:focus { border-bottom-style: solid; }
-/* Section numbers in a column of their own */
-.toc span.secno {float: left; width: 4em; margin-left: -5em}
-.toc ul ul span.secno { margin-left: -7em; }
+  p {
+    margin: 1em 0;
+  }
+  dd     > p:first-child,
+  li     > p:first-child {
+    margin-top: 0;
+  }
 
-table.proptable {
-  font-size: small;
-  border-collapse: collapse;
-  border-spacing: 0;
-  text-align: left;
-  margin: 1em 0;
-}
-table.proptable td, table.proptable th {
-  padding: 0.4em;
-  text-align: center;
-}
-table.proptable tr:hover td { background: #DEF; }
+  ul, ol {
+    margin-left: 0;
+    padding-left: 2em;
+  }
+  li {
+    margin: 0.25em 2em 0.5em 0;
+    padding-left: 0;
+  }
 
+  dl dd {
+    margin: 0 0 1em 2em;
+  }
+  .head dd {
+    margin-bottom: 0;
+  }
 
-/* Links */
+  /* Style for algorithms */
+  ol.algorithm ol {
+   border-left: 1px solid #90b8de;
+   margin-left: 1em;
+  }
+  ol.algorithm ol.algorithm {
+   border-left: none;
+   margin-left: 0;
+  }
 
-a[href] { color: inherit; border-bottom: 1px solid silver; text-decoration: none; }
-a[href]:hover { background: #ffa; }
-a[href]:active { color: #C00; background: transparent; }
-img, a.logo { border-style: none; }
-.heading, .issue, .note, .example, li, dt { position: relative; }
-/* CSS-ish link types */
-[data-link-type="property"]::before,
-[data-link-type="propdesc"]::before,
-[data-link-type="descriptor"]::before,
-[data-link-type="value"]::before,
-[data-link-type="function"]::before,
-[data-link-type="at-rule"]::before,
-[data-link-type="selector"]::before,
-[data-link-type="maybe"]::before {content: "“";}
-[data-link-type="property"]::after,
-[data-link-type="propdesc"]::after,
-[data-link-type="descriptor"]::after,
-[data-link-type="value"]::after,
-[data-link-type="function"]::after,
-[data-link-type="at-rule"]::after,
-[data-link-type="selector"]::after,
-[data-link-type="maybe"]::after {content: "”";}
-[data-link-type].production::before,
-[data-link-type].production::after,
-.prod [data-link-type]::before,
-.prod [data-link-type]::after { content: ""; }
-/* Element-type link styling */
-[data-link-type=element] { font-family: monospace; }
-[data-link-type=element]::before { content: "<" }
-[data-link-type=element]::after { content: ">" }
-/* Self-links */
-a.self-link {
-  position: absolute;
-  top: 0;
-  left: -2.5em;
-  width: 2em;
-  height: 2em;
-  text-align: center;
-  border: none;
-  transition: opacity .2s;
-  opacity: .5;
-}
-a.self-link:hover {
-  opacity: 1;
-}
-.heading > a.self-link {
-  font-size: 83%;
-}
-li > a.self-link {
-  left: -3.5em;
-}
-dfn > a.self-link {
-  top: auto;
-  left: auto;
-  opacity: 0;
-  width: 1.5em;
-  height: 1.5em;
-  background: gray;
-  color: white;
-  font-style: normal;
-  transition: opacity .2s, background-color .2s, color .2s;
-}
-dfn:hover > a.self-link {
-  opacity: 1;
-}
-dfn > a.self-link:hover {
-  color: black;
-}
-a.self-link::before { content: "¶"; }
-.heading > a.self-link::before { content: "§"; }
-dfn > a.self-link::before { content: "#"; }
+  /* Style for switch/case <dl>s */
+  dl.switch > dd > ol.only {
+   margin-left: 0;
+  }
+  dl.switch > dd > ol.algorithm {
+   margin-left: -2em;
+  }
+  dl.switch {
+   padding-left: 2em;
+  }
+  dl.switch > dt {
+   text-indent: -1.5em;
+   margin-top: 1em;
+  }
+  dl.switch > dt + dt {
+   margin-top: 0;
+  }
+  dl.switch > dt:before {
+   content: '\21AA';
+   padding: 0 0.5em 0 0;
+   display: inline-block;
+   width: 1em;
+   text-align: right;
+   line-height: 0.5em;
+  }
+
+  /* Style for paragraphs I know are in MD-genned lists */
+  [data-md] > :first-child {
+    margin-top: 0;
+  }
+  [data-md] > :last-child {
+    margin-bottom: 0;
+  }
+
+/** Inline Lists **************************************************************/
+  /* This is mostly to make the list inside the CR exit criteria more compact. */
+
+  ol.inline, ol.inline li {
+    display: inline;
+    padding: 0; margin: 0;
+  }
+  ol.inline {
+    counter-reset: list-item;
+  }
+  ol.inline li {
+    counter-increment: list-item;
+  }
+  ol.inline li:before {
+    content: "(" counter(list-item) ") ";
+    font-weight: bold;
+  }
+
+/** Terminology Markup ********************************************************/
 
 
-/* Figures */
+/******************************************************************************/
+/*                                 Inline Markup                              */
+/******************************************************************************/
 
-figure {
-  display: block;
-  text-align: center;
-  margin: 2.5em 0;
-}
-figure.sidefigure {
-  float: right;
-  width: 50%;
-  margin: 0 0 0.5em 0.5em
-}
-figure pre {
-  text-align: left;
-  display: table;
-  margin: 1em auto;
-}
-figure table {
-  margin: auto;
-}
-figure img, figure object {
-  display: block;
-  margin: auto;
-  max-width: 100%
-}
-figcaption {
-  counter-increment: figure;
-  font-size: 90%;
+/** Terminology Markup ********************************************************/
+  dfn   { /* Defining instance */
+    font-weight: bolder;
+  }
+  a > i { /* Instance of term */
+    font-style: normal;
+  }
+  dt dfn code, code.idl {
+    font-size: inherit;
+  }
+  dfn var {
+    font-style: normal;
+  }
+
+/** Change Marking ************************************************************/
+
+  del { color: red;  text-decoration: line-through; }
+  ins { color: #080; text-decoration: underline;    }
+
+/** Miscellaneous improvements to inline formatting ***************************/
+
+  sup {
+    vertical-align: super;
+    font-size: 80%
+  }
+
+/******************************************************************************/
+/*                                    Code                                    */
+/******************************************************************************/
+
+/** General monospace/pre rules ***********************************************/
+
+  pre, code {
+    font-family: Menlo, Consolas, "DejaVu Sans Mono", monospace;
+    font-size: .9em;
+    page-break-inside: avoid;
+  }
+  pre {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    overflow: auto;
+  }
+
+/** Syntax-Highlighted Code ***************************************************/
+
+  .example pre[class*="language-"],
+  .example [class*="language-"] pre,
+  .example pre[class*="lang-"],
+  .example [class*="lang-"] pre {
+    background: transparent; /* Prism applies a gray background that doesn't work well in the template. */
+  }
+
+/** Example Code **************************************************************/
+
+  div.html, div.xml,
+  pre.html, pre.xml {
+    padding: 0.5em;
+    margin: 1em 0;
+    position: relative;
+    clear: both;
+    color: #600;
+  }
+  pre.example,
+  pre.html,
+  pre.xml {
+    padding-top: 1.5em;
+  }
+
+  pre.illegal, .illegal pre
+  pre.deprecated, .deprecated pre {
+    color: red;
+  }
+
+/** IDL fragments *************************************************************/
+
+  pre.idl {
+    /* Match blue propdef boxes */
+    padding: .5em 1em;
+    background: #DEF;
+    margin: 1.2em 0;
+    border-left: 0.5em solid #8CCBF2;
+  }
+  pre.idl :link, pre.idl :visited {
+    color:inherit;
+    background:transparent;
+  }
+
+/** Inline CSS fragments ******************************************************/
+
+  .css.css, .property.property, .descriptor.descriptor {
+    color: #005a9c;
+    font-size: inherit;
+    font-family: inherit;
+  }
+  .css::before, .property::before, .descriptor::before {
+    content: "‘";
+  }
+  .css::after, .property::after, .descriptor::after {
+    content: "’";
+  }
+  .property, .descriptor {
+    /* Don't wrap property and descriptor names */
+    white-space: nowrap;
+  }
+  .type { /* CSS value <type> */
   font-style: italic;
-  text-align: center;
-}
-figcaption::before {
-  content: "Figure " counter(figure) ". ";
-  font-weight: bold;
-}
-dd figure { margin-left: -2em; }
+  }
+  pre .property::before, pre .property::after {
+    content: "";
+  }
+
+/** Inline markup fragments ***************************************************/
+
+  code.html, code.xml {
+    color: #660000;
+  }
+
+/** Autolinks produced using Bikeshed *****************************************/
+
+  [data-link-type="property"]::before,
+  [data-link-type="propdesc"]::before,
+  [data-link-type="descriptor"]::before,
+  [data-link-type="value"]::before,
+  [data-link-type="function"]::before,
+  [data-link-type="at-rule"]::before,
+  [data-link-type="selector"]::before,
+  [data-link-type="maybe"]::before {
+    content: "‘";
+  }
+  [data-link-type="property"]::after,
+  [data-link-type="propdesc"]::after,
+  [data-link-type="descriptor"]::after,
+  [data-link-type="value"]::after,
+  [data-link-type="function"]::after,
+  [data-link-type="at-rule"]::after,
+  [data-link-type="selector"]::after,
+  [data-link-type="maybe"]::after {
+    content: "’";
+  }
+
+  [data-link-type].production::before,
+  [data-link-type].production::after,
+  .prod [data-link-type]::before,
+  .prod [data-link-type]::after {
+    content: "";
+  }
+
+  [data-link-type=element]         { font-family: monospace; }
+  [data-link-type=element]::before { content: "<" }
+  [data-link-type=element]::after  { content: ">" }
+
+  [data-link-type=biblio] {
+    white-space: pre;
+  }
 
 
-/* Definition tables */
+/******************************************************************************/
+/*                                    Links                                   */
+/******************************************************************************/
 
-table.definition {
-  border-spacing: 0;
-  padding: 0 1em 0.5em;
-  width: 100%;
-  table-layout: fixed;
-  margin: 1.2em 0;
-}
-table.definition td, table.definition th {
-  padding: 0.5em;
-  vertical-align: baseline;
-  border-bottom: 1px solid #bbd7e9;
-}
-table.definition th:first-child {
-  font-style: italic;
-  font-weight: normal;
-  text-align: left;
-  width: 8.3em;
-  padding-left: 1em;
-}
-table.definition > tbody > tr:last-child > th,
-table.definition > tbody > tr:last-child > td {
-  border-bottom: none;
-}
-table.definition tr:first-child > th,
-table.definition tr:first-child > td {
-  padding-top: 1em;
-}
-/* Footnotes at the bottom of a definition table */
-table.definition td.footnote {
-  font-style: normal;
-  padding-top: .6em;
-  width: auto;
-}
-table.definition td.footnote::before {
-  content: " ";
-  display: block;
-  height: 0.6em;
-  width: 4em;
-  border-top: thin solid;
-}
+/** General Hyperlinks ********************************************************/
 
+  /* We hyperlink a lot, so make it less intrusive */
+  a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid silver;
+  }
+  @supports (text-decoration-color: silver) {
+    a:link, a:visited {
+      border-bottom: none;
+      text-decoration: underline;
+      text-decoration-color: silver;
+    }
+    a:visited {
+      text-decoration-style: dotted;
+    }
+  }
 
-/* IDL fragments */
+  a.logo:link, a.logo:visited { /* backout above styling for W3C logo */
+    padding: 0;
+    border: none;
+    text-decoration: none;
+  }
 
-pre.idl {
-  padding: .5em 1em;
-  margin: 1.2em 0;
-}
-pre.idl :link, pre.idl :visited {
-  color:inherit;
-  background:transparent;
-}
+/** Self-Links ****************************************************************/
+  /* Auto-generated links from an element to its own anchor, for usability */
 
+  .heading, .issue, .note, .example, li, dt {
+    position: relative;
+  }
+  a.self-link {
+    position: absolute;
+    top: 0;
+    left: -2.5em;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    border: none;
+    transition: opacity .2s;
+    opacity: .5;
+  }
+  a.self-link:hover {
+    opacity: 1;
+  }
+  .heading > a.self-link {
+    font-size: 83%;
+  }
+  li > a.self-link {
+    left: -3.5em;
+  }
+  dfn > a.self-link {
+    top: auto;
+    left: auto;
+    opacity: 0;
+    width: 1.5em;
+    height: 1.5em;
+    background: gray;
+    color: white;
+    font-style: normal;
+    transition: opacity .2s, background-color .2s, color .2s;
+  }
+  dfn:hover > a.self-link {
+    opacity: 1;
+  }
+  dfn > a.self-link:hover {
+    color: black;
+  }
 
-/* Data tables */
-/* Comes in plain, long, complex, or define varieties */
+  a.self-link::before            { content: "¶"; }
+  .heading > a.self-link::before { content: "§"; }
+  dfn > a.self-link::before      { content: "#"; }
 
-.data {
-  margin: 1em auto;
-  border-collapse: collapse;
-  width: 100%;
-  border: hidden;
-}
-.data {
-  text-align: center;
-  width: auto;
-}
-.data caption {
-  width: 100%;
-}
-.data td, .data th {
-  padding: 0.5em;
-  border-width: 1px;
-  border-color: silver;
-  border-top-style: solid;
-}
-.data thead td:empty {
-  padding: 0;
-  border: 0;
-}
-.data thead th[scope="row"] {
-  text-align: right;
-  color: inherit;
-}
-.data thead,
-.data tbody {
-  color: inherit;
-  border-bottom: 2px solid;
-}
-.data colgroup {
-  border-left: 2px solid;
-}
-.data tbody th:first-child,
-.data tbody td[scope="row"]:first-child {
-  text-align: right;
-  color: inherit;
-  border-right: 2px solid;
-  border-top: 1px solid silver;
-  padding-right: 1em;
-}
-.data.define td:last-child {
-  text-align: left;
-}
-.data tbody th[rowspan],
-.data tbody td[rowspan] {
-  border-left: 1px solid silver;
-}
-.data tbody th[rowspan]:first-child,
-.data tbody td[rowspan]:first-child {
-  border-left: 0;
-  border-right: 1px solid silver;
-}
-.data.complex th,
-.data.complex td {
-  border: 1px solid silver;
-}
-.data td.long {
- vertical-align: baseline;
- text-align: left;
-}
-.data img {
-  vertical-align: middle;
-}
+/******************************************************************************/
+/*                                    Images                                  */
+/******************************************************************************/
 
+  img {
+    border-style: none;
+    color: white;
+  }
 
-/* Switch/case <dl>s */
+  figure, div.figure, div.sidefigure {
+    page-break-inside: avoid;
+  }
 
-dl.switch {
- padding-left: 2em;
-}
-dl.switch > dt {
- text-indent: -1.5em;
-}
-dl.switch > dt:before {
- content: '↪';
- padding: 0 0.5em 0 0;
- display: inline-block;
- width: 1em;
- text-align: right;
- line-height: 0.5em;
-}
+  div.figure, p.figure, div.sidefigure, figure {
+    text-align: center;
+    margin: 2.5em 0;
+  }
+  div.figure pre, div.sidefigure pre, figure pre {
+    text-align: left;
+    display: table;
+    margin: 1em auto;
+  }
+  .figure table, figure table {
+    margin: auto;
+  }
+  div.sidefigure, figure.sidefigure {
+    float: right;
+    width: 50%;
+    margin: 0 0 0.5em 0.5em
+  }
+  div.figure img, div.sidefigure img, figure img,
+  div.figure object, div.sidefigure object, figure object {
+    display: block;
+    margin: auto;
+    max-width: 100%
+  }
+  p.caption, figcaption, caption {
+    text-align: center;
+    font-style: italic;
+    font-size: 90%;
+  }
+  p.caption:before, figcaption:before {
+    content: "Figure " counter(figure) ". ";
+    font-weight: bold;
+  }
+  p.caption, figcaption {
+    counter-increment: figure;
+  }
 
+  /* DL list is indented 2em, but figure inside it is not */
+  dd > div.figure, dd > figure { margin-left: -2em }
 
-/* Style for At Risk features (intended as editorial aid, not intended for publishing) */
-.atrisk::before {
- position: absolute;
- margin-left: -5em;
- margin-top: -2px;
- padding: 4px;
- border: 1px solid;
- content: 'At risk';
- font-size: small;
- background-color: white;
- color: gray;
- border-radius: 1em;
- text-align: center;
-}
+  pre.ascii-art {
+    display: table; /* shrinkwrap */
+    margin: 1em auto;
+  }
 
+  /* Displaying the output of text layout, particularly when
+     line-breaking is being invoked, and thus having a
+     visible width is good. */
+  pre.output {
+    margin: 1em;
+    border: solid thin silver;
+    padding: 0.25em;
+    display: table;
+  }
 
-/* Obsoletion notice */
-details.annoying-warning[open] {
-  background: #fdd;
-  color: red;
-  font-weight: bold;
-  text-align: center;
-  padding: .5em;
-  border: thick solid red;
-  border-radius: 1em;
-  position: fixed;
-  left: 1em;
-  right: 1em;
-  bottom: 1em;
-  z-index: 1000;
-}
-details.annoying-warning:not([open]) > summary {
-  background: #fdd;
-  color: red;
-  font-weight: bold;
-  text-align: center;
-  padding: .5em;
-}
+/******************************************************************************/
+/*                             Colored Boxes                                  */
+/******************************************************************************/
 
+  .issue, .note, .example, .why, .advisement, blockquote {
+    padding: .5em;
+    border: .5em;
+    border-left-style: solid;
+    page-break-inside: avoid;
+  }
+  span.issue, span.note {
+    padding: .1em .5em .15em;
+    border-right-style: solid;
+  }
 
-/* Examples */
+  div.issue,
+  div.note,
+  div.example,
+  details.why,
+  blockquote {
+    margin: 1em auto;
+  }
+  .note  > p:first-child,
+  .issue > p:first-child,
+  blockquote > :first-child {
+    margin-top: 0;
+  }
+  blockquote > :last-child {
+    margin-bottom: 0;
+  }
 
-.example {
-  counter-increment: exampleno;
-}
-.example::before {
-  content: "Example";
-  content: "Example " counter(exampleno);
-  min-width: 7.5em;
-  text-transform: uppercase;
-  display: block;
-}
-.illegal-example::before {
-  content: "Invalid Example";
-  content: "Invalid Example" counter(exampleno);
-}
-.example, .illegal-example, .html, .illegal-html, .xml, .illegal-xml {
-  padding: 0.5em;
-  margin: 1em 0;
-  position: relative;
-  clear: both;
-}
-pre.example, pre.illegal-example, pre.html,
-pre.illegal-html, pre.xml, pre.illegal-xml {
-  padding-top: 1.5em;
-}
-.illegal-example { color: red; }
-.illegal-example p { color: black; }
-.html { color: #600; }
-.illegal-html { color: red; }
-.illegal-html p { color: black; }
-.xml { color: #600; }
-.illegal-xml { color: red; }
-.illegal-xml p { color: black; }
-code.css { font-family: inherit; font-size: 100% }
-code.html { color: #600 } /* inline HTML */
-code.xml { color: #600 }  /* inline XML */
+/** Blockquotes ***************************************************************/
 
+  blockquote {
+    border-color: silver;
+  }
 
-/* Issues */
+/** Open issue ****************************************************************/
+  /* not intended for CR+ publication */
 
-.issue {
-  border-color: #E05252;
-  background: #FBE9E9;
-  counter-increment: issue;
-}
-.issue:before {
-  content: "Issue " counter(issue);
-  padding-right: 1em;
-  text-transform: uppercase;
-  color: #E05252;
-}
+  .issue {
+    border-color: #E05252;
+    background: #FBE9E9;
+    counter-increment: issue;
+    overflow: auto;
+  }
+  .issue:before {
+    content: "Issue " counter(issue);
+    padding-right: 1em;
+    text-transform: uppercase;
+    color: #E05252;
+  }
 
+/** Example *******************************************************************/
 
-/* Whys */
+  .example {
+    border-color: #E0CB52;
+    background: #FCFAEE;
+    counter-increment: exampleno;
+    overflow: auto;
+    clear: both;
+  }
+  .example:before {
+    color: #B9AB2D;
+    font-family: sans-serif;
+  }
+  .example:before {
+    content: "Example";
+    content: "Example " counter(exampleno);
+    min-width: 7.5em;
+    text-transform: uppercase;
+    display: block;
+  }
+  .illegal.example:before,
+  .illegal.example:before {
+    content: "Invalid Example";
+    content: "Invalid Example" counter(exampleno);
+    color: red;
+  }
 
-details.why > summary {
-  font-style: italic;
-}
-details.why[open] > summary {
-  border-bottom: 1px silver solid;
-}
+/** Non-normative Note ********************************************************/
 
+  .note, .why {
+    border-color: #52E052;
+    background: #E9FBE9;
+    overflow: auto;
+  }
 
-/* All the blocks get similarly styled */
+/** Advisement Box ************************************************************/
+  /*  for attention-grabbing normative statements */
 
-table.definition, pre.idl, .example, .note, details.why, .issue {
-  border: none;
-  border-left: .5em solid black;
-  border-left: .5rem solid black;
-}
-.issue, .note, .example, .why {
-  padding: .5em;
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
-table.definition, pre.idl {
-  background: hsl(210, 70%, 95%);
-  border-color: hsl(210, 80%, 75%);
-}
-.example {
-  background: hsl(50, 70%, 95%);
-  border-color: hsl(50, 70%, 60%);
-}
-.example::before,
-.example > .marker {
-  color: hsl(50, 70%, 60%);
-}
-.note, details.why {
-  background: hsl(120, 70%, 95%);
-  border-color: hsl(120, 70%, 60%);
-}
-.note::before,
-.note > .marker {
-  color: hsl(120, 70%, 60%);
-}
-.issue {
-  background: hsl(0, 70%, 95%);
-  border-color: hsl(0, 70%, 60%);
-}
-.issue::before,
-.issue > .marker {
-  color: hsl(0, 70%, 60%);
-}
-span.issue, span.note {
-  padding: .1em .5em .15em;
-  border-right-width: .5em;
-  border-right-style: solid;
-}
-.example.no-marker::before,
-.issue.no-marker::before,
-.note.no-marker::before,
-.no-marker::before {
-  content: none;
+  .advisement {
+    border-color: orange;
+    border-style: none solid;
+    background: #FFEECC;
+    text-align: center;
+  }
+  strong.advisement {
+    display: block;
+  }
+  /*.advisement:before { color: #FF8800; } */
+
+/** ??? ***********************************************************************/
+
+  details.why {
+    border-color: #52E052;
+    background: #E9FBE9;
+    display: block;
+  }
+
+  details.why > summary {
+    font-style: italic;
+    display: block;
+  }
+
+  details.why[open] > summary {
+    border-bottom: 1px silver solid;
+  }
+
+/** Spec Obsoletion Notice ****************************************************/
+  /* obnoxious obsoletion notice for older/abandoned specs. */
+
+  details.annoying-warning {
+    display: block;
+  }
+
+  details.annoying-warning[open] {
+    background: #fdd;
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    padding: .5em;
+    border: thick solid red;
+    border-radius: 1em;
+  }
+@media not print {
+  details.annoying-warning[open] {
+    position: fixed;
+    left: 1em;
+    right: 1em;
+    bottom: 1em;
+    z-index: 1000;
+  }
 }
 
-  </style>
+  details.annoying-warning:not([open]) > summary {
+    background: #fdd;
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    padding: .5em;
+  }
+
+/******************************************************************************/
+/*                                    Tables                                  */
+/******************************************************************************/
+
+/** Property/Descriptor Definition Tables *************************************/
+
+  table.propdef, table.propdef-extra,
+  table.descdef, table.definition-table {
+    page-break-inside: avoid;
+    width: 100%;
+    margin: 1.2em 0;
+    border-left: 0.5em solid #8CCBF2;
+    padding: 0.5em 1em;
+    background: #DEF;
+    border-spacing: 0;
+  }
+
+  table.propdef td, table.propdef-extra td,
+  table.descdef td, table.definition-table td,
+  table.propdef th, table.propdef-extra th,
+  table.descdef th, table.definition-table th {
+    padding: 0.5em;
+    vertical-align: baseline;
+    border-bottom: 1px solid #bbd7e9;
+  }
+  table.propdef > tbody > tr:last-child th,
+  table.propdef-extra > tbody > tr:last-child th,
+  table.descdef > tbody > tr:last-child th,
+  table.definition-table > tbody > tr:last-child th,
+  table.propdef > tbody > tr:last-child td,
+  table.propdef-extra > tbody > tr:last-child td,
+  table.descdef > tbody > tr:last-child td,
+  table.definition-table > tbody > tr:last-child td {
+    border-bottom: 0;
+  }
+
+  table.propdef th,
+  table.propdef-extra th,
+  table.descdef th,
+  table.definition-table th {
+    font-style: italic;
+    font-weight: normal;
+    width: 8.3em;
+    padding-left: 1em;
+  }
+
+  /* For when values are extra-complex and need formatting for readability */
+  table td.pre {
+    white-space: pre-wrap;
+  }
+
+  /* A footnote at the bottom of a propdef */
+  table.propdef td.footnote,
+  table.propdef-extra td.footnote,
+  table.descdef td.footnote,
+  table.definition-table td.footnote {
+    padding-top: 0.6em;
+  }
+  table.propdef td.footnote:before,
+  table.propdef-extra td.footnote:before,
+  table.descdef td.footnote:before,
+  table.definition-table td.footnote:before {
+    content: " ";
+    display: block;
+    height: 0.6em;
+    width: 4em;
+    border-top: thin solid;
+  }
+
+/** Profile Tables ************************************************************/
+  /* table of required features in a CSS profile */
+
+  table.features th {
+    background: #00589f;
+    color: #fff;
+    text-align: left;
+    padding: 0.2em 0.2em 0.2em 0.5em;
+  }
+  table.features td {
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    padding: 0.3em 0.3em 0.3em 0.7em;
+  }
+
+/** Data tables (and properly marked-up proptables) ***************************/
+  /*
+     <table class="data"> highlights structural relationships in a table
+     when correct markup is used (e.g. thead/tbody, th vs. td, scope attribute)
+
+     Use class="complex data" for particularly complicated tables --
+     (This will draw more lines: busier, but clearer.)
+
+     Use class="long" on table cells with paragraph-like contents
+     (This will adjust text alignment accordingly.)
+  */
+
+  .data, .proptable {
+    margin: 1em auto;
+    border-collapse: collapse;
+    width: 100%;
+    border: hidden;
+  }
+  .data {
+    text-align: center;
+    width: auto;
+  }
+  .data caption {
+    width: 100%;
+  }
+
+  .data td, .data th,
+  .proptable td, .proptable th {
+    padding: 0.5em;
+    border-width: 1px;
+    border-color: silver;
+    border-top-style: solid;
+  }
+
+  .data thead td:empty {
+    padding: 0;
+    border: 0;
+  }
+
+  .data thead th[scope="row"],
+  .proptable thead th[scope="row"] {
+    text-align: right;
+    color: inherit;
+  }
+
+  .data thead,
+  .proptable thead,
+  .data tbody,
+  .proptable tbody {
+    color: inherit;
+    border-bottom: 2px solid;
+  }
+
+  .data colgroup {
+    border-left: 2px solid;
+  }
+
+  .data tbody th:first-child,
+  .proptable tbody th:first-child ,
+  .data tbody td[scope="row"]:first-child,
+  .proptable tbody td[scope="row"]:first-child {
+    text-align: right;
+    color: inherit;
+    border-right: 2px solid;
+    border-top: 1px solid silver;
+    padding-right: 1em;
+  }
+  .data.define td:last-child {
+    text-align: left;
+  }
+
+  .data tbody th[rowspan],
+  .proptable tbody th[rowspan],
+  .data tbody td[rowspan],
+  .proptable tbody td[rowspan]{
+    border-left:  1px solid silver;
+    border-right: 1px solid silver;
+  }
+
+  .complex.data th,
+  .complex.data td {
+    border: 1px solid silver;
+  }
+
+  .data td.long {
+   vertical-align: baseline;
+   text-align: left;
+  }
+
+  .data img {
+    vertical-align: middle;
+  }
+
+
+/******************************************************************************/
+/*                                  Indices                                   */
+/******************************************************************************/
+
+
+/** Table of Contents *********************************************************/
+
+  /* ToC not indented, but font style shows hierarchy */
+  ul.toc           { margin: 1em 0;     font-weight: bold; /*text-transform: uppercase;*/ }
+  ul.toc ul        { margin: 0;        font-weight: normal; text-transform: none; }
+  ul.toc ul ul     { margin: 0 0 0 2em; font-style: italic; }
+  ul.toc ul ul ul  { margin: 0; }
+  ul.toc > li      { margin: 1.5em 0; }
+  ul.toc ul.toc li { margin: 0.3em 0 0 0; }
+
+  ul.toc, ul.toc ul, ul.toc li { padding: 0; line-height: 1.3; }
+  ul.toc a { text-decoration: none; border-bottom-style: none; }
+  ul.toc a:hover, ul.toc a:focus  { border-bottom-style: solid; }
+  @supports (text-decoration-style: solid) {
+    ul.toc a:hover, ul.toc a:focus  {
+      border-bottom-style: none;
+      text-decoration-style: solid;
+    }
+  }
+  /*
+  ul.toc li li li, ul.toc li li li ul {margin-left: 0; display: inline}
+  ul.toc li li li ul, ul.toc li li li ul li {margin-left: 0; display: inline}
+  */
+
+  /* Section numbers in a column of their own */
+  ul.toc {
+    margin-left: 5em
+  }
+  ul.toc span.secno {
+    float: left;
+    width: 4em;
+    margin-left: -5em;
+  }
+  ul.toc ul ul span.secno {
+    margin-left: -7em;
+  }
+  /*ul.toc span.secno {text-align: right}*/
+  ul.toc li {
+    clear: both;
+  }
+  /* If we had 'tab', floats would not be needed here:
+     ul.toc span.secno {tab: 5em right; margin-right: 1em}
+     ul.toc li {text-indent: 5em hanging}
+   The second line in case items wrap
+  */
+
+/** At-risk List **************************************************************/
+  /* Style for At Risk features (intended as editorial aid, not intended for publishing) */
+
+  .atrisk::before {
+   float: right;
+   margin-top: -0.25em;
+   padding: 0.5em 1em 0.5em 0;
+   text-indent: -0.9em;
+   border: 1px solid;
+   content: '\25C0    Not yet widely implemented';
+   white-space: pre;
+   font-size: small;
+   background-color: white;
+   color: gray;
+   text-align: center;
+  }
+
+  .toc .atrisk::before { content:none }
+
+/** Index *********************************************************************/
+
+  /* Index Lists: Layout */
+  ul.indexlist       { margin-left: 0; columns: 13em; }
+  ul.indexlist li    { margin-left: 0; list-style: none }
+  ul.indexlist li li { margin-left: 1em }
+  ul.indexlist dl    { margin-top: 0; }
+  ul.indexlist dt    { margin: .2em 0 .2em 20px;}
+  ul.indexlist dd    { margin: .2em 0 .2em 40px;}
+  /* Index Lists: Typography */
+  ul.indexlist ul,
+  ul.indexlist dl { font-size: smaller; }
+  ul.indexlist a  { font-weight: bold; }
+
+/** Property Index Tables *****************************************************/
+  /* See also the data table styling section, which this effectively subclasses */
+
+  table.proptable {
+    font-size: small;
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-align: left;
+    margin: 1em 0;
+  }
+
+  table.proptable td,
+  table.proptable th {
+    padding: 0.4em;
+    text-align: center;
+  }
+
+  table.proptable tr:hover td {
+    background: #DEF;
+  }
+  .propdef th {
+    font-style: italic;
+    font-weight: normal;
+    text-align: left;
+    width: 3em;
+  }
+  /* The link in the first column in the property table (formerly a TD) */
+  table.proptable td .property,
+  table.proptable th .property {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+  }
+
+/******************************************************************************/
+/*                                    Print                                   */
+/******************************************************************************/
+
+  @media print {
+    html {
+      margin: 0 !important; }
+    body {
+      font-family: serif; }
+    th, td {
+      font-family: inherit; }
+    a {
+      color: inherit !important; }
+
+    a:link, a:visited {
+      text-decoration: none !important }
+    a:link:after, a:visited:after { /* create a cross-ref "see..." */ }
+    .example:before {
+      font-family: serif !important; }
+  }
+  @page {
+    margin: 1.5cm 1.1cm;
+  }
+
+</style>
   
 
   <meta content="Bikeshed 1.0.0" name="generator">
@@ -668,7 +1081,7 @@ table.summary td.footnote::before {
    <h1 class="p-name no-ref" id="title">Priorities for CSS from the Digital Publishing Interest Group</h1>
   
    <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">A Collection of Interesting Ideas,
-    <time class="dt-updated" datetime="2015-07-07">7 July 2015</time></span></h2>
+    <time class="dt-updated" datetime="2015-08-04">4 August 2015</time></span></h2>
   
    <div data-fill-with="spec-metadata">
     <dl>
@@ -687,7 +1100,7 @@ table.summary td.footnote::before {
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" src="https://licensebuttons.net/p/zero/1.0/80x15.png"></a>
 To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 7 July 2015,
+In addition, as of 4 August 2015,
 the editors have made this specification available under the
 <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
@@ -830,6 +1243,9 @@ The <span class="css">target-text()</span> function
       <li><a href="#collapsing-page-ranges"><span class="secno">5.2</span> <span class="content">
 Collapsing Page Ranges
 </span></a>
+      <li><a href="#generated-content"><span class="secno">5.3</span> <span class="content">
+Generated content
+</span></a>
      </ul>
     <li><a href="#math"><span class="secno">6</span> <span class="content">
 Math
@@ -923,6 +1339,12 @@ Introduction
    <h2 class="heading settled" data-level="2" id="summary"><span class="secno">2. </span><span class="content">
 List of Priorities
 </span><a class="self-link" href="#summary"></a></h2>
+
+
+   <p>Priorities are listed on a scale of 1 to 5, with 5 being the highest priority. Priorities were determined in a somewhat arbitrary manner by the editor, with feedback from some members of the interest group. Input from anyone involved in digital publishing is welcome.</p>
+
+
+   <p class="issue" id="issue-a84f618e"><a class="self-link" href="#issue-a84f618e"></a> Get more input on priorities.</p>
 
 
    <h3 class="heading settled" data-level="2.1" id="features-requiring-implementation"><span class="secno">2.1. </span><span class="content">
@@ -1128,7 +1550,7 @@ Features requiring specification
 
      <tr>
 
-      <td><a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#funcdef-target-counter">target-counter()</a>
+      <td><a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#funcdef-target-counter">target-counter()</a>
 
       <td>5
 
@@ -1143,7 +1565,7 @@ Features requiring specification
 
      <tr>
 
-      <td><a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#funcdef-target-counters">target-counters()</a>
+      <td><a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#funcdef-target-counters">target-counters()</a>
 
       <td>5
 
@@ -1158,7 +1580,7 @@ Features requiring specification
 
      <tr>
 
-      <td><a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#target-text-function">target-text()</a>
+      <td><a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#target-text-function">target-text()</a>
 
       <td>5
 
@@ -1183,6 +1605,22 @@ Features requiring specification
       <td>
 
       <td>
+
+      <td>
+
+
+
+     <tr>
+
+      <td>content property on elements
+
+      <td>4
+
+      <td><a data-link-type="biblio" href="#biblio-css3-content">[css3-content]</a>, ED
+
+      <td>Prince, AH
+
+      <td>Chrome, Firefox, IE, Opera, Safari
 
       <td>
 
@@ -1471,10 +1909,10 @@ The hyphens property
 </span><a class="self-link" href="#hyphens"></a></h4>
 
 
-   <p>Hyphenation is critical for justified text. Most browsers now support the <a class="property" data-link-type="propdesc" href="http://dev.w3.org/csswg/css-text-3/#propdef-hyphens">hyphens</a> property.</p>
+   <p>Hyphenation is critical for justified text. Most browsers now support the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-text-3/#propdef-hyphens">hyphens</a> property.</p>
 
 
-   <p class="issue" id="issue-85d128c4"><a class="self-link" href="#issue-85d128c4"></a> <a class="property" data-link-type="propdesc" href="http://dev.w3.org/csswg/css-text-3/#propdef-hyphens">hyphens</a> property not supported in Chrome: https://code.google.com/p/chromium/issues/detail?id=47083</p>
+   <p class="issue" id="issue-85d128c4"><a class="self-link" href="#issue-85d128c4"></a> <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-text-3/#propdef-hyphens">hyphens</a> property not supported in Chrome: https://code.google.com/p/chromium/issues/detail?id=47083</p>
 
 
    <div class="polyfill" id="hyphens-polyfill">
@@ -1571,7 +2009,7 @@ Hyphenation dictionaries
       <td><dfn class="css" data-dfn-type="property" data-export="" id="propdef-hyphenate-patterns">hyphenate-patterns<a class="self-link" href="#propdef-hyphenate-patterns"></a></dfn>
      <tr class="value">
       <th>Value:
-      <td class="prod">none <a data-link-type="grammar" href="http://dev.w3.org/csswg/css-values-3/#comb-one">|</a> url(patterns-url)
+      <td class="prod">none <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-3/#comb-one">|</a> url(patterns-url)
      <tr>
       <th>Initial:
       <td>none
@@ -1676,7 +2114,7 @@ min-length-of-last-line
       <td><dfn class="css" data-dfn-type="property" data-export="" id="propdef-min-length-of-last-line">min-length-of-last-line<a class="self-link" href="#propdef-min-length-of-last-line"></a></dfn>
      <tr class="value">
       <th>Value:
-      <td class="prod"><a class="production css" data-link-type="type" href="http://dev.w3.org/csswg/css-values-3/#length-value">&lt;length></a>
+      <td class="prod"><a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#length-value">&lt;length></a>
      <tr>
       <th>Initial:
       <td>1
@@ -1881,27 +2319,27 @@ Cross-References
 
 
    <h4 class="heading settled" data-level="5.1.1" id="the-target_counter-function"><span class="secno">5.1.1. </span><span class="content">
-The <a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#funcdef-target-counter">target-counter()</a> function
+The <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#funcdef-target-counter">target-counter()</a> function
 </span><a class="self-link" href="#the-target_counter-function"></a></h4>
 
 
-   <p class="issue" id="issue-c6f7555b"><a class="self-link" href="#issue-c6f7555b"></a> <a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#funcdef-target-counter">target-counter()</a> is not implemented in browsers</p>
+   <p class="issue" id="issue-c6f7555b"><a class="self-link" href="#issue-c6f7555b"></a> <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#funcdef-target-counter">target-counter()</a> is not implemented in browsers</p>
 
 
    <h4 class="heading settled" data-level="5.1.2" id="the-target_counters-function"><span class="secno">5.1.2. </span><span class="content">
-The <a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#funcdef-target-counters">target-counters()</a> function
+The <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#funcdef-target-counters">target-counters()</a> function
 </span><a class="self-link" href="#the-target_counters-function"></a></h4>
 
 
-   <p class="issue" id="issue-9406ab50"><a class="self-link" href="#issue-9406ab50"></a> <a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#funcdef-target-counters">target-counters()</a> is not implemented in browsers</p>
+   <p class="issue" id="issue-9406ab50"><a class="self-link" href="#issue-9406ab50"></a> <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#funcdef-target-counters">target-counters()</a> is not implemented in browsers</p>
 
 
    <h4 class="heading settled" data-level="5.1.3" id="the-target_text-function"><span class="secno">5.1.3. </span><span class="content">
-The <a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#target-text-function">target-text()</a> function
+The <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#target-text-function">target-text()</a> function
 </span><a class="self-link" href="#the-target_text-function"></a></h4>
 
 
-   <p class="issue" id="issue-3864b94a"><a class="self-link" href="#issue-3864b94a"></a> <a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#target-text-function">target-text()</a> is not implemented in browsers</p>
+   <p class="issue" id="issue-3864b94a"><a class="self-link" href="#issue-3864b94a"></a> <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#target-text-function">target-text()</a> is not implemented in browsers</p>
 
 
 
@@ -1937,7 +2375,7 @@ Collapsing Page Ranges
       <td><dfn class="css" data-dfn-type="property" data-export="" id="propdef-merge-sequential-page-numbers">merge-sequential-page-numbers<a class="self-link" href="#propdef-merge-sequential-page-numbers"></a></dfn>
      <tr class="value">
       <th>Value:
-      <td class="prod">merge <a data-link-type="grammar" href="http://dev.w3.org/csswg/css-values-3/#comb-one">|</a> leave-separate
+      <td class="prod">merge <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-3/#comb-one">|</a> leave-separate
      <tr>
       <th>Initial:
       <td>merge
@@ -1967,6 +2405,32 @@ Collapsing Page Ranges
    <p class="note" role="note">Note: <a data-link-type="biblio" href="#biblio-xslfo20">[XSLFO20]</a> has a merge-sequential-page-numbers feature: http://www.w3.org/TR/xslfo20/#merge-sequential-page-numbers</p>
 
 
+
+   <h3 class="heading settled" data-level="5.3" id="generated-content"><span class="secno">5.3. </span><span class="content">
+Generated content
+</span><a class="self-link" href="#generated-content"></a></h3>
+
+
+   <p>In <span>[css22]</span>, generated content is restricted to pseudo-elements. PDF formatters like Prince allow the content property on all elements. This has proved invaluable for many common use cases.</p>
+
+
+   <div class="example" id="example-0a5870c3"><a class="self-link" href="#example-0a5870c3"></a>
+<a data-link-type="biblio" href="#biblio-html5">[HTML5]</a> and EPUB 3 accessibility guides recommend using the <code>hr</code> element to indicate thematic breaks in narrative content (sometimes called "space breaks" in the publishing industry. But these breaks are often designed as an ornament or image, rather than any sort of horizontal line. We would like to do
+
+
+    <pre>hr.ornament {
+  font-family: 'Poetica Std';
+  content: '•';
+  font-feature-settings: "ornm" 10;
+}
+</pre>
+
+
+</div>
+
+
+
+
    <h2 class="heading settled" data-level="6" id="math"><span class="secno">6. </span><span class="content">
 Math
 </span><a class="self-link" href="#math"></a></h2>
@@ -1979,20 +2443,31 @@ Aligning equations
 
    <p>Many publishers require that all equations on a page align on the equals sign.</p>
 
+   <div class="example" id="example-21d35522"><a class="self-link" href="#example-21d35522"></a>
 
-   <pre>    x + 3z = 7 + 2y
+    <pre>    x + 3z = 7 + 2y
     
 2x + y + z = 4
 
 Intervening text which may
 extend for several lines
 
-
    10 + 2y = 3x + 2z
 </pre>
+</div>
 
 
-   <p class="issue" id="issue-7a846b34"><a class="self-link" href="#issue-7a846b34"></a> design a mechanism for this feature</p>
+   <p class="issue" id="issue-49cbc0de"><a class="self-link" href="#issue-49cbc0de"></a> design a mechanism for this feature.</p>
+
+
+   <div class="example" id="example-240b618a"><a class="self-link" href="#example-240b618a"></a>
+	
+    <pre>math {
+    text-align: "=" center;
+}
+</pre>
+</div>
+
 
 
    <h3 class="heading settled" data-level="6.2" id="numbering-equations"><span class="secno">6.2. </span><span class="content">
@@ -2130,44 +2605,44 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
   <h2 class="no-num heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="indexlist">
-   <li>hyphenate-patterns, <a href="#propdef-hyphenate-patterns">3.2.2.3</a>
-   <li>merge-sequential-page-numbers, <a href="#propdef-merge-sequential-page-numbers">5.2</a>
-   <li>min-length-of-last-line, <a href="#propdef-min-length-of-last-line">3.2.2.5</a>
+   <li><a href="#propdef-hyphenate-patterns">hyphenate-patterns</a><span>, in §3.2.2.3</span>
+   <li><a href="#propdef-merge-sequential-page-numbers">merge-sequential-page-numbers</a><span>, in §5.2</span>
+   <li><a href="#propdef-min-length-of-last-line">min-length-of-last-line</a><span>, in §3.2.2.5</span>
   </ul>
   <h3 class="no-num heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="indexlist">
    <li><a data-link-type="biblio" href="#biblio-css-content-3">[css-content-3]</a> defines the following terms:
     <ul>
-     <li><a href="http://dev.w3.org/csswg/css-content-3/#funcdef-target-counter">target-counter()</a>
-     <li><a href="http://dev.w3.org/csswg/css-content-3/#funcdef-target-counters">target-counters()</a>
-     <li><a href="http://dev.w3.org/csswg/css-content-3/#target-text-function">target-text()</a>
+     <li><a href="https://drafts.csswg.org/css-content-3/#funcdef-target-counter">target-counter()</a>
+     <li><a href="https://drafts.csswg.org/css-content-3/#funcdef-target-counters">target-counters()</a>
+     <li><a href="https://drafts.csswg.org/css-content-3/#target-text-function">target-text()</a>
     </ul>
    <li><a data-link-type="biblio" href="#biblio-css-text-3">[css-text-3]</a> defines the following terms:
     <ul>
-     <li><a href="http://dev.w3.org/csswg/css-text-3/#propdef-hyphens">hyphens</a>
+     <li><a href="https://drafts.csswg.org/css-text-3/#propdef-hyphens">hyphens</a>
     </ul>
-   <li><a data-link-type="biblio" href="#biblio-css-values-3">[css-values-3]</a> defines the following terms:
+   <li><a data-link-type="biblio" href="#biblio-css-values-3">[css-values]</a> defines the following terms:
     <ul>
-     <li><a href="http://dev.w3.org/csswg/css-values-3/#length-value">&lt;length></a>
-     <li><a href="http://dev.w3.org/csswg/css-values-3/#comb-one">|</a>
+     <li><a href="https://drafts.csswg.org/css-values-3/#length-value">&lt;length></a>
+     <li><a href="https://drafts.csswg.org/css-values-3/#comb-one">|</a>
     </ul>
   </ul>
   <h2 class="no-num heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
   <dl>
    <dt id="biblio-css-content-3"><a class="self-link" href="#biblio-css-content-3"></a>[CSS-CONTENT-3]
-   <dd>CSS Generated Content Module Level 3 URL: <a href="http://dev.w3.org/csswg/css-content-3/">http://dev.w3.org/csswg/css-content-3/</a>
+   <dd>CSS Generated Content Module Level 3 URL: <a href="https://drafts.csswg.org/css-content-3/">https://drafts.csswg.org/css-content-3/</a>
    <dt id="biblio-css-text-3"><a class="self-link" href="#biblio-css-text-3"></a>[CSS-TEXT-3]
    <dd>Elika Etemad; Koji Ishii. <a href="http://www.w3.org/TR/css-text-3/">CSS Text Module Level 3</a>. 10 October 2013. LCWD. URL: <a href="http://www.w3.org/TR/css-text-3/">http://www.w3.org/TR/css-text-3/</a>
-   <dt id="biblio-css-values-3"><a class="self-link" href="#biblio-css-values-3"></a>[CSS-VALUES-3]
-   <dd>CSS Values and Units Module Level 3 URL: <a href="http://www.w3.org/TR/css3-values/">http://www.w3.org/TR/css3-values/</a>
+   <dt id="biblio-css-values"><a class="self-link" href="#biblio-css-values"></a>[CSS-VALUES]
+   <dd>Tab Atkins Jr.; Elika Etemad. <a href="http://www.w3.org/TR/css-values/">CSS Values and Units Module Level 3</a>. 11 June 2015. CR. URL: <a href="http://www.w3.org/TR/css-values/">http://www.w3.org/TR/css-values/</a>
    <dt id="biblio-rfc2119"><a class="self-link" href="#biblio-rfc2119"></a>[RFC2119]
    <dd>S. Bradner. <a href="https://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a>
   </dl>
   <h3 class="no-num heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
    <dt id="biblio-css3-display"><a class="self-link" href="#biblio-css3-display"></a>[CSS3-DISPLAY]
-   <dd>Tab Atkins Jr.; Elika Etemad. <a href="http://www.w3.org/TR/css-display-3/">CSS Display Module Level 3</a>. 11 September 2014. WD. URL: <a href="http://www.w3.org/TR/css-display-3/">http://www.w3.org/TR/css-display-3/</a>
+   <dd>Tab Atkins Jr.; Elika Etemad. <a href="http://www.w3.org/TR/css-display-3/">CSS Display Module Level 3</a>. 21 July 2015. WD. URL: <a href="http://www.w3.org/TR/css-display-3/">http://www.w3.org/TR/css-display-3/</a>
    <dt id="biblio-css3-line-grid"><a class="self-link" href="#biblio-css3-line-grid"></a>[CSS3-LINE-GRID]
    <dd>Elika Etemad; Koji Ishii; Alan Stearns. <a href="http://www.w3.org/TR/css-line-grid-1/">CSS Line Grid Module Level 1</a>. 16 September 2014. WD. URL: <a href="http://www.w3.org/TR/css-line-grid-1/">http://www.w3.org/TR/css-line-grid-1/</a>
    <dt id="biblio-css3-page-template"><a class="self-link" href="#biblio-css3-page-template"></a>[CSS3-PAGE-TEMPLATE]
@@ -2191,7 +2666,7 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
    <dt id="biblio-css3-content"><a class="self-link" href="#biblio-css3-content"></a>[CSS3-CONTENT]
    <dd>Ian Hickson. <a href="http://www.w3.org/TR/css3-content">CSS3 Generated and Replaced Content Module</a>. 14 May 2003. WD. URL: <a href="http://www.w3.org/TR/css3-content">http://www.w3.org/TR/css3-content</a>
    <dt id="biblio-css3-fonts"><a class="self-link" href="#biblio-css3-fonts"></a>[CSS3-FONTS]
-   <dd>John Daggett. <a href="http://www.w3.org/TR/css3-fonts/">CSS Fonts Module Level 3</a>. 11 December 2012. WD. URL: <a href="http://www.w3.org/TR/css3-fonts/">http://www.w3.org/TR/css3-fonts/</a>
+   <dd>John Daggett. <a href="http://www.w3.org/TR/css-fonts-3/">CSS Fonts Module Level 3</a>. 3 October 2013. CR. URL: <a href="http://www.w3.org/TR/css-fonts-3/">http://www.w3.org/TR/css-fonts-3/</a>
    <dt id="biblio-css3-gcpm"><a class="self-link" href="#biblio-css3-gcpm"></a>[CSS3-GCPM]
    <dd>Dave Cramer. <a href="http://www.w3.org/TR/css-gcpm-3/">CSS Generated Content for Paged Media Module</a>. 13 May 2014. WD. URL: <a href="http://www.w3.org/TR/css-gcpm-3/">http://www.w3.org/TR/css-gcpm-3/</a>
    <dt id="biblio-css3-page"><a class="self-link" href="#biblio-css3-page"></a>[CSS3-PAGE]
@@ -2206,6 +2681,8 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
    <dd>Dave Cramer. <a href="http://www.w3.org/TR/dpub-latinreq/">Requirements for Latin Text Layout and Pagination</a>. 30 September 2014. WD. URL: <a href="http://www.w3.org/TR/dpub-latinreq/">http://www.w3.org/TR/dpub-latinreq/</a>
    <dt id="biblio-houdini-font-metrics-1"><a class="self-link" href="#biblio-houdini-font-metrics-1"></a>[HOUDINI-FONT-METRICS-1]
    <dd>Stephen Zilles; Alan Stearns; Chris Lilley. <a href="http://dev.w3.org/houdini/font-metrics-api/">Font Metrics API Level 1</a>. ED. URL: <a href="http://dev.w3.org/houdini/font-metrics-api/">http://dev.w3.org/houdini/font-metrics-api/</a>
+   <dt id="biblio-html5"><a class="self-link" href="#biblio-html5"></a>[HTML5]
+   <dd>Ian Hickson; et al. <a href="http://www.w3.org/TR/html5/">HTML5</a>. 28 October 2014. REC. URL: <a href="http://www.w3.org/TR/html5/">http://www.w3.org/TR/html5/</a>
    <dt id="biblio-xslfo20"><a class="self-link" href="#biblio-xslfo20"></a>[XSLFO20]
    <dd>Dave Pawson. <a href="http://www.w3.org/TR/xslfo20/">Extensible Stylesheet Language (XSL) Version 2.0</a>. 17 January 2012. WD. URL: <a href="http://www.w3.org/TR/xslfo20/">http://www.w3.org/TR/xslfo20/</a>
   </dl>
@@ -2256,8 +2733,9 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
   </table>
   <h2 class="no-num heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
   <div style="counter-reset:issue">
+   <div class="issue"> Get more input on priorities.<a href="#issue-a84f618e"> ↵ </a></div>
    <div class="issue"> Not supported in Safari<a href="#issue-a7dbef9c"> ↵ </a></div>
-   <div class="issue"> <a class="property" data-link-type="propdesc" href="http://dev.w3.org/csswg/css-text-3/#propdef-hyphens">hyphens</a> property not supported in Chrome: https://code.google.com/p/chromium/issues/detail?id=47083<a href="#issue-85d128c4"> ↵ </a></div>
+   <div class="issue"> <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-text-3/#propdef-hyphens">hyphens</a> property not supported in Chrome: https://code.google.com/p/chromium/issues/detail?id=47083<a href="#issue-85d128c4"> ↵ </a></div>
    <div class="issue"> Defined in <a data-link-type="biblio" href="#biblio-css4-text">[css4-text]</a> which is not yet an official spec.<a href="#issue-66d0de53"> ↵ </a></div>
    <div class="issue"> implemented only by Prince and AH.<a href="#issue-f5d5acc7"> ↵ </a></div>
    <div class="issue"> Defined in <a data-link-type="biblio" href="#biblio-css4-text">[css4-text]</a> which is not yet an official spec.<a href="#issue-66d0de530"> ↵ </a></div>
@@ -2282,11 +2760,11 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
    <div class="issue"> How will Project Houdini fit into all of this?<a href="#issue-0016fe60"> ↵ </a></div>
    <div class="issue"> Is there a role for <a data-link-type="biblio" href="#biblio-css-regions-1">[css-regions-1]</a> in defining pagination?<a href="#issue-d59a4359"> ↵ </a></div>
    <div class="issue"> A significant number of people consider the page margin boxes as defined by <a data-link-type="biblio" href="#biblio-css3-page">[css3-page]</a> to be inadequate. <a data-link-type="biblio" href="#biblio-css3-page-template">[css3-page-template]</a> describes a potential alternative.<a href="#issue-a5c30b58"> ↵ </a></div>
-   <div class="issue"> <a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#funcdef-target-counter">target-counter()</a> is not implemented in browsers<a href="#issue-c6f7555b"> ↵ </a></div>
-   <div class="issue"> <a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#funcdef-target-counters">target-counters()</a> is not implemented in browsers<a href="#issue-9406ab50"> ↵ </a></div>
-   <div class="issue"> <a class="css" data-link-type="maybe" href="http://dev.w3.org/csswg/css-content-3/#target-text-function">target-text()</a> is not implemented in browsers<a href="#issue-3864b94a"> ↵ </a></div>
+   <div class="issue"> <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#funcdef-target-counter">target-counter()</a> is not implemented in browsers<a href="#issue-c6f7555b"> ↵ </a></div>
+   <div class="issue"> <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#funcdef-target-counters">target-counters()</a> is not implemented in browsers<a href="#issue-9406ab50"> ↵ </a></div>
+   <div class="issue"> <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#target-text-function">target-text()</a> is not implemented in browsers<a href="#issue-3864b94a"> ↵ </a></div>
    <div class="issue"> Not in a CSS spec.<a href="#issue-622d4c4f"> ↵ </a></div>
-   <div class="issue"> design a mechanism for this feature<a href="#issue-7a846b34"> ↵ </a></div>
+   <div class="issue"> design a mechanism for this feature.<a href="#issue-49cbc0de"> ↵ </a></div>
    <div class="issue"> Are CSS counters adequate to the task?<a href="#issue-cfb74b4a"> ↵ </a></div>
    <div class="issue"> only partial support in Gecko and WebKit<a href="#issue-14f549e5"> ↵ </a></div>
    <div class="issue"> unsupported in Blink, Trident/Edge<a href="#issue-7a30ac18"> ↵ </a></div>
