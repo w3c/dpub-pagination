@@ -961,7 +961,32 @@ Note: Digital publications often render footnotes differently from print. They m
 Cross-references
 </h2>
 
-TK
+Books often contain text that refers to other components of the same book. Such text commonly consists of the name or title of that component, along with a number used to identify that component. 
+
+<blockquote>
+as described in Chapter 14
+</blockquote>
+
+<blockquote>
+From the Aiguille du Midi, follow <b>A16</b> to 2950m
+</blockquote>
+
+<blockquote>
+Make Anchovy Mayonnaise (page 762), with 6 or 8 anchovies. </blockquote>
+
+<blockquote>
+For another example, see Figure 1.4.
+</blockquote>
+
+<blockquote>
+and equation (31.3) shows it does not!
+</blockquote>
+
+Many typesetting systems allow authors to generate numbers for such components. A cross-reference needs to be able to access such generated content from another location in the document.
+
+Note: CSS provides counters to number things; creating cross-references would require a mechanism to access the value of a counter at a particular location. The ''target-counter'' and ''target-counters'' functions in [[css3-content]] are designed to do this.
+
+Issue: [[css3-content]] does not have a mechanism to customize the content of a cross-reference based on the type of element being referred to. See <a href="https://lists.w3.org/Archives/Public/public-digipub/2015Aug/0079.html">https://lists.w3.org/Archives/Public/public-digipub/2015Aug/0079.html</a> and subsequent discussion. 
 
 <h2 id="sidebars">
 Sidebars
@@ -1318,5 +1343,5 @@ Further Reading
 
 <h2 class="no-num" id="acknowledgments">Acknowledgments</h2>
 
-Eric Aubourg, Luc Audrain, Bert Bos, Tom Byrer, James Clark, Brady Duga, Ivan Herman, Tony Graham, Bill Kasdorf, Jean Kaplansky, Liam Quin, Alan Stearns, Tzviya Siegman
+Eric Aubourg, Luc Audrain, Bert Bos, Tom Byrer, James Clark, Brady Duga, Ivan Herman, Tony Graham, Bill Kasdorf, Jean Kaplansky, Sanders Kleinfeld, Liam Quin, Alan Stearns, Tzviya Siegman
 
