@@ -1020,6 +1020,8 @@ alignment with reference
 Equations
 </h2>
 
+Mathematics is a critical part of many books, from learning materials for kindergartners to monographs on physics. 
+
 
 <h3 id="breaking-equations">
 Breaking equations
@@ -1058,6 +1060,16 @@ extend for several lines
 Note: the alignment is generally scoped to a page or (more likely) a defined set of equations. 
 
 Note: this is similar to how numbers in a table column may align on a decimal point or other character. 
+
+
+<h3 id="annotating-equations">
+Annotating equations</h3>
+
+
+<figure id="fig-annotating-equations"> <img src="images/golf_annotated.png" width="480" alt="" /> <figcaption> Annotated Equation from <a href="https://what-if.xkcd.com/85/">XKCD’s What if?</a> </figcaption> </figure> 
+
+
+
 
 <h2 id="columns">
 	Columns
