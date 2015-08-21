@@ -11,13 +11,16 @@
   <meta content="[WORKSTATUS]" name="csswg-work-status">
   
   
-  <meta content="DREAM" name="w3c-status">
+  <meta content="ED" name="w3c-status">
   
   
-  <link href="default.css" rel="stylesheet" type="text/css">
-    
+  <link href="../default.css" rel="stylesheet" type="text/css">
   
-  <link href="https://www.w3.org/StyleSheets/TR/W3C-DREAM" rel="stylesheet" type="text/css">
+  
+  <link href="../csslogo.ico" rel="shortcut icon" type="image/x-icon">
+  
+  
+  <link href="https://www.w3.org/StyleSheets/TR/W3C-ED" rel="stylesheet" type="text/css">
   
 
   <meta content="Bikeshed 1.0.0" name="generator">
@@ -132,7 +135,7 @@ table.summary td.footnote::before {
   
    <h1 class="p-name no-ref" id="title">Priorities for CSS from the Digital Publishing Interest Group</h1>
   
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">A Collection of Interesting Ideas,
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft,
     <time class="dt-updated" datetime="2015-08-21">21 August 2015</time></span></h2>
   
    <div data-fill-with="spec-metadata">
@@ -183,13 +186,13 @@ table.summary td.footnote::before {
    <p>This document is an <b>Editor’s Draft</b>.
 
   </p>
-   <p>Publication as an Editor’s Draft does not imply endorsement by the W3C
+   <p>Publication as a Editor’s Draft does not imply endorsement by the W3C
    Membership. This is a draft document and may be updated, replaced or
    obsoleted by other documents at any time. It is inappropriate to cite this
    document as other than work in progress.
 
   </p>
-   <p>The (<a href="http://lists.w3.org/Archives/Public/public-digipub/">archived</a>) public
+   <p>The (<a href="https://lists.w3.org/Archives/Public/public-digipub/">archived</a>) public
    mailing list <a href="mailto:public-digipub@w3.org">public-digipub@w3.org</a> (see
    <a href="http://www.w3.org/Mail/Request">instructions</a>) is preferred
    for discussion of this specification. When sending e-mail, please put the
@@ -198,11 +201,11 @@ table.summary td.footnote::before {
 
   </p>
    <p>This document was produced by the <a href="http://www.w3.org/dpub/IG/">Digital Publishing Interest Group</a> (part of
-   the <a href="http://www.w3.org/dpub/">Digital Publishing Activity</a>). This document is not on Recommendation track.
+   the <a href="http://www.w3.org/dpub/">Digital Publishing Activity</a>).
 
   </p>
    <p>This document was produced by a group operating under the <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February
-   2004 W3C Patent Policy</a>. W3C maintains a <a href="http://www.w3.org/2004/01/pp-impl/64149/status" rel="disclosure">public list of any patent disclosures</a> made in
+   2004 W3C Patent Policy</a>. W3C maintains a <a href="http://www.w3.org/2004/01/pp-impl/32061/status" rel="disclosure">public list of any patent disclosures</a> made in
    connection with the deliverables of the group; that page also includes
    instructions for disclosing a patent. An individual who has actual
    knowledge of a patent which the individual believes contains <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential
@@ -215,7 +218,6 @@ table.summary td.footnote::before {
   </p>
    <p>
 </p></div>
->>>>>>> 7972c553a04a8ccdd303bf25adb9b126b3e1978e
 
   <div data-fill-with="at-risk"></div>
 
@@ -408,7 +410,7 @@ Introduction
    <p>As publishing moves to the Open Web Platform (OWP), we hope to expand upon the range of content we are able to publish with web technologies. How content is displayed is of critical importance to how it is understood, and so we ask much of CSS. This document aims to describe our highest priorities for entirely new CSS features, implementation of CSS features that have already been specified, and even some cases where work may need to be done beyond the scope of CSS.</p>
 
 
-   <p class="note" role="note">Note: Many of the features described here are documented in various requirements documents written by the W3C, such as <a data-link-type="biblio" href="#biblio-dpub-latinreq">[dpub-latinreq]</a> and <a data-link-type="biblio" href="#biblio-jlreq">[jlreq]</a>. A complete list of such documents can be found <a href="http://www.w3.org/International/layout">here</a>.</p>
+   <p class="note" role="note">Note: Many of the features described here are documented in various requirements documents written by the W3C, such as <a data-link-type="biblio" href="#biblio-jlreq">[jlreq]</a> and <a data-link-type="biblio" href="#biblio-dpub-latinreq">[dpub-latinreq]</a>. A complete list of such documents can be found <a href="http://www.w3.org/International/layout">here</a>.</p>
 
 
    <h2 class="heading settled" data-level="2" id="summary"><span class="secno">2. </span><span class="content">
@@ -496,7 +498,7 @@ Features requiring implementation
 
       <td><a data-link-type="biblio" href="#biblio-css3-writing-modes">[css3-writing-modes]</a>, CR
 
-      <td>Chrome, IE, Opera, Safari, AH
+      <td>Chrome, IE, Edge, Opera, Safari, AH
 
       <td>Firefox (which has announced <a href="https://mail.mozilla.org/pipermail/firefox-dev/2015-July/003050.html">intent to ship</a>)
 
@@ -526,7 +528,7 @@ Features requiring implementation
 
      <tr>
 
-      <td><a href="#ruby">Ruby</a>
+      <td><a href="#ruby">Ruby Styling</a>
 
       <td>4
 
@@ -1251,10 +1253,10 @@ Ruby
 </span><a class="self-link" href="#ruby"></a></h4>
 
 
-   <p class="issue" id="issue-6f561c44"><a class="self-link" href="#issue-6f561c44"></a> Details needed on level of support in different browsers, and priorities for implementing features</p>
+   <p class="note" role="note">Note: W3C has created a very useful <a href="http://www.w3.org/International/tests/repo/results/ruby-html">test suite with results</a> for Ruby markup.</p>
 
 
-   <p class="issue" id="issue-fa46a009"><a class="self-link" href="#issue-fa46a009"></a> is the spec stable?</p>
+   <p class="issue" id="issue-2756fea4"><a class="self-link" href="#issue-2756fea4"></a> is the Ruby CSS spec stable?</p>
 
 
    <div class="polyfill" id="ruby-polyfill">
@@ -1716,7 +1718,7 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
     <ul>
      <li><a href="https://drafts.csswg.org/css-text-3/#propdef-hyphens">hyphens</a>
     </ul>
-   <li><a data-link-type="biblio" href="#biblio-css-values">[css-values]</a> defines the following terms:
+   <li><a data-link-type="biblio" href="#biblio-css-values-3">[css-values]</a> defines the following terms:
     <ul>
      <li><a href="https://drafts.csswg.org/css-values-3/#length-value">&lt;length></a>
      <li><a href="https://drafts.csswg.org/css-values-3/#comb-one">|</a>
@@ -1848,8 +1850,7 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
    <div class="issue"> not supported in Firefox. <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1040668">Bug to implement</a> unassigned.<a href="#issue-8277a584"> ↵ </a></div>
    <div class="issue"> not supported in IE.<a href="#issue-48a74c92"> ↵ </a></div>
    <div class="issue"> partial support in Chrome and Opera; don’t support left and right values of -webkit-text-emphasis-position.<a href="#issue-42c68512"> ↵ </a></div>
-   <div class="issue"> Details needed on level of support in different browsers, and priorities for implementing features<a href="#issue-6f561c44"> ↵ </a></div>
-   <div class="issue"> is the spec stable?<a href="#issue-fa46a009"> ↵ </a></div>
+   <div class="issue"> is the Ruby CSS spec stable?<a href="#issue-2756fea4"> ↵ </a></div>
    <div class="issue"> <a data-link-type="biblio" href="#biblio-css4-text">[css4-text]</a> is not yet an official spec<a href="#issue-10b2e175"> ↵ </a></div>
    <div class="issue"> implementation status unknown<a href="#issue-9bf26f2b"> ↵ </a></div>
    <div class="issue"> will be shipped in Safari in Fall 2015, but not yet implemented in other browsers.<a href="#issue-0d715af6"> ↵ </a></div>
