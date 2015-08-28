@@ -14,7 +14,7 @@
   <meta content="ED" name="w3c-status">
   
   
-  <link href="default.css" rel="stylesheet" type="text/css">
+  <link href="../default.css" rel="stylesheet" type="text/css">
   
   
   <link href="../csslogo.ico" rel="shortcut icon" type="image/x-icon">
@@ -136,7 +136,7 @@ table.summary td.footnote::before {
    <h1 class="p-name no-ref" id="title">Priorities for CSS from the Digital Publishing Interest Group</h1>
   
    <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft,
-    <time class="dt-updated" datetime="2015-08-21">21 August 2015</time></span></h2>
+    <time class="dt-updated" datetime="2015-08-28">28 August 2015</time></span></h2>
   
    <div data-fill-with="spec-metadata">
     <dl>
@@ -239,7 +239,7 @@ Features requiring implementation
       <li><a href="#features-requiring-specification"><span class="secno">2.2</span> <span class="content">
 Features requiring specification
 </span></a>
-      <li><a href="#features-requiring-design"><span class="secno">2.3</span> <span class="content">
+      <li><a href="#featurs-requiring-design"><span class="secno">2.3</span> <span class="content">
 Features requiring design
 </span></a>
      </ul>
@@ -254,7 +254,10 @@ Fonts
         <li><a href="#font-feature-settings"><span class="secno">3.1.1</span> <span class="content">
 font-feature-settings
 </span></a>
-        <li><a href="#font-metric-api"><span class="secno">3.1.2</span> <span class="content">
+        <li><a href="#font-variant"><span class="secno">3.1.2</span> <span class="content">
+Font feature properties
+</span></a>
+        <li><a href="#font-metric-api"><span class="secno">3.1.3</span> <span class="content">
 Font Metric API
 </span></a>
        </ul>
@@ -272,7 +275,7 @@ Hyphenation parameters
           <li><a href="#hyphenate-limit-chars"><span class="secno">3.2.2.1</span> <span class="content">
 hyphenate-limit-chars
 </span></a>
-          <li><a href="#hyphenate_limit_lines"><span class="secno">3.2.2.2</span> <span class="content">
+          <li><a href="#hyphenate-limit-lines"><span class="secno">3.2.2.2</span> <span class="content">
 hyphenate-limit-lines
 </span></a>
           <li><a href="#hyphenation-dictionaries"><span class="secno">3.2.2.3</span> <span class="content">
@@ -281,7 +284,7 @@ Hyphenation dictionaries
           <li><a href="#hyphenation-exception-list"><span class="secno">3.2.2.4</span> <span class="content">
 Hyphenation exception list
 </span></a>
-          <li><a href="#min_length_of_last_line"><span class="secno">3.2.2.5</span> <span class="content">
+          <li><a href="#min-length-of-last-line"><span class="secno">3.2.2.5</span> <span class="content">
 min-length-of-last-line
 </span></a>
          </ul>
@@ -329,13 +332,13 @@ Generated Content and Cross-References
 Cross-References
 </span></a>
        <ul class="toc">
-        <li><a href="#the-target_counter-function"><span class="secno">5.1.1</span> <span class="content">
+        <li><a href="#target-counter-function"><span class="secno">5.1.1</span> <span class="content">
 The <span class="css">target-counter()</span> function
 </span></a>
-        <li><a href="#the-target_counters-function"><span class="secno">5.1.2</span> <span class="content">
+        <li><a href="#target-counters-function"><span class="secno">5.1.2</span> <span class="content">
 The <span class="css">target-counters()</span> function
 </span></a>
-        <li><a href="#the-target_text-function"><span class="secno">5.1.3</span> <span class="content">
+        <li><a href="#target-text-function"><span class="secno">5.1.3</span> <span class="content">
 The <span class="css">target-text()</span> function
 </span></a>
        </ul>
@@ -364,7 +367,7 @@ OpenType Math Tables
 Tables
 </span></a>
      <ul class="toc">
-      <li><a href="#character_based-alignment"><span class="secno">7.1</span> <span class="content">
+      <li><a href="#character-based-alignment"><span class="secno">7.1</span> <span class="content">
 Character-based alignment
 </span></a>
      </ul>
@@ -460,7 +463,7 @@ Features requiring implementation
 
      <tr>
 
-      <td><a href="#font-feature-settings">font-feature-settings</a>
+      <td><a href="#font-feature-settings">Open Type Font Variants</a>
 
       <td>5
 
@@ -476,7 +479,7 @@ Features requiring implementation
 
      <tr>
 
-      <td><a href="#hyphens">hyphens</a>
+      <td><a href="#hyphens">Hyphens</a>
 
       <td>5
 
@@ -492,7 +495,7 @@ Features requiring implementation
 
      <tr>
 
-      <td><a href="http://w3c.github.io/typography/#vertical_text">vertical text</a>
+      <td><a href="http://w3c.github.io/typography/#vertical_text">Vertical text</a>
 
       <td>5
 
@@ -559,20 +562,6 @@ Features requiring implementation
 
 
 
-     <tr>
-
-      <td><a href="#open-type-math-tables">OpenType Math Tables</a>
-
-      <td>3
-
-      <td>
-
-      <td>Partial support in Firefox and Safari
-
-      <td>IE, Chrome, Opera
-
-      <td>
-
 
 </table>
 
@@ -614,7 +603,7 @@ Features requiring specification
 
      <tr>
 
-      <td>character-based alignment in tables
+      <td>Character-based alignment in tables
 
       <td>5
 
@@ -628,9 +617,10 @@ Features requiring specification
 
 
 
+
      <tr>
 
-      <td><a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#funcdef-target-counter">target-counter()</a>
+      <td>Cross-references
 
       <td>5
 
@@ -643,34 +633,6 @@ Features requiring specification
       <td><a href="http://philschatz.com/css-polyfills.js/">Yes</a>
 
 
-     <tr>
-
-      <td><a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#funcdef-target-counters">target-counters()</a>
-
-      <td>5
-
-      <td><a data-link-type="biblio" href="#biblio-css3-content">[css3-content]</a>, ED
-
-      <td>Prince, AH
-
-      <td>Chrome, Firefox, IE, Opera, Safari
-
-      <td><a href="http://philschatz.com/css-polyfills.js/">Yes</a>
-
-
-     <tr>
-
-      <td><a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#target-text-function">target-text()</a>
-
-      <td>5
-
-      <td><a data-link-type="biblio" href="#biblio-css3-content">[css3-content]</a>, ED
-
-      <td>Prince, AH
-
-      <td>Chrome, Firefox, IE, Opera, Safari
-
-      <td><a href="http://philschatz.com/css-polyfills.js/">Yes</a>
 
 
 
@@ -692,7 +654,7 @@ Features requiring specification
 
      <tr>
 
-      <td>content property on elements
+      <td>Content property on elements
 
       <td>4
 
@@ -724,7 +686,7 @@ Features requiring specification
 
      <tr>
 
-      <td><a href="#initial-letter">initial-letter</a>
+      <td><a href="#initial-letter">Initial-letter</a>
 
       <td>3
 
@@ -740,7 +702,7 @@ Features requiring specification
 
      <tr>
 
-      <td><a href="#hanging-punctuation">hanging punctuation</a>
+      <td><a href="#hanging-punctuation">Hanging punctuation</a>
 
       <td>3
 
@@ -760,9 +722,9 @@ Features requiring specification
 
 
 
-   <h3 class="heading settled" data-level="2.3" id="features-requiring-design"><span class="secno">2.3. </span><span class="content">
+   <h3 class="heading settled" data-level="2.3" id="featurs-requiring-design"><span class="secno">2.3. </span><span class="content">
 Features requiring design
-</span><a class="self-link" href="#features-requiring-design"></a></h3>
+</span><a class="self-link" href="#featurs-requiring-design"></a></h3>
 
 
    <p class="note" role="note">Note: these features require design work.</p>
@@ -809,13 +771,30 @@ Features requiring design
 
 
 
+
      <tr>
 
-      <td>Hyphenation exception dictionary
+      <td><a href="#math">Mathematics</a>
+
+      <td>5
+
+      <td>Houdini?
+
+      <td>Varies
+
+      <td>Varies
+
+      <td>MathJax
+
+
+
+     <tr>
+
+      <td>Controlling hyphenation
 
       <td>4
 
-      <td>unspecified
+      <td>Some properties in <a data-link-type="biblio" href="#biblio-css4-text">[css4-text]</a>, ED
 
       <td>AH, Prince
 
@@ -843,75 +822,12 @@ Features requiring design
 
 
 
-     <tr>
-
-      <td>hyphenate-limit-chars
-
-      <td>3
-
-      <td><a data-link-type="biblio" href="#biblio-css4-text">[css4-text]</a>, unofficial draft
-
-      <td>AH, Prince
-
-      <td>Chrome, Firefox, IE, Opera, Safari
-
-      <td>
-
 
 
 
      <tr>
 
-      <td>hyphenate-limit-lines
-
-      <td>3
-
-      <td><a data-link-type="biblio" href="#biblio-css4-text">[css4-text]</a>, unofficial draft
-
-      <td>AH, Prince
-
-      <td>Chrome, Firefox, IE, Opera, Safari
-
-      <td>
-
-
-
-     <tr>
-
-      <td><a class="property" data-link-type="propdesc" href="#propdef-hyphenate-patterns">hyphenate-patterns</a>
-
-      <td>3
-
-      <td>Unspecified
-
-      <td>AH, Prince
-
-      <td>Chrome, Firefox, IE, Opera, Safari
-
-      <td>
-
-
-
-     <tr>
-
-      <td><a class="property" data-link-type="propdesc" href="#propdef-min-length-of-last-line">min-length-of-last-line</a>
-
-      <td>2
-
-      <td>Unspecified
-
-      <td>
-
-      <td>Chrome, Firefox, IE, Opera, Safari, Prince, AH
-
-      <td>
-
-
-
-
-     <tr>
-
-      <td><a class="property" data-link-type="propdesc" href="#propdef-merge-sequential-page-numbers">merge-sequential-page-numbers</a>
+      <td>Tables of contents and indexes
 
       <td>2
 
@@ -952,24 +868,68 @@ Fonts
 </span><a class="self-link" href="#fonts"></a></h3>
 
 
+   <p>Good typography depends on accessing the many powerful features in OpenType fonts.</p>
+
+
    <h4 class="heading settled" data-level="3.1.1" id="font-feature-settings"><span class="secno">3.1.1. </span><span class="content">
 font-feature-settings
 </span><a class="self-link" href="#font-feature-settings"></a></h4>
 
 
+   <p class="note" role="note">Note: <code>font-variant-*</code> is the preferred method for accessing OpenType features.</p>
+
+
    <p class="issue" id="issue-54e63ee2"><a class="self-link" href="#issue-54e63ee2"></a> Not yet supported in Safari</p>
 
 
-   <p class="note" role="note">Note: support for this would help with ligatures</p>
-
-
    <div class="polyfill" id="font-feature-settings-polyfill">
-Can be polyfilled by subsetting fonts, but this does not seem to be viable in a production environment. 
+Can be polyfilled by subsetting fonts, but this is not viable in a production environment. 
 </div>
 
 
+   <h4 class="heading settled" data-level="3.1.2" id="font-variant"><span class="secno">3.1.2. </span><span class="content">
+Font feature properties
+</span><a class="self-link" href="#font-variant"></a></h4>
 
-   <h4 class="heading settled" data-level="3.1.2" id="font-metric-api"><span class="secno">3.1.2. </span><span class="content">
+
+   <p>The font feature properties are the preferred method for accessing OpenType features.</p>
+
+
+   <ol>
+    <li data-md="">
+     <p><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-kerning">font-kerning</a></p>
+     
+
+    <li data-md="">
+     <p><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-variant-ligatures">font-variant-ligatures</a></p>
+     
+
+    <li data-md="">
+     <p><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-variant-position">font-variant-position</a></p>
+     
+
+    <li data-md="">
+     <p><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-variant-caps">font-variant-caps</a></p>
+     
+
+    <li data-md="">
+     <p><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-variant-numeric">font-variant-numeric</a></p>
+     
+
+    <li data-md="">
+     <p><a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-variant-alternates">font-variant-alternates</a></p>
+     
+
+    <li data-md="">
+     <p>@font-feature-value</p>
+     
+</ol>
+
+   <p class="issue" id="issue-37716395"><a class="self-link" href="#issue-37716395"></a> Research support for these properties.</p>
+
+
+
+   <h4 class="heading settled" data-level="3.1.3" id="font-metric-api"><span class="secno">3.1.3. </span><span class="content">
 Font Metric API
 </span><a class="self-link" href="#font-metric-api"></a></h4>
 
@@ -1055,9 +1015,9 @@ hyphenate-limit-chars
 
 
 
-   <h5 class="heading settled" data-level="3.2.2.2" id="hyphenate_limit_lines"><span class="secno">3.2.2.2. </span><span class="content">
+   <h5 class="heading settled" data-level="3.2.2.2" id="hyphenate-limit-lines"><span class="secno">3.2.2.2. </span><span class="content">
 hyphenate-limit-lines
-</span><a class="self-link" href="#hyphenate_limit_lines"></a></h5>
+</span><a class="self-link" href="#hyphenate-limit-lines"></a></h5>
 
 
    <p>This property specifies the maximum number of consecutive lines that may end with a hyphenated word.</p>
@@ -1182,9 +1142,9 @@ Kabba-list
 
 
 
-   <h5 class="heading settled" data-level="3.2.2.5" id="min_length_of_last_line"><span class="secno">3.2.2.5. </span><span class="content">
+   <h5 class="heading settled" data-level="3.2.2.5" id="min-length-of-last-line"><span class="secno">3.2.2.5. </span><span class="content">
 min-length-of-last-line
-</span><a class="self-link" href="#min_length_of_last_line"></a></h5>
+</span><a class="self-link" href="#min-length-of-last-line"></a></h5>
 
 
    <table class="definition propdef" data-link-for-hint="min-length-of-last-line">
@@ -1401,25 +1361,25 @@ Cross-References
 </span><a class="self-link" href="#cross-references"></a></h3>
 
 
-   <h4 class="heading settled" data-level="5.1.1" id="the-target_counter-function"><span class="secno">5.1.1. </span><span class="content">
+   <h4 class="heading settled" data-level="5.1.1" id="target-counter-function"><span class="secno">5.1.1. </span><span class="content">
 The <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#funcdef-target-counter">target-counter()</a> function
-</span><a class="self-link" href="#the-target_counter-function"></a></h4>
+</span><a class="self-link" href="#target-counter-function"></a></h4>
 
 
    <p class="issue" id="issue-c6f7555b"><a class="self-link" href="#issue-c6f7555b"></a> <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#funcdef-target-counter">target-counter()</a> is not implemented in browsers</p>
 
 
-   <h4 class="heading settled" data-level="5.1.2" id="the-target_counters-function"><span class="secno">5.1.2. </span><span class="content">
+   <h4 class="heading settled" data-level="5.1.2" id="target-counters-function"><span class="secno">5.1.2. </span><span class="content">
 The <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#funcdef-target-counters">target-counters()</a> function
-</span><a class="self-link" href="#the-target_counters-function"></a></h4>
+</span><a class="self-link" href="#target-counters-function"></a></h4>
 
 
    <p class="issue" id="issue-9406ab50"><a class="self-link" href="#issue-9406ab50"></a> <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#funcdef-target-counters">target-counters()</a> is not implemented in browsers</p>
 
 
-   <h4 class="heading settled" data-level="5.1.3" id="the-target_text-function"><span class="secno">5.1.3. </span><span class="content">
+   <h4 class="heading settled" data-level="5.1.3" id="target-text-function"><span class="secno">5.1.3. </span><span class="content">
 The <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#target-text-function">target-text()</a> function
-</span><a class="self-link" href="#the-target_text-function"></a></h4>
+</span><a class="self-link" href="#target-text-function"></a></h4>
 
 
    <p class="issue" id="issue-3864b94a"><a class="self-link" href="#issue-3864b94a"></a> <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#target-text-function">target-text()</a> is not implemented in browsers</p>
@@ -1512,6 +1472,10 @@ Generated content
 </div>
 
 
+   <p class="issue" id="issue-34f3be3e"><a class="self-link" href="#issue-34f3be3e"></a> Is this necessary? <code>hr</code> can be restyled by using content on <code>hr::before</code> and setting the border of the <code>hr</code> to <code>none</code>.</p>
+
+
+   <p class="issue" id="issue-7f7ddd10"><a class="self-link" href="#issue-7f7ddd10"></a> Find more use cases.</p>
 
 
    <h2 class="heading settled" data-level="6" id="math"><span class="secno">6. </span><span class="content">
@@ -1531,10 +1495,17 @@ Math
      <p>Support for Open Type Math Tables</p>
      
 
-
-
-
+    <li data-md="">
+     <p>Custom Layout from Houdini</p>
+     
 </ol>
+
+   <p class="issue" id="issue-16014239"><a class="self-link" href="#issue-16014239"></a> Is MathML the ultimate solution for math on the web? Could math display move closer to the SVG model of being more related to CSS (as with the FX Task Force)?</p>
+
+
+
+
+
 
    <h3 class="heading settled" data-level="6.1" id="aligning-equations"><span class="secno">6.1. </span><span class="content">
 Aligning equations
@@ -1603,9 +1574,9 @@ Tables
 
 
 
-   <h3 class="heading settled" data-level="7.1" id="character_based-alignment"><span class="secno">7.1. </span><span class="content">
+   <h3 class="heading settled" data-level="7.1" id="character-based-alignment"><span class="secno">7.1. </span><span class="content">
 Character-based alignment
-</span><a class="self-link" href="#character_based-alignment"></a></h3>
+</span><a class="self-link" href="#character-based-alignment"></a></h3>
 
 
    <div class="example" id="example-be78ca92"><a class="self-link" href="#example-be78ca92"></a>
@@ -1717,6 +1688,15 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
      <li><a href="https://drafts.csswg.org/css-content-3/#funcdef-target-counters">target-counters()</a>
      <li><a href="https://drafts.csswg.org/css-content-3/#target-text-function">target-text()</a>
     </ul>
+   <li><a data-link-type="biblio" href="#biblio-css-fonts-3">[css-fonts-3]</a> defines the following terms:
+    <ul>
+     <li><a href="https://drafts.csswg.org/css-fonts-3/#propdef-font-kerning">font-kerning</a>
+     <li><a href="https://drafts.csswg.org/css-fonts-3/#propdef-font-variant-alternates">font-variant-alternates</a>
+     <li><a href="https://drafts.csswg.org/css-fonts-3/#propdef-font-variant-caps">font-variant-caps</a>
+     <li><a href="https://drafts.csswg.org/css-fonts-3/#propdef-font-variant-ligatures">font-variant-ligatures</a>
+     <li><a href="https://drafts.csswg.org/css-fonts-3/#propdef-font-variant-numeric">font-variant-numeric</a>
+     <li><a href="https://drafts.csswg.org/css-fonts-3/#propdef-font-variant-position">font-variant-position</a>
+    </ul>
    <li><a data-link-type="biblio" href="#biblio-css-text-3">[css-text-3]</a> defines the following terms:
     <ul>
      <li><a href="https://drafts.csswg.org/css-text-3/#propdef-hyphens">hyphens</a>
@@ -1732,6 +1712,8 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
   <dl>
    <dt id="biblio-css-content-3"><a class="self-link" href="#biblio-css-content-3"></a>[CSS-CONTENT-3]
    <dd>CSS Generated Content Module Level 3 URL: <a href="https://drafts.csswg.org/css-content-3/">https://drafts.csswg.org/css-content-3/</a>
+   <dt id="biblio-css-fonts-3"><a class="self-link" href="#biblio-css-fonts-3"></a>[CSS-FONTS-3]
+   <dd>John Daggett. <a href="http://www.w3.org/TR/css-fonts-3/">CSS Fonts Module Level 3</a>. 3 October 2013. CR. URL: <a href="http://www.w3.org/TR/css-fonts-3/">http://www.w3.org/TR/css-fonts-3/</a>
    <dt id="biblio-css-text-3"><a class="self-link" href="#biblio-css-text-3"></a>[CSS-TEXT-3]
    <dd>Elika Etemad; Koji Ishii. <a href="http://www.w3.org/TR/css-text-3/">CSS Text Module Level 3</a>. 10 October 2013. LCWD. URL: <a href="http://www.w3.org/TR/css-text-3/">http://www.w3.org/TR/css-text-3/</a>
    <dt id="biblio-css-values"><a class="self-link" href="#biblio-css-values"></a>[CSS-VALUES]
@@ -1839,6 +1821,7 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
   <div style="counter-reset:issue">
    <div class="issue"> Get more input on priorities.<a href="#issue-a84f618e"> ↵ </a></div>
    <div class="issue"> Not yet supported in Safari<a href="#issue-54e63ee2"> ↵ </a></div>
+   <div class="issue"> Research support for these properties.<a href="#issue-37716395"> ↵ </a></div>
    <div class="issue"> <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-text-3/#propdef-hyphens">hyphens</a> property not supported in Chrome: https://code.google.com/p/chromium/issues/detail?id=47083<a href="#issue-85d128c4"> ↵ </a></div>
    <div class="issue"> Defined in <a data-link-type="biblio" href="#biblio-css4-text">[css4-text]</a> which is not yet an official spec.<a href="#issue-66d0de53"> ↵ </a></div>
    <div class="issue"> implemented only by Prince and AH.<a href="#issue-f5d5acc7"> ↵ </a></div>
@@ -1867,6 +1850,9 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
    <div class="issue"> <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#funcdef-target-counters">target-counters()</a> is not implemented in browsers<a href="#issue-9406ab50"> ↵ </a></div>
    <div class="issue"> <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-content-3/#target-text-function">target-text()</a> is not implemented in browsers<a href="#issue-3864b94a"> ↵ </a></div>
    <div class="issue"> Not in a CSS spec.<a href="#issue-622d4c4f"> ↵ </a></div>
+   <div class="issue"> Is this necessary? <code>hr</code> can be restyled by using content on <code>hr::before</code> and setting the border of the <code>hr</code> to <code>none</code>.<a href="#issue-34f3be3e"> ↵ </a></div>
+   <div class="issue"> Find more use cases.<a href="#issue-7f7ddd10"> ↵ </a></div>
+   <div class="issue"> Is MathML the ultimate solution for math on the web? Could math display move closer to the SVG model of being more related to CSS (as with the FX Task Force)?<a href="#issue-16014239"> ↵ </a></div>
    <div class="issue"> design a mechanism for this feature.<a href="#issue-49cbc0de"> ↵ </a></div>
    <div class="issue"> Are CSS counters adequate to the task?<a href="#issue-cfb74b4a"> ↵ </a></div>
    <div class="issue"> only partial support in Gecko and WebKit<a href="#issue-14f549e5"> ↵ </a></div>
