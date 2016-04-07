@@ -1192,7 +1192,7 @@ However, in Spanish the roles are reversed, with the period used to group digits
 </pre>
 </div>
 
-Note: The CSSWG has <a href="https://wiki.csswg.org/ideas/content-formatting">informally proposed</a> a method for formatting numbers. See 
+Note: The CSSWG has <a href="https://wiki.csswg.org/ideas/content-formatting">informally proposed</a> a method for formatting numbers.
 
 
 
