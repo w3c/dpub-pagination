@@ -1110,39 +1110,43 @@ Language-specific spacing rules
 		<td>Punctuation</td>
 		<td>English</td>
 		<td>French</td>
-		<td></td>
+		<td>Spanish</td>
 	</tr>
 	<tr>
-		<td>Exclamation Point !</td>
+		<td>Exclamation Point</td>
 		<td>!</td>
 		<td>[thin space]!</td>
-		<td></td>
+		<td>¡text!</td>
 	</tr>
 	<tr>
-		<td>Colon :</td>
+		<td>Colon</td>
+		<td>:</td>
 		<td>[thin space]:</td>
-		<td></td>
-		<td></td>
+		<td>:</td>
 	</tr>
 		<tr>
-		<td>Question Mark ?</td>
+		<td>Question Mark</td>
 		<td>?</td>
 		<td>[thin space]?</td>
-		<td></td>
+		<td>¿text?</td>
 	</tr>
 	<tr>
 		<td>Open Quote</td>
 		<td>“</td>
 		<td>«[thin space]</td>
-		<td></td>
+		<td>“</td>
 	</tr>
 	<tr>
 		<td>Close Quote</td>
 		<td>”</td>
 		<td>[thin space]»</td>
-		<td></td>
+		<td>”</td>
 	</tr>
 </table>
+
+
+
+
 
 
 <h3 id="em-dashes-and-en-dashes">
@@ -1166,6 +1170,30 @@ prince-text-replace: "—" "\200A—\200A";
 In this example, we’re adding hair spaces around em-dashes.
 
 </div>
+
+
+<h3 id="number-formatting">
+Number formatting
+</h3>
+
+Different languages have different conventions for formatting numbers. Punctuation marks are inserted at specified points in numbers to aid readability. For example, in English commas are used to separate groups of digits, and a period to denote the decimal point.
+
+<div class="example">
+<pre>
+299,792,458.0
+</pre>
+</div>
+
+However, in Spanish the roles are reversed, with the period used to group digits, and the comma for the decimal point:
+
+<div class="example">
+<pre>
+299.792.458,0
+</pre>
+</div>
+
+Note: The CSSWG has <a href="https://wiki.csswg.org/ideas/content-formatting">informally proposed</a> a method for formatting numbers. See 
+
 
 
 <h2 id="special-considerations-for-genres">
