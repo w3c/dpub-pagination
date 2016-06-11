@@ -1184,13 +1184,64 @@ Different languages have different conventions for formatting numbers. Punctuati
 </pre>
 </div>
 
-However, in Spanish the roles are reversed, with the period used to group digits, and the comma for the decimal point:
+However, in Spanish and Norwegian the roles are reversed, with the period used to group digits, and the comma for the decimal point:
 
 <div class="example">
 <pre>
 299.792.458,0
 </pre>
 </div>
+
+
+<table>
+<tr>
+<th>Language</th>
+<th>Grouping separator</th>
+<th>Decimal separator</th>
+</tr>
+<tr>
+<td>Austria, Belgium, Brazil, Canada (fr), Czech Republic, Denmark, Estonia, Finland, France, Germany, Hungary, Italy, Netherlands, Norway, Peru, Poland, Portugal, Romania, South Africa, Spain, Sweden, Switzerland</td>
+<td>space</td>
+<td>comma</td>
+</tr>
+<tr>
+<td>Argentina, Austria, Brazil, Denmark, Germany, Italy, Portugal, Romania, Slovenia, Spain (older)</td>
+<td>period</td>
+<td>comma</td>
+</tr>
+<tr>
+<td>Great Britain, United States</td>
+<td>comma</td>
+<td>period</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+
+</table>
 
 Note: The CSSWG has <a href="https://wiki.csswg.org/ideas/content-formatting">informally proposed</a> a method for formatting numbers.
 
