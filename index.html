@@ -4,7 +4,7 @@
   <title>Requirements for Latin Text Layout and Pagination</title>
   <meta content="[WORKSTATUS]" name="csswg-work-status">
   <meta content="ED" name="w3c-status">
-  <link href="default.css" rel="stylesheet" type="text/css">
+  <link href="../default.css" rel="stylesheet" type="text/css">
   <link href="../csslogo.ico" rel="shortcut icon" type="image/x-icon">
   <link href="https://www.w3.org/StyleSheets/TR/W3C-ED" rel="stylesheet" type="text/css">
   <meta content="Bikeshed 1.0.0" name="generator">
@@ -18,7 +18,7 @@ p.source { text-align: right; font-style: normal }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/Icons/w3c_home" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">Requirements for Latin Text Layout and Pagination</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2016-04-07">7 April 2016</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2016-07-21">21 July 2016</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -42,7 +42,7 @@ p.source { text-align: right; font-style: normal }
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
   <div class="p-summary" data-fill-with="abstract">
-   <p>This document describes requirements for pagination and layout of books in latin languages, based on the tradition of print book design and composition. It is hoped that these principles can inform the pagination of digital content as well, and serve as a reference for the CSS Working Group and other interested parties. This work was inspired by <a data-link-type="biblio" href="#biblio-jlreq">[JLREQ]</a>.</p>
+   <p>This document describes requirements for pagination and layout of books that use the Latin script, based on the tradition of print book design and composition. It is hoped that these principles can inform the pagination of digital content as well, and serve as a reference for the CSS Working Group and other interested parties. This work was inspired by <a data-link-type="biblio" href="#biblio-jlreq">[JLREQ]</a>.</p>
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -277,6 +277,7 @@ p.source { text-align: right; font-style: normal }
     <p class="source"> —Robert Bringhurst, <i>The Elements of Typographic Style</i> </p>
    </blockquote>
    <p>Good pagination, like good typography, aims to be invisible. As the reader turns the page, the stream of words and images in her mind should not be interrupted. Two thousand years of experience have taught us how best to do this. The goal of this document is to describe those rules, as clearly as possible, so they can be implemented in the Open Web Platform. We hope for a day where the pagination of digital books will be as beautiful and transparent as the best printed books.</p>
+   <p class="note" role="note">Note: Our goal is for this document to describe layout and pagination for all languages that use the Latin script.</p>
    <h2 class="heading settled" data-level="2" id="fundamentals"><span class="secno">2. </span><span class="content"> Fundamentals </span><a class="self-link" href="#fundamentals"></a></h2>
    <blockquote>
     <p> Makeup is a highly skilled procedure. If the text is merely divided mechanically into portions of equal length, without regard to where the divisions fall, some of the pages that result are bound to be unacceptable logically or aesthetically: they will incorporate bad breaks. </p>
@@ -853,12 +854,51 @@ prince-text-replace: "—" "\200A—\200A";
 <pre>299,792,458.0
 </pre>
    </div>
-   <p>However, in Spanish the roles are reversed, with the period used to group digits, and the comma for the decimal point:</p>
+   <p>However, in Spanish and Norwegian the roles are reversed, with the period used to group digits, and the comma for the decimal point:</p>
    <div class="example" id="example-47d904e1">
     <a class="self-link" href="#example-47d904e1"></a> 
 <pre>299.792.458,0
 </pre>
    </div>
+   <table>
+    <tbody>
+     <tr>
+      <th>Language
+      <th>Grouping separator
+      <th>Decimal separator
+     <tr>
+      <td>Austria, Belgium, Brazil, Canada (fr), Czech Republic, Denmark, Estonia, Finland, France, Germany, Hungary, Italy, Netherlands, Norway, Peru, Poland, Portugal, Romania, South Africa, Spain, Sweden, Switzerland
+      <td>space
+      <td>comma
+     <tr>
+      <td>Argentina, Austria, Brazil, Denmark, Germany, Italy, Portugal, Romania, Slovenia, Spain (older)
+      <td>period
+      <td>comma
+     <tr>
+      <td>Great Britain, United States
+      <td>comma
+      <td>period
+     <tr>
+      <td>
+      <td>
+      <td>
+     <tr>
+      <td>
+      <td>
+      <td>
+     <tr>
+      <td>
+      <td>
+      <td>
+     <tr>
+      <td>
+      <td>
+      <td>
+     <tr>
+      <td>
+      <td>
+      <td>
+   </table>
    <p class="note" role="note">Note: The CSSWG has <a href="https://wiki.csswg.org/ideas/content-formatting">informally proposed</a> a method for formatting numbers.</p>
    <h2 class="heading settled" data-level="21" id="special-considerations-for-genres"><span class="secno">21. </span><span class="content"> Special Considerations for Genres </span><a class="self-link" href="#special-considerations-for-genres"></a></h2>
    <h3 class="heading settled" data-level="21.1" id="education"><span class="secno">21.1. </span><span class="content"> Education </span><a class="self-link" href="#education"></a></h3>

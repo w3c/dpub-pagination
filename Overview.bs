@@ -14,7 +14,7 @@ ED: http://w3c.github.io/dpub-pagination/
 TR: http://www.w3.org/TR/dpub-latinreq/
 Previous Version: http://www.w3.org/TR/2014/WD-dpub-latinreq-20140313/
 Editor: Dave Cramer, Hachette Livre, dave.cramer@hbgusa.com
-Abstract: This document describes requirements for pagination and layout of books in latin languages, based on the tradition of print book design and composition. It is hoped that these principles can inform the pagination of digital content as well, and serve as a reference for the CSS Working Group and other interested parties. This work was inspired by [[JLREQ]].
+Abstract: This document describes requirements for pagination and layout of books that use the Latin script, based on the tradition of print book design and composition. It is hoped that these principles can inform the pagination of digital content as well, and serve as a reference for the CSS Working Group and other interested parties. This work was inspired by [[JLREQ]].
 
 </pre>
 <h2  class="no-num no-toc" id=sotd>
@@ -47,6 +47,9 @@ Not all stories worth telling can fit in a tweet, on a computer screen, or on a 
 </blockquote>
 
 Good pagination, like good typography, aims to be invisible. As the reader turns the page, the stream of words and images in her mind should not be interrupted. Two thousand years of experience have taught us how best to do this. The goal of this document is to describe those rules, as clearly as possible, so they can be implemented in the Open Web Platform. We hope for a day where the pagination of digital books will be as beautiful and transparent as the best printed books.
+
+
+Note: Our goal is for this document to describe layout and pagination for all languages that use the Latin script. 
 
 
 <h2 id="fundamentals">
